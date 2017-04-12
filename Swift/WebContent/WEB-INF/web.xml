@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  	<display-name>SwiftNet</display-name>
+  	<welcome-file-list>
+    	<welcome-file>index</welcome-file>
+  	</welcome-file-list>
+  
+  	<servlet>
+    	<servlet-name>index-page</servlet-name>
+    	<jsp-file>/pages/index.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>index-page</servlet-name>
+    	<url-pattern>/index</url-pattern>
+  	</servlet-mapping>
+  
+  	<servlet>
+    	<servlet-name>authorization-page</servlet-name>
+    	<jsp-file>/pages/authorization.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>authorization-page</servlet-name>
+    	<url-pattern>/authorization</url-pattern>
+  	</servlet-mapping>
+  
+ 	<servlet>
+    	<servlet-name>aboutUs-page</servlet-name>
+    	<jsp-file>/pages/about_us.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>aboutUs-page</servlet-name>
+   	 	<url-pattern>/about</url-pattern>
+  	</servlet-mapping>
+  
+	<servlet>
+  		<servlet-name>editProfile-page</servlet-name>
+    	<jsp-file>/pages/user/edit_profile.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>editProfile-page</servlet-name>
+    	<url-pattern>/editprofile</url-pattern>
+  	</servlet-mapping>
+	
+ 	<servlet>
+  		<servlet-name>balance-page</servlet-name>
+    	<jsp-file>/pages/user/balance.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>balance-page</servlet-name>
+    	<url-pattern>/balance</url-pattern>
+  	</servlet-mapping>
+  	
+	<servlet>
+  		<servlet-name>createAgreement-page</servlet-name>
+    	<jsp-file>/pages/user/create_agreement.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>createAgreement-page</servlet-name>
+    	<url-pattern>/createagreement</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>getSingleAgreement-page</servlet-name>
+    	<jsp-file>/pages/user/get_single_agreement.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getSingleAgreement-page</servlet-name>
+    	<url-pattern>/singleagreement</url-pattern>
+  	</servlet-mapping>
+  	
+  		<servlet>
+  		<servlet-name>getAgreementList-page</servlet-name>
+    	<jsp-file>/pages/user/get_agreement_list.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getAgreementList-page</servlet-name>
+    	<url-pattern>/agreementlist</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>requestOnService-page</servlet-name>
+    	<jsp-file>/pages/user/request_on_service.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>requestOnService-page</servlet-name>
+    	<url-pattern>/requestonservice</url-pattern>
+  	</servlet-mapping>
+	
+	<servlet>
+  		<servlet-name>searchResult-page</servlet-name>
+    	<jsp-file>/pages/tariff/search_result.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>searchResult-page</servlet-name>
+    	<url-pattern>/searchresult</url-pattern>
+  	</servlet-mapping>
+	
+	<servlet>
+  		<servlet-name>editTariff-page</servlet-name>
+    	<jsp-file>/pages/tariff/edit_tariff.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>editTariff-page</servlet-name>
+    	<url-pattern>/edittariff</url-pattern>
+  	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+  		<servlet-name>addTariff-page</servlet-name>
+    	<jsp-file>/pages/tariff/add_tariff.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>addTariff-page</servlet-name>
+    	<url-pattern>/addtariff</url-pattern>
+  	</servlet-mapping>
+	
+	<servlet>
+  		<servlet-name>getTariffList-page</servlet-name>
+    	<jsp-file>/pages/tariff/get_tariff_list.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getTariffList-page</servlet-name>
+    	<url-pattern>/tarifflist</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>getTariffListAdmin-page</servlet-name>
+    	<jsp-file>/pages/tariff/get_tariff_list_admin.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getTariffListAdmin-page</servlet-name>
+    	<url-pattern>/tarifflistadmin</url-pattern>
+  	</servlet-mapping>
+  	
+	
+	<servlet>
+  		<servlet-name>getSingleTariff-page</servlet-name>
+    	<jsp-file>/pages/tariff/get_single_tariff.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getSingleTariff-page</servlet-name>
+    	<url-pattern>/getsingletariff</url-pattern>
+  	</servlet-mapping>
+	
+	
+	
+	<servlet>
+  		<servlet-name>getSingleNews-page</servlet-name>
+    	<jsp-file>/pages/news/get_single_news.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getSingleNews-page</servlet-name>
+    	<url-pattern>/getsinglenews</url-pattern>
+  	</servlet-mapping>
+
+	<servlet>
+  		<servlet-name>addNews-page</servlet-name>
+    	<jsp-file>/pages/news/add_news.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>addNews-page</servlet-name>
+    	<url-pattern>/addnews</url-pattern>
+  	</servlet-mapping>
+
+	<servlet>
+  		<servlet-name>editNews-page</servlet-name>
+    	<jsp-file>/pages/news/edit_news.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>editNews-page</servlet-name>
+    	<url-pattern>/editnews</url-pattern>
+  	</servlet-mapping>
+
+	<servlet>
+  		<servlet-name>getNewsList-page</servlet-name>
+    	<jsp-file>/pages/news/get_news_list.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getNewsList-page</servlet-name>
+    	<url-pattern>/listnews</url-pattern>
+  	</servlet-mapping>
+
+	<servlet>
+  		<servlet-name>getNewsListAdmin-page</servlet-name>
+    	<jsp-file>/pages/news/get_news_list_admin.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getNewsListAdmin-page</servlet-name>
+    	<url-pattern>/listnewsadmin</url-pattern>
+  	</servlet-mapping>
+
+	<servlet>
+  		<servlet-name>getUserList-page</servlet-name>
+    	<jsp-file>/pages/user/get_user_list.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getUserList-page</servlet-name>
+    	<url-pattern>/userlist</url-pattern>
+  	</servlet-mapping>
+
+
+
+
+
+
+  	<servlet>
+    	<display-name>Controller</display-name>
+   	 	<servlet-name>Controller</servlet-name>
+   		<servlet-class>by.epam.swift.controller.Controller</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>Controller</servlet-name>
+    	<url-pattern>/Controller</url-pattern>
+  	</servlet-mapping>
+
+
+	<listener>
+ 		<listener-class>by.epam.swift.controller.listener.InitializationLog4jListener</listener-class>
+ 	</listener>
+
+	<listener>
+ 		<listener-class>by.epam.swift.controller.listener.InitializationSourceListener</listener-class>
+ 	</listener>
+
+ 	<filter>
+ 		<filter-name>EncodingFilter</filter-name>
+ 		<filter-class>by.epam.swift.controller.filter.EncodingFilter</filter-class>
+ 		<init-param>
+ 			<param-name>encoding</param-name>
+ 			<param-value>UTF-8</param-value>
+ 		</init-param>
+ 	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+		
+ 	<filter>
+ 		<filter-name>SessionInspectorFilter</filter-name>
+ 		<filter-class>by.epam.swift.controller.filter.SessionInspectorFilter</filter-class>
+ 	</filter>
+
+	<filter-mapping>
+		<filter-name>SessionInspectorFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+
+
+
+	<servlet>
+  		<servlet-name>security-page</servlet-name>
+    	<jsp-file>/pages/security.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>security-page</servlet-name>
+    	<url-pattern>/security</url-pattern>
+  	</servlet-mapping>
+
+ 	<filter>
+ 		<filter-name>SecurityFilter</filter-name>
+ 		<filter-class>by.epam.swift.controller.filter.SecurityFilter</filter-class>
+ 	</filter>
+ 	
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<servlet>
+  		<servlet-name>errorWrongRequest-page</servlet-name>
+    	<jsp-file>/pages/error_wrong_request.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>errorWrongRequest-page</servlet-name>
+    	<url-pattern>/errorPage</url-pattern>
+  	</servlet-mapping>
+
+ 	<error-page>
+ 		<error-code>403</error-code>
+ 		<location>/pages/error.jsp</location>
+ 	</error-page>
+ 	
+ 	<error-page>
+ 		<error-code>404</error-code>
+ 		<location>/pages/error.jsp</location>
+ 	</error-page>
+ 	
+ 	<error-page>
+ 		<error-code>414</error-code>
+ 		<location>/pages/error.jsp</location>
+ 	</error-page>
+ 	
+ 	<error-page>
+ 		<error-code>504</error-code>
+ 		<location>/pages/error.jsp</location>
+ 	</error-page> 
+ 
+ 	<display-name>Log4j</display-name>
+ 	<context-param>
+ 		<param-name>log4j-config-location</param-name>
+ 		<param-value>WEB-INF/log4j.properties</param-value>
+ 	</context-param>
+ 
+</web-app>

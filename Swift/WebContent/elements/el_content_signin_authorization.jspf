@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+	<br>
+	<div id="signin_panel" class="tab-pane fade in active">    
+    	<p>
+  
+    		<form id="form-sign-in" action="Controller" method="post">
+    			<input type="hidden" name="command" value="sign_in"/>
+    		
+    			<div class="form-group row">
+      				<label for="userLogin" class="col-sm-2 col-form-label">${login_label}</label>
+     				<div class="col-sm-10">
+        				<input id="userLogin" type="text" class="form-control" name="user_login" placeholder="${login_label}" required>
+      				</div>
+    			</div>
+    
+    		   <div class="form-group row">
+				    <label for="userPassword" class="col-sm-2 col-form-label">${password_label}</label>
+					<div class="col-sm-10">
+				   		<input id="userPassword" type="password" class="form-control" name="user_password" placeholder="${password_label}" required>
+				  	</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="offset-sm-2 col-sm-10">
+				        <button type="submit" class="btn btn-primary">${signin_label}</button>
+				  	</div>
+				</div>
+  			</form>
+		</p>
+	</div>
+	
+</html>

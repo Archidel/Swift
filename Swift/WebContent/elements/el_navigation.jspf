@@ -1,0 +1,320 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+
+<form id="form-upload-to-add-tariff" action="Controller" method="get">
+	<input type="hidden" name="command" value="upload_data_to_add_tariff">
+</form>
+
+<div id="wrapper" class="wrapper">
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li class="sidebar-brand"><a style="color: red;">${sessionScope.user.name} ${sessionScope.user.surname}</a></li>
+			<li><a href="editprofile">Edit profile</a></li>
+			<li><a href="createagreement">Create agreement</a></li>
+			<li><a href="#" onclick="submitUploadDataToRequestOnService();">Create request on service</a></li>
+			<li><a href="#" onclick="submitGetRequestOnServiceListUser();">Get your request on service</a></li>
+			<li><a href="#" onclick="submitGetBalance();">Get your balance</a></li>
+		<c:if test="${(sessionScope.user.position eq 'admin') or (sessionScope.user.position eq 'moderator')}">
+			<li class="sidebar-brand"><a style="color: blue;">Management</a></li>
+			<li><a href="#">Get user list</a></li>
+			<li><a href="#" onclick="submitGetAgreementList();">Get agreement list</a></li>
+			<li><a href="#">Get request list</a></li>
+			<li><a href="addnews">Add news</a></li>
+			<li><a href="#" onclick="submitGetNewsListAdmin();">Get news list</a></li>
+			<li><a href="#" data-toggle="modal" data-target="#exampleModal">Add new type of tariff</a></li>
+			<li><a href="#" onclick="submitUploadAddTariff();">Add tariff</a></li>
+			<li><a href="#"><a href="#" data-toggle="modal" data-target="#getTariffList">Get tariff list</a></a></li>
+		</c:if>
+		</ul>
+	</div>
+
+	<div class="jumbotron jumbotron-fluid" style="color: white; margin-bottom: 0px; background-image: url('http://tutorial9.s3.amazonaws.com/uploads/2008/05/finished-flare-andbanner.jpg'); background-size: 100% 100%;">
+		<div class="container">
+			<h1 class="display-3">Swift.net</h1>
+			<p class="lead">Welcome to our site.</p>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index">SWIFT.NET</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="index">${home_label}</a></li>
+					<li><a href="about">${about_us_label}</a></li>
+					<li><a onclick="submitGetNewsListUser();">${news_label}</a></li>
+<!-- Tariffs -->
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${tariffs_label}<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a onclick="submitGetInternetTariffListUser();">${internet_label}</a></li>
+							<li><a onclick="submitGetDigitalTVTariffListUser();">${digital_tv_label}</a></li>
+						</ul>
+					</li>
+				</ul>
+<!-- Search -->
+				<form class="navbar-form navbar-left" action="Controller" method="get">
+					<div class="form-group">
+						<input type="hidden" name="command" value="search_tariff">
+						<input type="text" name="search_tariff" class="form-control" placeholder="${search_label}"> 
+						<input type="hidden" name="page" value="1">
+					</div>
+					<button type="submit" class="btn btn-default">GO</button>
+				</form>
+
+<!-- Right navigation bar -->
+				<ul class="nav navbar-nav navbar-right">
+<!-- Authorization -->
+				<c:if test="${sessionScope.logged != true}">
+					<li><a href="authorization">${authorization_label}</a></li>
+				</c:if>
+<!-- Account -->
+				<c:if test="${sessionScope.logged == true}">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${account_label}<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#menu-toggle" id="menu-toggle">${personal_cabinet_label}</a></li>
+							<li><a onclick="submitExit();">${exit_button}</a></li>
+						</ul>
+					</li>
+				</c:if>
+<!-- Language -->
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${language_label}<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a onclick="submitLocalRu();">${ru_button}</a></li>
+							<li><a onclick="submitLocalEn();">${en_button}</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</div>
+
+	<!--------------------------------------------------------------------------------------------------------->
+	<!---------------------------------------------------MODAL-TYPE OF TARIFF---------------------------------->
+	<!--------------------------------------------------------------------------------------------------------->
+
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
+					<h3 class="modal-title" id="exampleModalLabel" style="text-align: center;">Add new type of tariff</h3>
+				</div>
+
+				<div class="modal-body">
+					<form id="form-add-type" action="Controller" method="post">
+						<input type="hidden" name="command" value="add_tariff_type">
+						<div class="form-group">
+							<label for="recipient-name" class="form-control-label">Type:</label>
+							<input type="text" class="form-control" id="recipient-name" name="tariff_type">
+						</div>
+					
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary">Add new type</button>
+						</div>
+					</form>
+				</div>				
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------------------------------------------------------------------------->
+	<!---------------------------------------------------MODAL-GET TARIFF LIST ADMIN--------------------------->
+	<!--------------------------------------------------------------------------------------------------------->
+
+	<div class="modal fade" id="getTariffList" tabindex="-1" role="dialog" aria-labelledby="getTariffListLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
+					<h3 class="modal-title" id="getTariffListLabel" style="text-align: center;">Select type of tariff </h3>
+				</div>
+
+				<div class="modal-body">
+					<form id="form-add-type" action="Controller" method="get">
+						<input type="hidden" name="command" value="get_tariff_list_admin">
+						<div class="form-group">
+							<label for="recipient-name" class="form-control-label">Type:</label>
+							<select id="tariff_type" name="tariff_type">
+								<option>Internet</option>
+								<option>Digital_tv</option>
+							</select>
+							
+						</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">${apply_button}</button>
+				</div>
+						<input type="hidden" name="page" value="1">
+					
+					</form>
+				
+				</div>
+
+
+			
+			</div>
+		</div>
+	</div>
+
+	<!--------------------------------------------------------------------------------------------------------->
+	<!---------------------------------------------------FORMS------------------------------------------------->
+	<!--------------------------------------------------------------------------------------------------------->
+
+<!-- 
+	<form id="form-tariff" action="Controller" method="get">
+		<input type="hidden" name="command" value="get_tariff_list"> 
+		<input id="inputTariffType" type="hidden"> 
+		<input type="hidden" name="page" value="1">
+	</form> -->
+
+	<form id="form-news-user" action="Controller" method="get">
+		<input type="hidden" name="command" value="get_news_list"> 
+		<input type="hidden" name="page" value="1">
+	</form>
+
+	<form id="form-news-admin" action="Controller" method="get">
+		<input type="hidden" name="command" value="get_news_list_admin">
+		<input type="hidden" name="page" value="1">
+	</form>
+
+	<form id="form-account" action="Controller" method="post">
+		<input id="inputAccount" type="hidden">
+	</form>
+
+	<form id="form-localization" action="Controller" method="post">
+		<input type="hidden" name="command" value="localization" /> 
+		<input id="inputLocal" type="hidden" name="local">
+	</form>
+
+	<form id="form-request-on-service" action="Controller" method="get">
+		<input type="hidden" name="command" value="upload_data_to_request_on_service">
+	</form>
+
+	<form id="form-get-balance" action="Controller" method="post">
+		<input type="hidden" name="command" value="get_balance"> 
+		<input type="hidden" name="user_id" value="${sessionScope.user.id}">
+	</form>
+
+	<form id="form-request-on-service-list-user" action="Controller" method="get">
+		<input type="hidden" name="command" value="get_request_on_service_list_user"> 
+		<input type="hidden" name="page" value="1">
+	</form>
+
+	<form id="form-request-on-service-list-admin" action="Controller" method="get">
+		<input type="hidden" name="command" value="get_request_on_service_list_admin"> 
+		<input type="hidden" name="page" value="1">
+	</form>
+
+	<form id="form-tariff-list-user" action="Controller" method="get">
+		<input type="hidden" name="command" value="get_tariff_list"> 
+		<input id = "inputTariffType" type="hidden" name="tariff_type">
+		<input type="hidden" name="page" value="1">
+	</form>
+
+	<form id="form-tariff-list-admin" action="Controller" method="get">
+		<input type="hidden" name="command" value="get_tariff_list_admin"> 
+		<input type="hidden" name="page" value="1">
+	</form>
+
+	<form id="form-agreement-list" action="Controller" method="get">
+		<input type="hidden" name="command" value="get_agreement_list"> 
+		<input type="hidden" name="page" value="1">
+	</form>
+
+	<script type="text/javascript">
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+
+		function submitGetAgreementList() {
+			document.getElementById('form-agreement-list').submit();
+		}
+		
+		function submitGetRequestOnServiceListUser() {
+			document.getElementById('form-request-on-service-list-user').submit();
+		}
+
+		function submitGetInternetTariffListUser() {
+			var inputTariffTypeInternet = document.getElementById('inputTariffType');
+			inputTariffTypeInternet.setAttribute('value', 'Internet');
+			document.getElementById('form-tariff-list-user').submit();
+		}
+		
+		function submitGetDigitalTVTariffListUser() {
+			var inputTariffTypeDigitalTV = document.getElementById('inputTariffType')
+			inputTariffTypeDigitalTV.setAttribute('value', 'Digital_tv');
+			document.getElementById('form-tariff-list-user').submit()
+		}
+		
+		
+		function submitGetTariffListAdmin() {
+			document.getElementById('form-tariff-list-admin').submit()
+		}
+
+		function submitGetRequestOnServiceListAdmin() {
+			document.getElementById('form-request-on-service-list-admin').submit()
+		}
+
+		function submitGetBalance() {
+			document.getElementById('form-get-balance').submit()
+		}
+
+		function submitUploadAddTariff() {
+			document.getElementById('form-upload-to-add-tariff').submit()
+		}
+
+		function submitLocalRu() {
+			var inputLocal = document.getElementById('inputLocal')
+			inputLocal.setAttribute('value', 'ru');
+			document.getElementById('form-localization').submit()
+		}
+
+		function submitLocalEn() {
+			var inputLocal = document.getElementById('inputLocal')
+			inputLocal.setAttribute('value', 'en');
+			document.getElementById('form-localization').submit()
+		}
+
+		function submitProfileEdit() {
+			var inputAccount = document.getElementById('inputAccount')
+			inputAccount.setAttribute('name', 'command');
+			inputAccount.setAttribute('value', 'more_about_edit_profile');
+			document.getElementById('form-account').submit()
+		}
+
+		function submitExit() {
+			var inputAccount = document.getElementById('inputAccount')
+			inputAccount.setAttribute('name', 'command');
+			inputAccount.setAttribute('value', 'logout');
+			document.getElementById('form-account').submit()
+		}
+
+		function submitGetNewsListUser() {
+			var inputNews = document.getElementById('inputNews')
+			document.getElementById('form-news-user').submit()
+		}
+
+		function submitGetNewsListAdmin() {
+			var inputNews = document.getElementById('inputNews')
+			document.getElementById('form-news-admin').submit()
+		}
+
+		function submitUploadDataToRequestOnService() {
+			document.getElementById('form-request-on-service').submit()
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+	<br>
+	<div id="signin_panel" class="tab-pane fade in active">    
+   		<div class="row">
+    		<div class="col-md-8 col-md-offset-2">	
+    			<div class="panel panel-default" >
+			  		<div class="panel-heading" style="text-align: center; font-size: 24px;">Rules for create agreement</div>
+			  		<div class="panel-body" style="max-height: 500px; overflow: scroll;">
+						<p>
+							<strong style="font-size: 16px;">1.</strong>
+							Make sure that your personal information is fully completed. 
+							You can do this in the personal cabin in the "edit profile" tab.
+						</p>
+				
+						<p>
+							<strong style="font-size: 16px;">2.</strong>
+							Lorem ipsum dolor sit amet. 
+							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
+							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
+							Sint et voluptates repudiandae sint et voluptates. 
+							Est eligendi optio, cumque nihil molestiae consequatur. 
+							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
+							Dolorum fuga autem vel eum fugiat. 
+							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+						</p>
+				
+						<p>
+							<strong style="font-size: 16px;">3.</strong>
+							Lorem ipsum dolor sit amet. 
+							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
+							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
+							Sint et voluptates repudiandae sint et voluptates. 
+							Est eligendi optio, cumque nihil molestiae consequatur. 
+							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
+							Dolorum fuga autem vel eum fugiat. 
+							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+						</p>
+						
+						
+						<p>
+							<strong style="font-size: 16px;">4.</strong>
+							Lorem ipsum dolor sit amet. 
+							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
+							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
+							Sint et voluptates repudiandae sint et voluptates. 
+							Est eligendi optio, cumque nihil molestiae consequatur. 
+							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
+							Dolorum fuga autem vel eum fugiat. 
+							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+						</p>
+						
+						
+						<p>
+							<strong style="font-size: 16px;">5.</strong>
+							Lorem ipsum dolor sit amet. 
+							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
+							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
+							Sint et voluptates repudiandae sint et voluptates. 
+							Est eligendi optio, cumque nihil molestiae consequatur. 
+							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
+							Dolorum fuga autem vel eum fugiat. 
+							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+						</p>
+						<p>
+							<strong style="font-size: 16px;">6.</strong>
+							Lorem ipsum dolor sit amet. 
+							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
+							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
+							Sint et voluptates repudiandae sint et voluptates. 
+							Est eligendi optio, cumque nihil molestiae consequatur. 
+							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
+							Dolorum fuga autem vel eum fugiat. 
+							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+						</p>
+						
+						<p>
+							<strong style="font-size: 16px;">7.</strong>
+							Lorem ipsum dolor sit amet. 
+							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
+							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
+							Sint et voluptates repudiandae sint et voluptates. 
+							Est eligendi optio, cumque nihil molestiae consequatur. 
+							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
+							Dolorum fuga autem vel eum fugiat. 
+							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+						</p>
+						
+						<p>
+							<strong style="font-size: 16px;">8.</strong>
+							Lorem ipsum dolor sit amet. 
+							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
+							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
+							Sint et voluptates repudiandae sint et voluptates. 
+							Est eligendi optio, cumque nihil molestiae consequatur. 
+							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
+							Dolorum fuga autem vel eum fugiat. 
+							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+						</p>
+						
+						<p>
+							<strong style="font-size: 16px;">9.</strong>
+							Lorem ipsum dolor sit amet. 
+							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
+							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
+							Sint et voluptates repudiandae sint et voluptates. 
+							Est eligendi optio, cumque nihil molestiae consequatur. 
+							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
+							Dolorum fuga autem vel eum fugiat. 
+							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+						</p>	
+						<br>
+					</div>
+				</div>
+				
+    		</div>
+		</div>
+	</div>
+</html>

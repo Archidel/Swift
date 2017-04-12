@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<body>
+	<footer>
+		<div class="container" >
+			<div class="row">
+			
+				<div class="footer-section col-md-4">
+					<h3>${info_about_project_label}</h3>
+					<div class="row"><br>
+						<strong>${theme_of_the_proejct_label}:</strong> ${internet_provider_service_label}<br>
+						<br>
+						<strong>${author_label}:</strong> ${albert_zarankovich_label}
+						<br><br>
+						<strong>${group_label}:</strong> Java 11 16
+						
+					</div>
+				</div>
+				
+				
+				<div class="footer-section col-md-4">
+					<h3>EMAP SYSTEMS</h3>
+					<div class="row">
+						<img alt="EPAM SYSTEMS" class="img-rounded footer-logo" src="images/epam_logo.png">
+					</div>
+				</div>
+				
+				<div class=" footer-section col-md-4">
+					<h3>${scoial_networks_label}</h3>
+					<br>
+					<table>
+						<tr>
+							<td class="social-network-link-first"><a href="http://vk.com/id75745157">Vkontakte</a><br></td>
+							<td class="social-network-link-second"><a href="http://facebook.com/">Facebook</a><br></td>
+						</tr>
+					
+						<tr>
+							<td class="social-network-link-first"><a href="http://plus.google.com/">Google-plus</a><br></td>
+							<td class="social-network-link-second"><a href="http://twitter.com/">Twitter</a><br></td>
+						</tr>
+						
+						<tr>
+							<td class="social-network-link-first"><a href="http://youtube.com/">Youtube</a><br></td>
+							<td class="social-network-link-second"><a href="http://instagram.com/">Instagram</a><br></td>
+						</tr>
+					
+					</table>
+				
+					
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
