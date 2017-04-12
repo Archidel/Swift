@@ -17,21 +17,6 @@ import by.epam.swift.service.validation.ValidationData;
 public class RequestServiceImpl implements RequestService {
 
 	@Override
-	public List<RequestOnService> getRequestList() throws ServiceException {
-		DAOFactory daoFactory = DAOFactory.getInstance();
-		RequestServiceDAO requestServiceDAO = daoFactory.getRequestServiceDAO();
-		List<RequestOnService> list = null;
-/*		
-		try {
-//			list = requestServiceDAO.getRequestList();
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}*/
-		
-		return list;
-	}
-
-	@Override
 	public RequestOnService getRequestOnServiceById(int idRequest) throws ServiceException {
 		if(!ValidationData.validInteger(idRequest)){
 			throw new ServiceException("Incorrent id request");
@@ -40,19 +25,19 @@ public class RequestServiceImpl implements RequestService {
 		DAOFactory daoFactory = DAOFactory.getInstance();
 		RequestServiceDAO requestServiceDAO = daoFactory.getRequestServiceDAO();
 		RequestOnService requestOnService = null;
-	/*	
+		
 		try {
 			requestOnService = requestServiceDAO.getRequestOnServiceById(idRequest);
 		} catch (DAOException e) {
 			throw new ServiceException(e);
-		}*/
+		}
 		
 		return requestOnService;
 	}
 
 	@Override
 	public void removeRequestOnService(int idRequestOnService) throws ServiceException {
-		/*if(!ValidationData.validInteger(idRequestOnService)){
+		if(!ValidationData.validInteger(idRequestOnService)){
 			throw new ServiceException("Incorrent id request");
 		}
 		
@@ -60,37 +45,11 @@ public class RequestServiceImpl implements RequestService {
 		RequestServiceDAO requestServiceDAO = daoFactory.getRequestServiceDAO();
 		
 		try {
-//			requestServiceDAO.removeRequestOnService(idRequestOnService);
+			requestServiceDAO.removeRequestOnService(idRequestOnService);
 		} catch (DAOException e) {
 			throw new ServiceException(e);
 		}
-		*/
-	}
-
-	@Override
-	public void applyRequest(int idRequestOnService, int idUser, String typeTariff) throws ServiceException {
-		if(!ValidationData.validRequest(idRequestOnService, idUser, typeTariff)){
-			throw new ServiceException("Incorrent idRequest, idUser or type tariff");
-		}
 		
-		DAOFactory daoFactory = DAOFactory.getInstance();
-		RequestServiceDAO requestServiceDAO = daoFactory.getRequestServiceDAO();
-		
-		/*try {
-			if(Type.INTERNET == Type.valueOf(typeTariff.toUpperCase())){
-				requestServiceDAO.applyInternetRequest(idRequestOnService, idUser);
-			}
-			
-			if(Type.DIGITAL_TV == Type.valueOf(typeTariff.toUpperCase())){
-				requestServiceDAO.applyDigitalTVRequest(idRequestOnService, idUser);
-			}
-
-			if(Type.TELEPHONY == Type.valueOf(typeTariff.toUpperCase())){
-				requestServiceDAO.applyTelephonyRequest(idRequestOnService, idUser);
-			}			
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}*/
 	}
 
 	@Override
@@ -147,7 +106,7 @@ public class RequestServiceImpl implements RequestService {
 		int begin = (numberPage * 10) - 10;
 		
 		try {
-			int idAgreement = agreementDAO.getIdAgreementByUserId(idUser);
+			int idAgreement = agreementDAO.getIdAgreementByUserIdAccepted(idUser);
 			list = requestServiceDAO.getRequestOnServiceList(idAgreement, begin, offset);
 		} catch (DAOException e) {
 			throw new ServiceException(e);

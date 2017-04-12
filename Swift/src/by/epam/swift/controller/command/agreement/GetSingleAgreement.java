@@ -39,7 +39,7 @@ public class GetSingleAgreement implements Command {
 		}
 
 		try {
-			request.getRequestDispatcher(PageName.GET_SINGLE_AGREEMENT).forward(request, response);
+			request.getRequestDispatcher(PageName.GET_SINGLE_AGREEMENT_PAGE).forward(request, response);
 		} catch (ServletException | IOException e) {
 			LOGGER.error(e);
 		}

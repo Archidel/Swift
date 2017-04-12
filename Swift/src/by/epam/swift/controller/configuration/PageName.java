@@ -7,14 +7,14 @@ public final class PageName {
 	private PageName() {}
 	
 	public static final String SECURITY_PAGE = "/security";
-	public static final String ERROR_WRONG_REQUEST = "/errorPage";
+	public static final String ERROR_WRONG_REQUEST_PAGE = "/errorPage";
 
 	public static final String INDEX_PAGE = "/index";
 	public static final String ABOUT_US_PAGE = "/about";
 	public static final String AUTHORIZATION_PAGE = "/authorization";
 //AGREEMENT
 	public static final String GET_AGREEMENT_LIST = "/agreementlist";
-	public static final String GET_SINGLE_AGREEMENT = "/singleagreement";
+	public static final String GET_SINGLE_AGREEMENT_PAGE = "/singleagreement";
 	
 //NEWS	
 	public static final String GET_SINGLE_NEWS_PAGE = "/getsinglenews";
@@ -24,19 +24,22 @@ public final class PageName {
 	public static final String EDIT_NEWS_PAGE = "/editnews";
 //USER	
 	public static final String EDIT_PROFILE_PAGE = "/editprofile";
-	public static final String GET_USER_LIST = "/userlist";
-	public static final String USER_BALANCE = "/balance";
+	public static final String GET_USER_LIST_PAGE = "/userlist";
+	public static final String USER_BALANCE_PAGE = "/balance";
 
 //TARIFF	
 	public static final String TARIFF_LIST_USER_PAGE = "/tarifflist";	
 	public static final String TARIFF_LIST_ADMIN_PAGE = "/tarifflistadmin";
 	public static final String SEARCH_TARIFF_RESULT_PAGE = "/searchresult";	
 	public static final String ADD_TARIFF_PAGE = "/addtariff";
-	public static final String GET_SINGLE_TARIFF = "/getsingletariff";
-	public static final String EDIT_TARIFF = "/edittariff";
+	public static final String GET_SINGLE_TARIFF_PAGE = "/getsingletariff";
+	public static final String EDIT_TARIFF_PAGE = "/edittariff";
 	
 //REQUEST
 	public static final String REQUEST_ON_SERVICE_PAGE = "/requestonservice";
+	public static final String REQUEST_ON_SERVICE_LIST_ADMIN_PAGE = "/requestlistadmin";
+	public static final String REQUEST_ON_SERVICE_LIST_USER_PAGE = "/requestlist";
+	public static final String GET_SINGLE_REQUEST_ON_SERVICE_PAGE = "/singlerequest";
 	
 //REDIRCET	
 	public static final String REDIRECT_EDIT_NEWS_PAGE = "/Controller?command=upload_news_data_to_edit&news_id=";
@@ -62,4 +65,7 @@ public final class PageName {
 	
 	public static final String REDIRECT_MAKE_REQUEST_ON_SERVICE_SUCCESS = "/Controller?command=redirect&pagename=index&message=Your request to add a service has been sent to the administration&status=true";
 	public static final String REDIRECT_MAKE_REQUEST_ON_SERVICE_ERROR = "/Controller?command=redirect&pagename=index&message=Error sending a request to add a service, check the entered data&status=false";
+
+	public static final String REDIRECT_REQUEST_ON_SERVICE_LIST_USER =  "/Controller?command=get_request_on_service_list_user&page=1";
+	public static final String REDIRECT_REQUEST_ON_SERVICE_LIST_ADMIN =  "/Controller?command=get_request_on_service_list_admin&page=1";
 }

@@ -32,6 +32,8 @@ public final class SQLCommand {
 	//AGREEMENT
 	public static final String INSERT_AGREEMENT = "INSERT INTO agreement (u_id, a_date_creation) VALUES (?,?)";
 	public static final String SELECT_AGREEMENT_ID_BY_USERID = "SELECT a_id FROM agreement WHERE u_id = ?";
+	public static final String SELECT_AGREEMENT_ID_BY_USERID_ACCEPTED = "SELECT a_id FROM agreement WHERE admin_u_id > 0 AND u_id = ?";
+	
 	public static final String SELECT_AGREEMENT_BY_ID = "SELECT u_id, admin_u_id, a_date_creation, a_status FROM agreement WHERE a_id = ?";
 	public static final String SELECT_AGREEMENT_ACTIVE_STATUS_LIMIT = "SELECT a_id, u_id, a_date_creation, admin_u_id FROM agreement WHERE a_status = 0 ORDER BY a_date_creation DESC LIMIT ?,?";
 	public static final String SELECT_AGREEMENT_ACTIVE_STATUS_COUNT = "SELECT COUNT(*) as amount FROM agreement WHERE a_status = 0";

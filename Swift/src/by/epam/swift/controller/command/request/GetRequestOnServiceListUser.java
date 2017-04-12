@@ -1,7 +1,9 @@
 package by.epam.swift.controller.command.request;
 
+import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,6 +14,7 @@ import by.epam.swift.bean.RequestOnService;
 import by.epam.swift.bean.User;
 import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.configuration.AttributeName;
+import by.epam.swift.controller.configuration.PageName;
 import by.epam.swift.controller.configuration.ParameterName;
 import by.epam.swift.service.RequestService;
 import by.epam.swift.service.exception.ServiceException;
@@ -33,8 +36,8 @@ public class GetRequestOnServiceListUser implements Command {
 		
 		try {
 			request.setAttribute(AttributeName.NUMBER_PAGE, numberPage);
-			int numberEntries = requestService.getAmountEntriesRequestList(idUser);			
-			requestService.getAmountEntriesRequestList(idUser);
+			int numberEntries = requestService.getAmountEntriesRequestList(idUser);	
+			request.setAttribute(AttributeName.AMOUNT_RESULT, numberEntries);
 			int amountPage = (int) Math.ceil(numberEntries * 1.0 / 10);
 			request.setAttribute(AttributeName.AMOUNT_PAGE, amountPage);
 			
@@ -44,7 +47,11 @@ public class GetRequestOnServiceListUser implements Command {
 			LOGGER.error(e);
 		}
 		
-		
+		try {
+			request.getRequestDispatcher(PageName.REQUEST_ON_SERVICE_LIST_USER_PAGE).forward(request, response);
+		} catch (ServletException | IOException e) {
+			LOGGER.error(e);
+		}
 		
 	}
 

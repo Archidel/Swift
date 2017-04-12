@@ -21,7 +21,7 @@ public class User implements Serializable{
 	private boolean status;
 	private Date blockedTill;
 	private List<Tariff> list;
-
+ 
 	public User() {}
 
 	public int getId() {

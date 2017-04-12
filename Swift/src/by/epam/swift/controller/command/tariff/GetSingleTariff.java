@@ -35,7 +35,7 @@ public class GetSingleTariff implements Command {
 		}
 		
 		try {
-			request.getRequestDispatcher(PageName.GET_SINGLE_TARIFF).forward(request, response);
+			request.getRequestDispatcher(PageName.GET_SINGLE_TARIFF_PAGE).forward(request, response);
 		} catch (ServletException | IOException e) {
 			LOGGER.error(e);
 		}

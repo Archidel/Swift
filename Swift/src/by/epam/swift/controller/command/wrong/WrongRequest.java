@@ -17,7 +17,7 @@ public class WrongRequest implements Command {
 	@Override
 	public void  executeCommand(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			request.getRequestDispatcher(PageName.ERROR_WRONG_REQUEST).forward(request, response);
+			request.getRequestDispatcher(PageName.ERROR_WRONG_REQUEST_PAGE).forward(request, response);
 		} catch (ServletException | IOException e) {
 			LOGGER.error(e);
 		}

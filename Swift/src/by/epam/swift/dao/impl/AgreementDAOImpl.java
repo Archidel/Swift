@@ -204,4 +204,30 @@ public class AgreementDAOImpl implements AgreementDAO {
 		}
 	}
 
+	@Override
+	public int getIdAgreementByUserIdAccepted(int idUser) throws DAOException {
+		ConnectionPool pool  = ConnectionPool.getInstance();
+		Connection connection = null;
+		ResultSet resultSet = null;
+		PreparedStatement preparedStatement = null;
+		int idAgreement = 0;
+		
+		try {
+			connection = pool.take();
+			preparedStatement = connection.prepareStatement(SQLCommand.SELECT_AGREEMENT_ID_BY_USERID_ACCEPTED);
+			preparedStatement.setInt(1, idUser);
+			resultSet = preparedStatement.executeQuery();
+			resultSet.next();
+			idAgreement = resultSet.getInt(ColumnLabel.AGREEMENT_ID);
+		} catch (ConnectionPoolException e) {
+			throw new DAOException(e);
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		}finally {
+			pool.closeConnection(connection, preparedStatement, resultSet);
+		}
+		
+		return idAgreement;
+	}
+
 }

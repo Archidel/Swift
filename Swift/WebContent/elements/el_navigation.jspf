@@ -23,12 +23,12 @@
 			<li class="sidebar-brand"><a style="color: blue;">Management</a></li>
 			<li><a href="#">Get user list</a></li>
 			<li><a href="#" onclick="submitGetAgreementList();">Get agreement list</a></li>
-			<li><a href="#">Get request list</a></li>
+			<li><a href="#" onclick="submitGetRequestOnServiceListAdmin();">Get request list</a></li>
 			<li><a href="addnews">Add news</a></li>
 			<li><a href="#" onclick="submitGetNewsListAdmin();">Get news list</a></li>
 			<li><a href="#" data-toggle="modal" data-target="#exampleModal">Add new type of tariff</a></li>
 			<li><a href="#" onclick="submitUploadAddTariff();">Add tariff</a></li>
-			<li><a href="#"><a href="#" data-toggle="modal" data-target="#getTariffList">Get tariff list</a></a></li>
+			<li><a href="#" data-toggle="modal" data-target="#getTariffList">Get tariff list</a></li>
 		</c:if>
 		</ul>
 	</div>

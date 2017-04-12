@@ -34,7 +34,7 @@ public class GetBalance implements Command {
 		}
 
 		try {
-			request.getRequestDispatcher(PageName.USER_BALANCE).forward(request, response);
+			request.getRequestDispatcher(PageName.USER_BALANCE_PAGE).forward(request, response);
 		} catch (ServletException | IOException e) {
 			LOGGER.error(e);
 		}

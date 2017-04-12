@@ -146,6 +146,44 @@
 	
 	
 	
+	
+	
+	<servlet>
+  		<servlet-name>getRequestOnServiceListAdmin-page</servlet-name>
+    	<jsp-file>/pages/request/get_request_on_service_list_admin.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getRequestOnServiceListAdmin-page</servlet-name>
+    	<url-pattern>/requestlistadmin</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>getRequestOnServiceListUser-page</servlet-name>
+    	<jsp-file>/pages/request/get_request_on_service_list.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getRequestOnServiceListUser-page</servlet-name>
+    	<url-pattern>/requestlist</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>getSingleRequestOnService-page</servlet-name>
+    	<jsp-file>/pages/request/get_single_request_on_service.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getSingleRequestOnService-page</servlet-name>
+    	<url-pattern>/singlerequest</url-pattern>
+  	</servlet-mapping>
+  	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<servlet>
   		<servlet-name>getSingleNews-page</servlet-name>
     	<jsp-file>/pages/news/get_single_news.jsp</jsp-file>

@@ -6,18 +6,11 @@ import by.epam.swift.bean.RequestOnService;
 import by.epam.swift.service.exception.ServiceException;
 
 public interface RequestService {
-	List<RequestOnService> getRequestList() throws ServiceException;
 	RequestOnService getRequestOnServiceById(int idRequestOnService) throws ServiceException;
 	void removeRequestOnService(int idRequestOnService) throws ServiceException;
-	void applyRequest(int idRequestOnService, int idUser, String typeTariff) throws ServiceException;
-	////
-	void makeRequestOnService(String title, String type, String datePeriod, String serviceAction, int idUser) throws ServiceException;
-	
+	void makeRequestOnService(String title, String type, String datePeriod, String serviceAction, int idUser) throws ServiceException;	
 	List<RequestOnService> getRequestOnServiceList(int idUser, int numberPage) throws ServiceException;
 	int getAmountEntriesRequestList(int idUser) throws ServiceException;
-	
 	List<RequestOnService> getRequestOnServiceList(int numberPage) throws ServiceException;
 	int getAmountEntriesRequestList() throws ServiceException;
-
-	
 }

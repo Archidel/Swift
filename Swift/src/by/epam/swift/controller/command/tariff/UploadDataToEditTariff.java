@@ -36,7 +36,7 @@ public class UploadDataToEditTariff implements Command {
 		}
 		
 		try {
-			request.getRequestDispatcher(PageName.EDIT_TARIFF).forward(request, response);
+			request.getRequestDispatcher(PageName.EDIT_TARIFF_PAGE).forward(request, response);
 		} catch (ServletException | IOException e) {
 			LOGGER.error(e);
 		}

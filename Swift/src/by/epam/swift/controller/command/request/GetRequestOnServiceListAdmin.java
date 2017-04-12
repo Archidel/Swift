@@ -1,7 +1,9 @@
 package by.epam.swift.controller.command.request;
 
+import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,6 +12,7 @@ import org.apache.log4j.Logger;
 import by.epam.swift.bean.RequestOnService;
 import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.configuration.AttributeName;
+import by.epam.swift.controller.configuration.PageName;
 import by.epam.swift.controller.configuration.ParameterName;
 import by.epam.swift.service.RequestService;
 import by.epam.swift.service.exception.ServiceException;
@@ -38,7 +41,11 @@ public class GetRequestOnServiceListAdmin implements Command {
 			LOGGER.error(e);
 		}
 	
-		
+		try {
+			request.getRequestDispatcher(PageName.REQUEST_ON_SERVICE_LIST_ADMIN_PAGE).forward(request, response);
+		} catch (ServletException | IOException e) {
+			LOGGER.error(e);
+		}
 		
 	}
 

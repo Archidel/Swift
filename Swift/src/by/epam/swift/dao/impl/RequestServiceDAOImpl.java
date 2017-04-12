@@ -175,43 +175,6 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 		return amountEntries;
 	}
 
-	/*@Override
-	public List<RequestOnService> getRequestList() throws DAOException {
-		ConnectionPool pool  = ConnectionPool.getInstance();
-		Connection connection = null;
-		Statement statement = null;
-		ResultSet resultSet = null;
-		List<RequestOnService> list = null;
-		
-		try {
-			connection = pool.take();
-			statement = connection.createStatement();
-			resultSet = statement.executeQuery(SQLCommand.SELECT_REQUEST_ACTIVE_STATUS);
-			list = new LinkedList<RequestOnService>();
-			RequestOnService requestOnService = null;
-			
-			while(resultSet.next()){
-				requestOnService = new RequestOnService();
-				requestOnService.setId(resultSet.getInt(ColumnLabel.REQUEST_ON_SERVICE_ID));
-				requestOnService.setIdUser(resultSet.getInt(ColumnLabel.USER_ID));
-				requestOnService.setIdTariff(resultSet.getInt(ColumnLabel.REQUEST_ON_SERVICE_ID_TARIFF));
-				requestOnService.setDate(resultSet.getString(ColumnLabel.REQUEST_ON_SERVICE_DATE).substring(0, 19));
-				requestOnService.setServiceAction(resultSet.getBoolean(ColumnLabel.REQUEST_ON_SERVICE_ACTION));
-				requestOnService.setTypeTariff(Type.valueOf(resultSet.getString(ColumnLabel.REQUEST_ON_SERVICE_TYPE_TARIFF).toUpperCase()));
-				list.add(requestOnService);
-			}
-		
-		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
-		} catch (SQLException e) {
-			throw new DAOException(e);
-		}finally {
-			pool.closeConnection(connection, statement, resultSet);
-		}		
-		
-		return list;
-	}
-
 	@Override
 	public RequestOnService getRequestOnServiceById(int idRequest) throws DAOException {
 		ConnectionPool pool  = ConnectionPool.getInstance();
@@ -227,12 +190,12 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 			resultSet = preparedStatement.executeQuery();
 			while(resultSet.next()){
 				requestOnService = new RequestOnService();
-				requestOnService.setId(resultSet.getInt(ColumnLabel.REQUEST_ON_SERVICE_ID));
-				requestOnService.setIdUser(resultSet.getInt(ColumnLabel.USER_ID));
-				requestOnService.setIdTariff(resultSet.getInt(ColumnLabel.REQUEST_ON_SERVICE_ID_TARIFF));
-				requestOnService.setDate(resultSet.getString(ColumnLabel.REQUEST_ON_SERVICE_DATE).substring(0, 19));
+				requestOnService.setIdRequest(idRequest);
+				requestOnService.setIdAgreement(resultSet.getInt(ColumnLabel.AGREEMENT_ID));
+				requestOnService.setIdTariff(resultSet.getInt(ColumnLabel.TARIFF_ID));
+				requestOnService.setDate(resultSet.getDate(ColumnLabel.REQUEST_ON_SERVICE_DATE));
+				requestOnService.setStatus(resultSet.getBoolean(ColumnLabel.REQUEST_ON_SERVICE_STATUS));
 				requestOnService.setServiceAction(resultSet.getBoolean(ColumnLabel.REQUEST_ON_SERVICE_ACTION));
-				requestOnService.setTypeTariff(Type.valueOf(resultSet.getString(ColumnLabel.REQUEST_ON_SERVICE_TYPE_TARIFF).toUpperCase()));
 			}
 		} catch (ConnectionPoolException e) {
 			throw new DAOException(e);
@@ -264,6 +227,6 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 			pool.closeConnection(connection, preparedStatement);
 		}
 		
-	}*/
+	}
 
 }
