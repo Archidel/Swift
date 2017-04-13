@@ -52,7 +52,7 @@
   	
 	<servlet>
   		<servlet-name>createAgreement-page</servlet-name>
-    	<jsp-file>/pages/user/create_agreement.jsp</jsp-file>
+    	<jsp-file>/pages/agreement/create_agreement.jsp</jsp-file>
   	</servlet>
   	<servlet-mapping>
     	<servlet-name>createAgreement-page</servlet-name>
@@ -61,7 +61,7 @@
   	
   	<servlet>
   		<servlet-name>getSingleAgreement-page</servlet-name>
-    	<jsp-file>/pages/user/get_single_agreement.jsp</jsp-file>
+    	<jsp-file>/pages/agreement/get_single_agreement.jsp</jsp-file>
   	</servlet>
   	<servlet-mapping>
     	<servlet-name>getSingleAgreement-page</servlet-name>
@@ -70,7 +70,7 @@
   	
   		<servlet>
   		<servlet-name>getAgreementList-page</servlet-name>
-    	<jsp-file>/pages/user/get_agreement_list.jsp</jsp-file>
+    	<jsp-file>/pages/agreement/get_agreement_list.jsp</jsp-file>
   	</servlet>
   	<servlet-mapping>
     	<servlet-name>getAgreementList-page</servlet-name>
@@ -79,7 +79,7 @@
   	
   	<servlet>
   		<servlet-name>requestOnService-page</servlet-name>
-    	<jsp-file>/pages/user/request_on_service.jsp</jsp-file>
+    	<jsp-file>/pages/request/request_on_service.jsp</jsp-file>
   	</servlet>
   	<servlet-mapping>
     	<servlet-name>requestOnService-page</servlet-name>
