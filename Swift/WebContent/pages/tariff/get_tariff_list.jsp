@@ -9,7 +9,7 @@
 <%@include file="../../../elements/el_navigation.jspf" %>
 	<div class="wrapper container">
 		<div class="heading">
-			<h1>${internet_label}</h1>
+			<h1>${tariffs_label}</h1>
 		</div>
 		<h4><span>${found_label}: ${requestScope.amountResult}</span></h4>
 		<legend></legend>
@@ -30,8 +30,8 @@
 			<thead>
 	    		<tr>
 	        		<th>${title_label}</th>
-	        		<th>TYPE:</th>
-	        		<th>${price_label} per day</th>
+	        		<th>${type_label}</th>
+	        		<th>${price_label} ${dimension_price_per_month}</th>
 	        		
 	        		<th>${action_label}</th>		
 	      		</tr>

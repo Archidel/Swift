@@ -16,4 +16,5 @@ public interface UserService {
 	
 	double getBalance(String idUser) throws ServiceException;
 	void addBalance(String balance, int idUser) throws ServiceException;
+	int getAmountEntriesListUser() throws ServiceException;
 }

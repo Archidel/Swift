@@ -3,7 +3,6 @@ package by.epam.swift.controller.command.user;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -36,10 +35,10 @@ public class BlockUser implements Command {
 		} catch (ServiceException e) {
 			LOGGER.error(e);
 		}
-		
+
 		try {
-			request.getRequestDispatcher(PageName.SHOW_USER_LIST).forward(request, response);
-		} catch (ServletException | IOException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_USER_LIST);
+		} catch (IOException e) {
 			LOGGER.error(e);
 		}
 		

@@ -7,109 +7,51 @@
    		<div class="row">
     		<div class="col-md-8 col-md-offset-2">	
     			<div class="panel panel-default" >
-			  		<div class="panel-heading" style="text-align: center; font-size: 24px;">Rules for create agreement</div>
+			  		<div class="panel-heading" style="text-align: center; font-size: 24px;">${agreement_rules_label}</div>
 			  		<div class="panel-body" style="max-height: 500px; overflow: scroll;">
 						<p>
 							<strong style="font-size: 16px;">1.</strong>
-							Make sure that your personal information is fully completed. 
-							You can do this in the personal cabin in the "edit profile" tab.
+							${agreement_rules_one_label}
 						</p>
 				
 						<p>
 							<strong style="font-size: 16px;">2.</strong>
-							Lorem ipsum dolor sit amet. 
-							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
-							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
-							Sint et voluptates repudiandae sint et voluptates. 
-							Est eligendi optio, cumque nihil molestiae consequatur. 
-							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
-							Dolorum fuga autem vel eum fugiat. 
-							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+							${head_one_label}
 						</p>
 				
 						<p>
 							<strong style="font-size: 16px;">3.</strong>
-							Lorem ipsum dolor sit amet. 
-							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
-							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
-							Sint et voluptates repudiandae sint et voluptates. 
-							Est eligendi optio, cumque nihil molestiae consequatur. 
-							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
-							Dolorum fuga autem vel eum fugiat. 
-							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+							${head_three_label}
 						</p>
 						
 						
 						<p>
 							<strong style="font-size: 16px;">4.</strong>
-							Lorem ipsum dolor sit amet. 
-							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
-							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
-							Sint et voluptates repudiandae sint et voluptates. 
-							Est eligendi optio, cumque nihil molestiae consequatur. 
-							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
-							Dolorum fuga autem vel eum fugiat. 
-							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
-						</p>
+							${head_four_label}
 						
 						
 						<p>
 							<strong style="font-size: 16px;">5.</strong>
-							Lorem ipsum dolor sit amet. 
-							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
-							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
-							Sint et voluptates repudiandae sint et voluptates. 
-							Est eligendi optio, cumque nihil molestiae consequatur. 
-							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
-							Dolorum fuga autem vel eum fugiat. 
-							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+							${head_five_label}
 						</p>
 						<p>
 							<strong style="font-size: 16px;">6.</strong>
-							Lorem ipsum dolor sit amet. 
-							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
-							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
-							Sint et voluptates repudiandae sint et voluptates. 
-							Est eligendi optio, cumque nihil molestiae consequatur. 
-							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
-							Dolorum fuga autem vel eum fugiat. 
-							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+							${head_fix_label}
 						</p>
 						
 						<p>
 							<strong style="font-size: 16px;">7.</strong>
-							Lorem ipsum dolor sit amet. 
-							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
-							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
-							Sint et voluptates repudiandae sint et voluptates. 
-							Est eligendi optio, cumque nihil molestiae consequatur. 
-							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
-							Dolorum fuga autem vel eum fugiat. 
-							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+							${head_seven_label}
 						</p>
 						
 						<p>
 							<strong style="font-size: 16px;">8.</strong>
-							Lorem ipsum dolor sit amet. 
-							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
-							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
-							Sint et voluptates repudiandae sint et voluptates. 
-							Est eligendi optio, cumque nihil molestiae consequatur. 
-							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
-							Dolorum fuga autem vel eum fugiat. 
-							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+							${head_eight_label}
 						</p>
 						
 						<p>
 							<strong style="font-size: 16px;">9.</strong>
-							Lorem ipsum dolor sit amet. 
-							Deleniti atque corrupti, quos dolores eos, qui in ea commodi autem. 
-							Officia deserunt mollitia animi, id est laborum et voluptates repudiandae. 
-							Sint et voluptates repudiandae sint et voluptates. 
-							Est eligendi optio, cumque nihil molestiae consequatur. 
-							Eos et harum quidem rerum. Eveniet, ut enim ipsam voluptatem, quia dolor sit, aspernatur. 
-							Dolorum fuga autem vel eum fugiat. 
-							Minima veniam, quis nostrum exercitationem ullam corporis suscipit.
+							${head_nine_label}
 						</p>	
 						<br>
 					</div>

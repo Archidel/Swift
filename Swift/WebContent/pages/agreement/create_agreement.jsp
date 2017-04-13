@@ -10,7 +10,7 @@
 	<%@include file="../../../elements/el_navigation.jspf" %>
 	<div class="wrapper container">
 		<div class="heading">
-			<h1>AGreement</h1>
+			<h1>${create_agreement_label}</h1>
 			<legend></legend>
 		</div>
 	
@@ -27,21 +27,21 @@
 		</c:if>
 	
 		<ul id="myTab2" class="nav nav-tabs">
-  			<li class="active"><a data-toggle="tab" href="#signin_panel">rules</a></li>
-  			<li><a data-toggle="tab" href="#signup_panel">Edit profile</a></li>
+  			<li class="active"><a data-toggle="tab" href="#signin_panel">${rules_label}</a></li>
+  			<li><a data-toggle="tab" href="#signup_panel">${profile_edit_label}</a></li>
 		</ul>
 	
 		<div class="tab-content">
 	  		<%@include file="../../elements/el_content_agreement_rule.jspf" %>
 		  	<%@include file="../../elements/el_content_agreement_edit_profile.jspf" %>	  		 		
 		</div>
-		
+		<legend></legend>
 		<div class="col-md-8 col-md-offset-2">	
-			<span class="bg-info" style="font-size: 16px;">You must accept the agreement to get agreement.</span>
+			<span class="bg-info" style="font-size: 16px;">${agreement_rules_notation_label}</span>
 		
 			<form action="Controller" method="post" class="pull-right">
 				<input type="hidden" name="command" value="create_agreement">
-				<button type="submit" class="btn btn-success" style="margin-left: 30px;">Accept</button>
+				<button type="submit" class="btn btn-success" style="margin-left: 30px;">${apply_button}</button>
 			</form>
 		</div>
 	</div>

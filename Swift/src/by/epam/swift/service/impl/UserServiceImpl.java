@@ -191,5 +191,20 @@ public class UserServiceImpl implements UserService{
 			throw new ServiceException(e);
 		}
 	}
+
+	@Override
+	public int getAmountEntriesListUser() throws ServiceException {
+		DAOFactory factory = DAOFactory.getInstance();
+		UserDAO userDAO = factory.getUserDAO();
+		int numberEntries = 0;
+		
+		try {
+			numberEntries = userDAO.getAmountEntriesListUser();
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
+		
+		return numberEntries;
+	}
 	
 }

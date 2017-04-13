@@ -32,6 +32,17 @@
    	 	<url-pattern>/about</url-pattern>
   	</servlet-mapping>
   
+  	<servlet>
+    	<servlet-name>rules-page</servlet-name>
+    	<jsp-file>/pages/rules.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>rules-page</servlet-name>
+   	 	<url-pattern>/rules</url-pattern>
+  	</servlet-mapping>
+  
+  
+  
 	<servlet>
   		<servlet-name>editProfile-page</servlet-name>
     	<jsp-file>/pages/user/edit_profile.jsp</jsp-file>
@@ -42,11 +53,11 @@
   	</servlet-mapping>
 	
  	<servlet>
-  		<servlet-name>balance-page</servlet-name>
-    	<jsp-file>/pages/user/balance.jsp</jsp-file>
+  		<servlet-name>getBalance-page</servlet-name>
+    	<jsp-file>/pages/user/get_balance.jsp</jsp-file>
   	</servlet>
   	<servlet-mapping>
-    	<servlet-name>balance-page</servlet-name>
+    	<servlet-name>getBalance-page</servlet-name>
     	<url-pattern>/balance</url-pattern>
   	</servlet-mapping>
   	

@@ -10,7 +10,7 @@
 	<div class="wrapper container">
 
 	 	<div class="heading">
-			<h1>GETL ALL NEWS</h1>
+			<h1>${news_get_all_label}</h1>
 			<legend></legend>
 		</div>
  
@@ -34,9 +34,20 @@
 					 	<tbody>
 					   		<tr>
 								<td>${list.id}</td>
-							    <td style="color: black;">${list.title}</td>
+							    <td>${list.title}</td>
 							    <td>${list.datePublication}</td>
 							    <td>
+							   
+							   	<form action="Controller" method="get">
+										<input type="hidden" name="command" value="get_single_news"/>
+										
+										<div class="form-group row">
+											<div class="offset-sm-2 col-sm-10">
+												<button type="submit" class="btn btn-info" name="news_id" value="${list.id}">${more_button}</button>
+								  			</div>
+										</div>
+									</form>	
+							   
 							   
 							    	<form action="Controller" method="get">
 										<input type="hidden" name="command" value="upload_news_data_to_edit"/>
@@ -63,15 +74,7 @@
 										</div>
 									</form>		      		
 							      	
-							      	<form action="Controller" method="get">
-										<input type="hidden" name="command" value="get_single_news"/>
-										
-										<div class="form-group row">
-											<div class="offset-sm-2 col-sm-10">
-												<button type="submit" class="btn btn-default" name="news_id" value="${list.id}">${more_button}</button>
-								  			</div>
-										</div>
-									</form>	
+							      
 						
 								</td>
 					 		</tr>	

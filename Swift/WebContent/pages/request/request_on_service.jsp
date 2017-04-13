@@ -10,7 +10,7 @@
 	<%@include file="../../../elements/el_navigation.jspf" %>
 	<div class="wrapper container">
 		<div class="heading">
-			<h1>Request on service</h1>
+			<h1>${create_request_on_service_label}</h1>
 			<legend></legend>
 		</div>
 	
@@ -31,7 +31,7 @@
 	<input type="hidden" name="command" value="make_request_on_service">
 		<table>
 			<tr>
-				<td style="widows: 200px; height: 50px;">Type: </td>
+				<td style="widows: 200px; height: 50px;">${type_label}: </td>
 				<td>
 					<select class="selectpicker" data-live-search="true" id="tariff_type" name="tariff_type">
 						<c:forEach items="${requestScope.tariffTypeList}" var = "typeList">
@@ -41,7 +41,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>Title: </td>
+				<td>${title_label}: </td>
 				<td>
 					<select class="selectpicker" data-live-search="true" id="tariff_title" name="tariff_title">
 						<c:forEach items="${requestScope.list}" var = "list">
@@ -52,7 +52,7 @@
 			</tr>	
 			
 			<tr>
-				<td>Period</td>
+				<td>${peroid_label}:</td>
 				<td>
 				<input type="date" name="date_period">
 				
@@ -60,11 +60,11 @@
 			</tr>	
 
 	<tr>
-		<td>Service Action</td>
+		<td>${service_action_label}:</td>
 		<td>
 			<select class="selectpicker" id="request_service_action" name="request_service_action">
-				<option>Enable</option>
-				<option>Disable</option>
+				<option>${enable_label}</option>
+				<option>${disable_label}</option>
 			</select>
 		</td>
 	</tr>
@@ -75,7 +75,7 @@
 		
 		
 		<br><br>
-		<button type="submit" class="btn btn-primary"> make request on service</button>
+		<button type="submit" class="btn btn-primary">${make_order_button}</button>
 		
 		
 </form>		

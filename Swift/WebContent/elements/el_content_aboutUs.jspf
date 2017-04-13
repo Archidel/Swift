@@ -3,37 +3,11 @@
 
 <html>
 <body>
-	<section class="col-md-17">
-		<div class="jumbotron">
-			<blockquote>
-				<p>&ldquo;Internet gives something that is not in real life - Feedback.&rdquo;</p>
-				<small>Alexander Domogarov</small>
-			</blockquote>
-		</div>
-				
-		<p>
-			Это финальный проект, тема которого "интернет провайдер". Данный проект сделан был по завершению тренинга EPAM SYSTEMS.
-			Автор веб проекта: Заранкович Альберт.
-		</p>
-		
-		<p>
-			Некоторые люди могут задаться вопросом как попасть на тренинг в EPAM. Требуется от человека только одно - желание.
-		</p>
-	
-		<p>
-			Подаётся заявка на сайте https://www.training.by на желаемый вами курс и сразу скажу если у вас нет хорошего багажа знаний то вам придётся очень сложно.
-			Зачисление в студенты происходил после прохождения трёх этапов собеседования.<br>
-			1. Вам звонят по телефону уточняют личную информацию, проверяют знания английского, Java.<br>
-			2. Приглашают на собеседование в EPAM. Проверят ваши знания английского письменного и устного. <br>
-			3. Техническое собеседование. В начале предоставят тест состоящий из 6 заданий и 20 минут на его выполнение. Далее написать предложенную консольную программу за 30 минут и в конце непосредственное общение с интервьюером.
-		</p>
-				
-				
-				
-				
-				
-				
-				
+
+	<p style="text-align: center;">
+		<h2>${about_epam_label}</h2>
+	</p>
+
 		<div class="row">
 			<div class="col-sm">
 				<img src="images/aboutus/about_2.png" alt="" class="thumbnail" width="320" height="230">
@@ -61,51 +35,5 @@
 			</div>
 		</div>
 				
-		<h2>our trainers</h2>	
-		<div class="team">
-			<div class="row">
-				
-				<div class="col col-md-4">
-					<img src="images/aboutus/trainers/olga_smolaykova.png" alt="Olga Smolyakova" class="thumbnail" width="100" height="120">
-					<div class="caption">
-						<h3>Olga Smolyakova</h3>
-						<p>Java core</p>
-					</div>
-				</div>
-				
-				<div class="col col-md-4 col-md-offset-1">
-					<img src="images/aboutus/trainers/svetlana_zaharenko.png" alt="Sviatlana Zakharenka" class="thumbnail" width="100" height="120">
-					<div class="caption">
-						<h3>Sviatlana Zakharenka</h3>
-						<p>Java core</p>
-					</div>
-				</div>
-				
-				<div class="col col-md-4 col-md-offset-1">
-					<img src="images/aboutus/trainers/no_avatar_male.png" alt="Ihar Nazarau" class="thumbnail" width="100" height="120">
-					<div class="caption">
-						<h3>Ihar Nazarau</h3>
-						<p>DB & Front end</p>
-					</div>
-				</div>
-				
-				<div class="col col-md-4 col-md-offset-1">
-					<img src="images/aboutus/trainers/ihar_blinov.png" alt="Ihar Blinou" class="thumbnail" width="100" height="120">
-					<div class="caption">
-						<h3>Ihar Blinou</h3>
-						<p>Java core</p>
-					</div>
-				</div>
-				
-				<div class="col col-md-4 col-md-offset-1">
-					<img src="images/aboutus/trainers/no_avatar_male.png" alt="Aliaksei Sychou" class="thumbnail" width="100" height="120">
-					<div class="caption">
-						<h3>Aliaksei Sychou</h3>
-						<p>Front end </p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 </body>
 </html>

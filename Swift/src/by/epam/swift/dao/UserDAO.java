@@ -16,4 +16,5 @@ public interface UserDAO {
 	void removeBlock(int idUser) throws DAOException;
 	double getBalance(int idUser) throws DAOException;
 	void addBalance(double balance, int idUser) throws DAOException;
+	int getAmountEntriesListUser() throws DAOException;
 }

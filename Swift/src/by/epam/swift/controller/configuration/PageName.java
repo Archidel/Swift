@@ -68,4 +68,6 @@ public final class PageName {
 
 	public static final String REDIRECT_REQUEST_ON_SERVICE_LIST_USER =  "/Controller?command=get_request_on_service_list_user&page=1";
 	public static final String REDIRECT_REQUEST_ON_SERVICE_LIST_ADMIN =  "/Controller?command=get_request_on_service_list_admin&page=1";
+
+	public static final String REDIRECT_USER_LIST = "/Controller?command=get_user_list&page=1";
 }

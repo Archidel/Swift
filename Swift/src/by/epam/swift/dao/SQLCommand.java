@@ -31,6 +31,7 @@ public final class SQLCommand {
 	public static final String SELECT_USER_BY_ID = "SELECT * FROM user WHERE u_id = ?";
 	public static final String UPDATE_USER_BLOCK_BY_ID = "UPDATE user SET u_blocked_till = ? WHERE u_id = ?";
 	public static final String SELECT_USER_BALANCE_BY_ID = "SELECT u_balance FROM user WHERE u_id = ?";
+	public static final String SELECT_USER_LIST_COUNT = "SELECT COUNT(*) as amount FROM user";
 	
 	//AGREEMENT
 	public static final String INSERT_AGREEMENT = "INSERT INTO agreement (u_id, a_date_creation) VALUES (?,?)";

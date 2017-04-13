@@ -10,7 +10,7 @@
 	<%@include file="../../../elements/el_navigation.jspf" %>
 	<div class="wrapper container">
 		<div class="heading">
-			<h1>REQUEST ON SERVICE LIST ADMIN</h1>
+			<h1>${get_request_list_label}</h1>
 			<legend></legend>
 		</div>
 	
@@ -29,10 +29,10 @@
 		<table class="table table-hover">
 		  		<thead>
 	    	  		<tr>
-	        			<th>Request id</th>
-	        			<th>Tariff id</th>
-	        			<th>Date</th>	
-	        			<th>Service action</th>
+	        			<th>${request_id_label}</th>
+	        			<th>${tariff_id_label}</th>
+	        			<th>${date_label}</th>	
+	        			<th>${service_action_label}</th>
 	        			<th>${action_label}</th>
 	      			</tr>
 	    		</thead>
@@ -46,11 +46,11 @@
 						    <td>
 					
 						    	<c:if test="${list.serviceAction == true}">
-						    		Enable service
+						    		${enable_label}
 						    	</c:if>
 						    	
 						    	<c:if test="${list.serviceAction != true}">
-						    		Disable service
+						    		${disable_label}
 						    	</c:if>
 						    </td>
 						    <td>

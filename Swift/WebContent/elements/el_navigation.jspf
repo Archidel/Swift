@@ -14,21 +14,21 @@
 	<div id="sidebar-wrapper">
 		<ul class="sidebar-nav">
 			<li class="sidebar-brand"><a style="color: red;">${sessionScope.user.name} ${sessionScope.user.surname}</a></li>
-			<li><a href="editprofile">Edit profile</a></li>
-			<li><a href="createagreement">Create agreement</a></li>
-			<li><a href="#" onclick="submitUploadDataToRequestOnService();">Create request on service</a></li>
-			<li><a href="#" onclick="submitGetRequestOnServiceListUser();">Get your request on service</a></li>
-			<li><a href="#" onclick="submitGetBalance();">Get your balance</a></li>
+			<li><a href="editprofile">${profile_edit_label}</a></li>
+			<li><a href="createagreement">${create_agreement_label}</a></li>
+			<li><a href="#" onclick="submitUploadDataToRequestOnService();">${create_request_on_service_label}</a></li>
+			<li><a href="#" onclick="submitGetRequestOnServiceListUser();">${get_your_request_on_service_label}</a></li>
+			<li><a href="#" onclick="submitGetBalance();">${get_your_balance_label}</a></li>
 		<c:if test="${(sessionScope.user.position eq 'admin') or (sessionScope.user.position eq 'moderator')}">
-			<li class="sidebar-brand"><a style="color: blue;">Management</a></li>
-			<li><a href="#">Get user list</a></li>
-			<li><a href="#" onclick="submitGetAgreementList();">Get agreement list</a></li>
-			<li><a href="#" onclick="submitGetRequestOnServiceListAdmin();">Get request list</a></li>
-			<li><a href="addnews">Add news</a></li>
-			<li><a href="#" onclick="submitGetNewsListAdmin();">Get news list</a></li>
-			<li><a href="#" data-toggle="modal" data-target="#exampleModal">Add new type of tariff</a></li>
-			<li><a href="#" onclick="submitUploadAddTariff();">Add tariff</a></li>
-			<li><a href="#" data-toggle="modal" data-target="#getTariffList">Get tariff list</a></li>
+			<li class="sidebar-brand"><a style="color: blue;">${management_label}</a></li>
+			<li><a href="#" onclick="submitGetUserList();">${get_user_lsit_label}</a></li>
+			<li><a href="#" onclick="submitGetAgreementList();">${get_agreement_list_label}</a></li>
+			<li><a href="#" onclick="submitGetRequestOnServiceListAdmin();">${get_request_list_label}</a></li>
+			<li><a href="addnews">${news_add_label}</a></li>
+			<li><a href="#" onclick="submitGetNewsListAdmin();">${get_news_list_label}</a></li>
+			<li><a href="#" data-toggle="modal" data-target="#exampleModal">${add_new_type_of_tariff}</a></li>
+			<li><a href="#" onclick="submitUploadAddTariff();">${add_tariff_label}</a></li>
+			<li><a href="#" data-toggle="modal" data-target="#getTariffList">${get_tariff_list_label}</a></li>
 		</c:if>
 		</ul>
 	</div>
@@ -36,7 +36,7 @@
 	<div class="jumbotron jumbotron-fluid" style="color: white; margin-bottom: 0px; background-image: url('http://tutorial9.s3.amazonaws.com/uploads/2008/05/finished-flare-andbanner.jpg'); background-size: 100% 100%;">
 		<div class="container">
 			<h1 class="display-3">Swift.net</h1>
-			<p class="lead">Welcome to our site.</p>
+			<p class="lead">${welcome_site_label}</p>
 		</div>
 	</div>
 
@@ -52,6 +52,8 @@
 					<li><a href="index">${home_label}</a></li>
 					<li><a href="about">${about_us_label}</a></li>
 					<li><a onclick="submitGetNewsListUser();">${news_label}</a></li>
+					<li><a href="rules">${rules_label}</a></li>
+					
 <!-- Tariffs -->
 					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${tariffs_label}<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -107,20 +109,20 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
-					<h3 class="modal-title" id="exampleModalLabel" style="text-align: center;">Add new type of tariff</h3>
+					<h3 class="modal-title" id="exampleModalLabel" style="text-align: center;">${add_new_type_of_tariff}</h3>
 				</div>
 
 				<div class="modal-body">
 					<form id="form-add-type" action="Controller" method="post">
 						<input type="hidden" name="command" value="add_tariff_type">
 						<div class="form-group">
-							<label for="recipient-name" class="form-control-label">Type:</label>
+							<label for="recipient-name" class="form-control-label">${type_label}:</label>
 							<input type="text" class="form-control" id="recipient-name" name="tariff_type">
 						</div>
 					
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary">Add new type</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">${close_label}</button>
+							<button type="submit" class="btn btn-primary">${add_button}</button>
 						</div>
 					</form>
 				</div>				
@@ -136,14 +138,14 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
-					<h3 class="modal-title" id="getTariffListLabel" style="text-align: center;">Select type of tariff </h3>
+					<h3 class="modal-title" id="getTariffListLabel" style="text-align: center;">${select_type_of_tariff_label} </h3>
 				</div>
 
 				<div class="modal-body">
 					<form id="form-add-type" action="Controller" method="get">
 						<input type="hidden" name="command" value="get_tariff_list_admin">
 						<div class="form-group">
-							<label for="recipient-name" class="form-control-label">Type:</label>
+							<label for="recipient-name" class="form-control-label">${type_label}:</label>
 							<select id="tariff_type" name="tariff_type">
 								<option>Internet</option>
 								<option>Digital_tv</option>
@@ -152,7 +154,7 @@
 						</div>
 				
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">${close_label}</button>
 					<button type="submit" class="btn btn-primary">${apply_button}</button>
 				</div>
 						<input type="hidden" name="page" value="1">
@@ -170,13 +172,6 @@
 	<!--------------------------------------------------------------------------------------------------------->
 	<!---------------------------------------------------FORMS------------------------------------------------->
 	<!--------------------------------------------------------------------------------------------------------->
-
-<!-- 
-	<form id="form-tariff" action="Controller" method="get">
-		<input type="hidden" name="command" value="get_tariff_list"> 
-		<input id="inputTariffType" type="hidden"> 
-		<input type="hidden" name="page" value="1">
-	</form> -->
 
 	<form id="form-news-user" action="Controller" method="get">
 		<input type="hidden" name="command" value="get_news_list"> 
@@ -231,6 +226,11 @@
 		<input type="hidden" name="command" value="get_agreement_list"> 
 		<input type="hidden" name="page" value="1">
 	</form>
+	
+	<form id="form-user-list" action="Controller" method="get">
+		<input type="hidden" name="command" value="get_user_list"> 
+		<input type="hidden" name="page" value="1">
+	</form>
 
 	<script type="text/javascript">
 		$("#menu-toggle").click(function(e) {
@@ -258,6 +258,9 @@
 			document.getElementById('form-tariff-list-user').submit()
 		}
 		
+		function submitGetUserList() {
+			document.getElementById('form-user-list').submit()
+		}
 		
 		function submitGetTariffListAdmin() {
 			document.getElementById('form-tariff-list-admin').submit()

@@ -11,7 +11,7 @@
 	<div class="wrapper container">
 	
 		<div class="heading">
-			<h1>TYPE TARIFF</h1>
+			<h1>${get_tariff_list_label}</h1>
 			<legend></legend>
 		</div>
 
@@ -25,12 +25,13 @@
 			<h4><span>${found_label}: ${requestScope.amountResult}</span></h4>
 			
 			<table class="table table-hover">
-			<caption><h2 style="text-align: center;">${internet_label}</h2></caption>
+			<caption><h2 style="text-align: center;">${tariffs_label}</h2></caption>
 		  		<thead>
 	    	  		<tr>
 	        			<th>${id_label}</th>
 	        			<th>${title_label}</th>
-	        			<th>${price_label}</th>	
+	        			<th>${type_label}</th>		
+	        			<th>${price_label}</th>
 	        			<th>${action_label}</th>
 	      			</tr>
 	    		</thead>
@@ -39,7 +40,8 @@
 				 	<tbody>
 				   		<tr>
 							<td>${list.id}</td>
-						    <td style="color: black;">${list.title}</td>
+						    <td>${list.title}</td>
+						   	<td>${list.type}</td>
 						   	<td>${list.price}</td>
 						    <td>
 						    	<form action="Controller" method="get">

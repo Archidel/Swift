@@ -92,22 +92,13 @@
 	
 <!-- EDIT -->
 	<fmt:message bundle="${loc}" key="local.label.edit.news" var="news_edit_label"/>
-	<fmt:message bundle="${loc}" key="local.label.edit.telephony" var="telephony_edit_label"/>
-	<fmt:message bundle="${loc}" key="local.label.edit.digitaltv" var="digital_tv_edit_label"/>
-	<fmt:message bundle="${loc}" key="local.label.edit.internet" var="internet_edit_label"/>
 	<fmt:message bundle="${loc}" key="local.label.edit.profile" var="profile_edit_label"/>
 
 <!-- ADD -->
 	<fmt:message bundle="${loc}" key="local.label.add.news" var="news_add_label"/>
-	<fmt:message bundle="${loc}" key="local.label.add.telephony" var="telephony_add_label"/>
-	<fmt:message bundle="${loc}" key="local.label.add.digitaltv" var="digital_tv_add_label"/>
-	<fmt:message bundle="${loc}" key="local.label.add.internet" var="internet_add_label"/>
 	
 <!-- get -->
 	<fmt:message bundle="${loc}" key="local.label.get.allNews" var="news_get_all_label"/>
-	<fmt:message bundle="${loc}" key="local.label.get.allInternet" var="internet_get_all_label"/>
-	<fmt:message bundle="${loc}" key="local.label.get.allDigitalTV" var="digital_tv_get_all_label"/>
-	<fmt:message bundle="${loc}" key="local.label.get.allTelephony" var="telephony_get_all_label"/>
 
 <!-- SECURITY -->
 	<fmt:message bundle="${loc}" key="local.security.message" var="security_message"/>
@@ -118,4 +109,66 @@
 	<fmt:message bundle="${loc}" key="local.error.414.message" var="error_414_message"/>
 	<fmt:message bundle="${loc}" key="local.error.504.message" var="error_504_message"/>
 	
+	
+	
+<!-- MESSAGESSSSSS -->
+	<fmt:message bundle="${loc}" key="local.label.logo.welcomeSite" var="welcome_site_label"/>
+	<fmt:message bundle="${loc}" key="local.label.quote" var="quote_label"/>
+	<fmt:message bundle="${loc}" key="local.label.quote.authro" var="quote_authror_label"/>
+	<fmt:message bundle="${loc}" key="local.label.head.one" var="head_one_label"/>
+	<fmt:message bundle="${loc}" key="local.label.head.two" var="head_two_label"/>
+	<fmt:message bundle="${loc}" key="local.label.head.three" var="head_three_label"/>
+	<fmt:message bundle="${loc}" key="local.label.head.four" var="head_four_label"/>
+	<fmt:message bundle="${loc}" key="local.label.head.five" var="head_five_label"/>
+	<fmt:message bundle="${loc}" key="local.label.head.fix" var="head_fix_label"/>
+	<fmt:message bundle="${loc}" key="local.label.head.seven" var="head_seven_label"/>
+	<fmt:message bundle="${loc}" key="local.label.head.eight" var="head_eight_label"/>
+	<fmt:message bundle="${loc}" key="local.label.head.nine" var="head_nine_label"/>
+	<fmt:message bundle="${loc}" key="local.label.quote.aboutEpam" var="about_epam_label"/>
+	<fmt:message bundle="${loc}" key="local.label.rules" var="rules_label"/>
+	<fmt:message bundle="${loc}" key="local.label.rules.heading" var="rules_heading_label"/>
+	
+	
+	<fmt:message bundle="${loc}" key="local.label.rules.one" var="rules_one_label"/>
+	<fmt:message bundle="${loc}" key="local.label.rules.two" var="rules_two_label"/>
+	<fmt:message bundle="${loc}" key="local.label.rules.three" var="rules_three_label"/>
+	<fmt:message bundle="${loc}" key="local.label.rules.notation" var="rules_notation_label"/>
+	<fmt:message bundle="${loc}" key="local.label.notation" var="notation_label"/>
+	
+	<fmt:message bundle="${loc}" key="local.label.account.createAgreement" var="create_agreement_label"/>
+	<fmt:message bundle="${loc}" key="local.label.account.createRequestOnService" var="create_request_on_service_label"/>
+	<fmt:message bundle="${loc}" key="local.label.account.getYourRequestOnService" var="get_your_request_on_service_label"/>
+	<fmt:message bundle="${loc}" key="local.label.account.getYourBalance" var="get_your_balance_label"/>
+	<fmt:message bundle="${loc}" key="local.label.account.getAgreementList" var="get_agreement_list_label"/>
+	<fmt:message bundle="${loc}" key="local.label.account.getRequestList" var="get_request_list_label"/>
+	<fmt:message bundle="${loc}" key="local.label.account.getNewsList" var="get_news_list_label"/>
+	<fmt:message bundle="${loc}" key="local.label.account.addNewTypeOfTariff" var="add_new_type_of_tariff"/>
+	
+	<fmt:message bundle="${loc}" key="local.label.account.addTariff" var="add_tariff_label"/>
+	<fmt:message bundle="${loc}" key="local.label.account.agreement" var="agreement_label"/>
+	<fmt:message bundle="${loc}" key="local.label.agreement.rules.one" var="agreement_rules_one_label"/>
+	<fmt:message bundle="${loc}" key="local.label.agreement.rules.notation" var="agreement_rules_notation_label"/>
+	<fmt:message bundle="${loc}" key="local.label.account.agreementRules" var="agreement_rules_label"/>
+	<fmt:message bundle="${loc}" key="local.label.account.requestOnService" var="request_on_service_label"/>
+	<fmt:message bundle="${loc}" key="local.label.peroid" var="peroid_label"/>
+	<fmt:message bundle="${loc}" key="local.label.ServiceAction" var="service_action_label"/>
+	<fmt:message bundle="${loc}" key="local.label.requestId" var="request_id_label"/>
+	<fmt:message bundle="${loc}" key="local.label.tariffID" var="tariff_id_label"/>
+	<fmt:message bundle="${loc}" key="local.label.agreementId" var="agreement_id_label"/>
+	<fmt:message bundle="${loc}" key="local.label.userId" var="user_id_label"/>
+	<fmt:message bundle="${loc}" key="local.label.date" var="date_label"/>
+	<fmt:message bundle="${loc}" key="local.label.close" var="close_label"/>
+	<fmt:message bundle="${loc}" key="local.label.selectTypeOfTariff" var="select_type_of_tariff_label"/>
+	<fmt:message bundle="${loc}" key="local.label.addTariff" var="add_tariff_label"/>
+	<fmt:message bundle="${loc}" key="local.label.getTariffList" var="get_tariff_list_label"/>
+	
+	
+	<fmt:message bundle="${loc}" key="local.label.enable" var="enable_label"/>
+	<fmt:message bundle="${loc}" key="local.label.disable" var="disable_label"/>
+	<fmt:message bundle="${loc}" key="local.label.accepted" var="accepted_label"/>
+	<fmt:message bundle="${loc}" key="local.label.yes" var="yes_label"/>
+	<fmt:message bundle="${loc}" key="local.label.no" var="no_label"/>
+	
+	<fmt:message bundle="${loc}" key="local.label.tariff.loadType" var="tariff_load_type_label"/>
+
 </html>

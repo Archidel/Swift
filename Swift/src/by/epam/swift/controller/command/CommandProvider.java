@@ -39,9 +39,11 @@ import by.epam.swift.controller.command.tariff.SearchTariff;
 import by.epam.swift.controller.command.tariff.UploadDataToAddTariff;
 import by.epam.swift.controller.command.user.EditProfile;
 import by.epam.swift.controller.command.user.GetBalance;
+import by.epam.swift.controller.command.user.GetUserList;
 import by.epam.swift.controller.command.user.Logout;
 import by.epam.swift.controller.command.user.SignIn;
 import by.epam.swift.controller.command.user.SignUp;
+import by.epam.swift.controller.command.user.UpPosition;
 import by.epam.swift.controller.command.user.AddBalance;
 import by.epam.swift.controller.command.user.BlockUser;
 import by.epam.swift.controller.command.wrong.Redirect;
@@ -100,6 +102,8 @@ public final class CommandProvider {
 		repository.put(CommandName.BLOCK_USER, new BlockUser());
 		repository.put(CommandName.GET_BALANCE, new GetBalance());
 		repository.put(CommandName.ADD_BALANCE, new AddBalance());
+		repository.put(CommandName.GET_USER_LIST, new GetUserList());
+		repository.put(CommandName.UP_POSITION, new UpPosition());
 		
 //REQUEST
 		repository.put(CommandName.REMOVE_REQUEST_ON_SERVICE, new RemoveRequestOnService());

@@ -5,20 +5,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-<head>
-  <style>
-  .modal-header, h4, .close {
-      background-color: #5cb85c;
-      color:white;
-      text-align: center;
-      font-size: 30px;
-  }
-  .modal-footer {
-      background-color: #f9f9f9;
-  }
-  </style>
-
-</head>
 <body>
 <%@include file="../../../elements/el_navigation.jspf" %>
 	<div class="wrapper container">
@@ -35,7 +21,7 @@
 		</c:if>
 		
 		<div class="row">
-	
+		<h4><span>${found_label}: ${requestScope.amountResult}</span></h4>
 			<table class="table table-hover">
 		  		<thead>
 	    	  		<tr>
@@ -80,7 +66,7 @@
 											            	</div>
 											            	<input name="user_id" value="${list.id}" type="hidden">
 											        		<button type="submit" class="btn btn-success btn-block" name="command" value="set_block"> Apply</button>
-											              	<button type="submit" class="btn btn-danger btn-block" name="command" value="remove_block"> Remove the block</button>
+											              	<button type="submit" class="btn btn-danger btn-block" name="command" value="up_position"> Up position</button>
 											        	</div>
 											        
 											        	<div class="modal-footer">
@@ -114,6 +100,28 @@
 				</c:forEach>
 			</table>
 		</div>
+	
+	
+	
+	<c:if test="${requestScope.amountResult > 10}">
+			<div class="text-center">
+				<ul class="pagination pagination-lg">
+					<c:forEach begin="1" end="${requestScope.amountPage}" var="i">
+						<c:choose>
+							<c:when test="${requestScope.numberPage eq i}">
+								<li class="active"><a>${i}</a></li>
+							</c:when>
+							<c:otherwise>
+										<li><a href="Controller?command=get_tariff_list_admin&tariff_type=${tariffType}&page=${i}">${i}</a></li>
+					</c:otherwise>
+						</c:choose>
+					</c:forEach>
+				</ul>
+			</div>
+		</c:if>
+	
+	
+	
 	</div>
 	<%@include file="../../../elements/el_footer.jspf" %>
 	

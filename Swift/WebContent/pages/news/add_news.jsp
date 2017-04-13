@@ -33,7 +33,7 @@
 						<div class="form-group row">
 							<label for="newsTitle" class="col-sm-2 col-form-label">${title_label}</label>
 							<div class="col-sm-10">
-								<input id="newsTitle" class="form-control" type="text" name="news_title" placeholder="Title news" required="">
+								<input id="newsTitle" class="form-control" type="text" name="news_title" required>
 							</div>
 						</div>
 													
@@ -41,7 +41,7 @@
 							<label for="newsDescription" class="col-sm-2 col-form-label">${description_label}</label>
 							<br>
 							<div class="col-sm-10" style="width: 100%">
-								<textarea id="newsDescription" class="form-control" name="news_description" rows="10" required="" ></textarea>
+								<textarea id="newsDescription" class="form-control" name="news_description" rows="10" required></textarea>
 							</div>
 						</div>
 							

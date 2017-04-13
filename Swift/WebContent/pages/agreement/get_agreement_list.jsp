@@ -10,7 +10,7 @@
 	<%@include file="../../../elements/el_navigation.jspf" %>
 	<div class="wrapper container">
 		<div class="heading">
-			<h1>AGreement</h1>
+			<h1>${get_agreement_list_label}</h1>
 			<legend></legend>
 		</div>
 	
@@ -29,13 +29,13 @@
 		<h4><span>${found_label}: ${requestScope.amountResult}</span></h4>
 			
 			<table class="table table-hover">
-			<caption><h2 style="text-align: center;">${internet_label}</h2></caption>
+			<caption><h2 style="text-align: center;">${agreement_label}</h2></caption>
 		  		<thead>
 	    	  		<tr>
-	        			<th>Agreement id</th>
-	        			<th>user id</th>
-	        			<th>a_date_creation</th>	
-	        			<th>Accepted</th>
+	        			<th>${agreement_id_label}</th>
+	        			<th>${user_id_label}</th>
+	        			<th>${date_label}</th>	
+	        			<th>${accepted_label}</th>
 	        			<th>${action_label}</th>
 	      			</tr>
 	    		</thead>
@@ -48,11 +48,11 @@
 						   	<td><fmt:formatDate type="both" dateStyle="medium" timeStyle="medium" value="${list.dateCreation}"/></td>
 						    <td>
 						    	<c:if test="${list.idAdmin != 0}">
-						    		YES
+						    		${yes_label}
 						    	</c:if>
 						    	
 						    	<c:if test="${list.idAdmin == 0}">
-						    		NO
+						    		${no_label}
 						    	</c:if>
 						    </td>
 						    <td>

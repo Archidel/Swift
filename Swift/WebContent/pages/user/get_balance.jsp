@@ -11,7 +11,7 @@
 	<%@include file="../../../elements/el_navigation.jspf"%>
 	<div class="wrapper container">
 		<div class="heading">
-			<h1>Balance</h1>
+			<h1>${balance_label}</h1>
 			<legend></legend>
 		</div>
 
@@ -30,16 +30,13 @@
 		</c:if>
 
 		<table>
-			<caption style="text-align: center;">
-				<strong>Your balance</strong>
-			</caption>
 			<tr>
-				<td width="200px;">Balance:</td>
+				<td width="200px;">${balance_label}:</td>
 				<td>${requestScope.more}$</td>
 			</tr>
 		</table>
 		<br><a href="#" data-toggle="modal"
-			data-target="#exampleModal1" class="btn btn-primary">add balance</a>
+			data-target="#exampleModal1" class="btn btn-primary">${add_button}</a>
 		<br> <br> <br> <br>
 
 	</div>
@@ -61,14 +58,14 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h3 class="modal-title" id="exampleModalLabel"
-						style="text-align: center;">Add balance</h3>
+						style="text-align: center;">${balance_label}</h3>
 				</div>
 
 				<div class="modal-body">
 					<form id="form-add-balance" action="Controller" method="post">
 						<input type="hidden" name="command" value="add_balance">
 						<div class="form-group">
-							<label for="recipient-name" class="form-control-label">Amount
+							<label for="recipient-name" class="form-control-label">${amount_label}
 								[$]: </label> <input type="text" class="form-control"
 								id="recipient-name" name="user_balance">
 						</div>
@@ -78,9 +75,9 @@
 
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Close</button>
+						data-dismiss="modal">${close_label}</button>
 					<button type="button" class="btn btn-success"
-						onclick="submitAddBalance();">Add balance</button>
+						onclick="submitAddBalance();">${add_button}</button>
 				</div>
 			</div>
 		</div>

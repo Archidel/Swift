@@ -312,5 +312,30 @@ public class UserDAOImpl implements UserDAO {
 		}
 		
 	}
+
+	@Override
+	public int getAmountEntriesListUser() throws DAOException {
+		ConnectionPool pool  = ConnectionPool.getInstance();
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		int numberEntries = 0;
+		
+		try {
+			connection = pool.take();
+			statement = connection.createStatement();
+			resultSet = statement.executeQuery(SQLCommand.SELECT_USER_LIST_COUNT);
+			resultSet.next();
+			numberEntries = resultSet.getInt(ColumnLabel.AMOUNT);
+		} catch (ConnectionPoolException e) {
+			throw new DAOException(e);
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		}finally {
+			pool.closeConnection(connection, statement, resultSet);
+		}
+		
+		return numberEntries;
+	}
 	
 }
