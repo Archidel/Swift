@@ -14,4 +14,5 @@ public interface RequestServiceDAO {
 	int getAmountEntriesRequestList() throws DAOException;
 	RequestOnService getRequestOnServiceById(int idRequest) throws DAOException;
 	void removeRequestOnService(int idRequest) throws DAOException;
+	void acceptRequestOnService(int idUser, int idTariff, boolean status) throws DAOException;
 }

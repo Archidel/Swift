@@ -10,7 +10,10 @@ public final class SQLCommand {
 	public static final String INSERT_REQUEST_ON_SERVICE = "INSERT INTO request (a_id, t_id, r_date, r_service_action) VALUES (?,?,?,?)";
 
 	public static final String UPDATE_REQUEST_STATUS = "UPDATE request SET r_status = 1 WHERE r_id = ?";
+	public static final String INSERT_REQUEST_ENABLE_TARIFF = "INSERT IGNORE INTO user_m2m_tariff(u_id, t_id) VALUES (?,?)";
+	public static final String UPDATE_REQUEST_DISABLE_TARIFF = "UPDATE user_m2m_tariff SET u_id = 0, t_id = 0 WHERE u_id = ? AND t_id = ?";
 
+	
 	public static final String SELECT_USER_REQUEST_ON_SERVLICE_LIST_LIMIT = "SELECT r_id, t_id, r_date, r_service_action FROM request WHERE r_status = 0 AND a_id = ? ORDER BY r_date DESC LIMIT ?, ?";
 	public static final String SELECT_ADMIN_REQUEST_ON_SERVLICE_LIST_LIMIT = "SELECT r_id, a_id, t_id, r_date, r_service_action FROM request WHERE r_status = 0 ORDER BY r_date DESC LIMIT ?, ?";
 	public static final String SELECT_USER_REQUEST_ON_SERVICE_LIST_COUNT = "SELECT COUNT(*) as amount FROM request WHERE a_id = ? AND r_status = 0";

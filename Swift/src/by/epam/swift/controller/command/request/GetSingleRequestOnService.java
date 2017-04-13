@@ -44,7 +44,7 @@ public class GetSingleRequestOnService implements Command {
 		}
 		
 		try {
-			request.getRequestDispatcher(PageName.).forward(request, response);
+			request.getRequestDispatcher(PageName.GET_SINGLE_REQUEST_ON_SERVICE_PAGE).forward(request, response);
 		} catch (ServletException | IOException e) {
 			LOGGER.error(e);
 		}

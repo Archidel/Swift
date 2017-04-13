@@ -33,20 +33,38 @@
 			</div>
 		</c:if>
 
-
-
-			
 		<table class="table table-hover" style="text-align: center;">
+			<tr>
+				<td>Request onservice ID</td>
+				<td>${requestScope.more.idRequest}</td>
+			</tr>	
+			
 			<tr>
 				<td>Agreement ID</td>
 				<td>${requestScope.more.idAgreement}</td>
 			</tr>	
+
+			<tr>
+				<td>Tariff ID</td>
+				<td>${requestScope.more.idTariff}</td>
+			</tr>
 			
 			<tr>
-				<td>Agreement Date creation</td>
-				<td>${requestScope.more.dateCreation}</td>
-			</tr>	
+				<td>Request Date</td>
+				<td>${requestScope.more.date}</td>
+			</tr>
 			
+			<tr>
+				<td>Service Action</td>
+				<c:if test="${requestScope.more.serviceAction == true}">
+					<td>Enable service</td>
+				</c:if>
+
+				<c:if test="${requestScope.more.serviceAction != true}">
+					<td>Disable service</td>
+				</c:if>
+			</tr>
+
 			<tr>
 				<td>${position_label}</td>
 				<td>${requestScope.user.position}</td>
@@ -93,14 +111,17 @@
 			<tr>
 				<td>		
 					<form action="Controller" method="get">
-						<input type="hidden" name="command" value="accept_agreement"/>
-						<button type="submit" class="btn btn-success" name="agreement_id" value="${requestScope.more.idAgreement}">${apply_button}</button>
+						<input type="hidden" name="command" value="accept_request_on_service"/>
+						<input type="hidden" name="user_id" value="${requestScope.user.id}">	
+						<input type="hidden" name="status" value="${requestScope.more.serviceAction}">	
+						<button type="submit" class="btn btn-success" name="request_id" value="${requestScope.more.idRequest}">${apply_button}</button>
 					</form>
 				</td>
 				<td>	
 					<form action="Controller" method="post" >
-						<input type="hidden" name="command" value="remove_agreement"/>
-						<button type="submit" class="btn btn-danger" name="agreement_id" value="${requestScope.more.idAgreement}">${remove_button}</button>
+						<input type="hidden" name="command" value="remove_request_on_service"/>
+						<input type="hidden" name="status" value="true">
+						<button type="submit" class="btn btn-danger" name="request_id" value="${requestScope.more.idRequest}">${remove_button}</button>
 					</form>
 				</td>
 			</tr>

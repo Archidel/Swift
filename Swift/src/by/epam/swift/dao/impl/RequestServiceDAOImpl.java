@@ -229,4 +229,35 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 		
 	}
 
+	@Override
+	public void acceptRequestOnService(int idUser, int idTariff, boolean action) throws DAOException {
+		ConnectionPool pool  = ConnectionPool.getInstance();
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		PreparedStatement preparedStatement = null;
+		
+		try {
+			connection = pool.take();
+			statement = connection.createStatement();
+			resultSet = statement.executeQuery(SQLCommand.FOREING_KET_CHECKS_FALSE);
+			
+			if(action){
+				preparedStatement = connection.prepareStatement(SQLCommand.INSERT_REQUEST_ENABLE_TARIFF);
+			}else{
+				preparedStatement = connection.prepareStatement(SQLCommand.UPDATE_REQUEST_DISABLE_TARIFF);
+			}
+			preparedStatement.setInt(1, idUser);
+			preparedStatement.setInt(2, idTariff);
+			preparedStatement.executeUpdate();
+		} catch (ConnectionPoolException e) {
+			throw new DAOException(e);
+		} catch (SQLException e) {
+			throw new DAOException(e);
+		}finally {
+			pool.closeConnection(connection, statement, preparedStatement, resultSet);
+		}
+		
+	}
+
 }

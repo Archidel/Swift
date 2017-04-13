@@ -171,7 +171,7 @@ public class AgreementDAOImpl implements AgreementDAO {
 		try {
 			connection = pool.take();
 			preparedStatement = connection.prepareStatement(SQLCommand.UPDATE_AGREEMENT_ADMINID_STATUS);
-			preparedStatement.setInt(1, idAdmin);
+			preparedStatement.setInt(1, 0);
 			preparedStatement.setInt(2, idAgreement);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {

@@ -13,4 +13,5 @@ public interface RequestService {
 	int getAmountEntriesRequestList(int idUser) throws ServiceException;
 	List<RequestOnService> getRequestOnServiceList(int numberPage) throws ServiceException;
 	int getAmountEntriesRequestList() throws ServiceException;
+	void acceptRequestOnService(int idRequest, int idUser, boolean action) throws ServiceException;
 }

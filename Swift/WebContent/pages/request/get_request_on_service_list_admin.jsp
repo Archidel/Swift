@@ -55,7 +55,7 @@
 						    </td>
 						    <td>
 						    	
-								<form action="Controller" method="post">
+								<form action="Controller" method="get">
 									<input type="hidden" name="command" value="get_single_request_on_service"/>
 									<div class="form-group row">
 										<div class="offset-sm-2 col-sm-10">	
@@ -63,15 +63,6 @@
 								  		</div>
 									</div>
 								</form>
-								
-								<form action="Controller" method="post">
-									<input type="hidden" name="command" value="accept_request_on_service"/>
-									<div class="form-group row">
-										<div class="offset-sm-2 col-sm-10">	
-								  			<button type="submit" class="btn btn-success" name="request_id" value="${list.idRequest}">${apply_button}</button>
-								  		</div>
-									</div>
-								</form>	
 								
 								<form action="Controller" method="post">
 									<input type="hidden" name="command" value="remove_request_on_service"/>

@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import by.epam.swift.bean.Agreement;
 import by.epam.swift.bean.RequestOnService;
 import by.epam.swift.dao.AgreementDAO;
 import by.epam.swift.dao.RequestServiceDAO;
@@ -169,6 +170,30 @@ public class RequestServiceImpl implements RequestService {
 		}
 		
 		return numberEntries;
+	}
+
+	@Override
+	public void acceptRequestOnService(int idRequest, int idUser, boolean action) throws ServiceException {
+		if(!ValidationData.validInteger(idRequest)){
+			throw new ServiceException("Icorrent id request");
+		}
+		
+		if(!ValidationData.validInteger(idUser)){
+			throw new ServiceException("Icorrent id user");
+		}
+		
+		DAOFactory daoFactory = DAOFactory.getInstance();
+		RequestServiceDAO requestServiceDAO = daoFactory.getRequestServiceDAO();
+		AgreementDAO agreementDAO = daoFactory.getAgreementDAO();
+		
+		try {
+			RequestOnService requestOnService = requestServiceDAO.getRequestOnServiceById(idRequest);
+			Agreement agreement = agreementDAO.getAgreementById(requestOnService.getIdAgreement());
+			requestServiceDAO.acceptRequestOnService(agreement.getIdUser(), requestOnService.getIdTariff(), action);
+			requestServiceDAO.removeRequestOnService(idRequest);
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
 	}
 
 }
