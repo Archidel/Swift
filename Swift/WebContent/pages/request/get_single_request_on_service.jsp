@@ -10,7 +10,7 @@
 	<%@include file="../../../elements/el_navigation.jspf" %>
 	<div class="wrapper container">
 		<div class="heading">
-			<h1>AGreement</h1>
+			<h1>${agreement_label}</h1>
 			<legend></legend>
 		</div>
 	
@@ -26,7 +26,6 @@
 			</div>
 		</c:if>
 	
-			
 		<c:if test="${not empty sessionScope.user.blockedTill}">							
 			<div class="alert alert-danger">
 				<strong>${blocked_to_label}:</strong> <c:out value="${sessionScope.user.blockedTill}" />
@@ -35,33 +34,33 @@
 
 		<table class="table table-hover" style="text-align: center;">
 			<tr>
-				<td>Request onservice ID</td>
+				<td>${request_id_label}</td>
 				<td>${requestScope.more.idRequest}</td>
 			</tr>	
 			
 			<tr>
-				<td>Agreement ID</td>
+				<td>${agreement_id_label}</td>
 				<td>${requestScope.more.idAgreement}</td>
 			</tr>	
 
 			<tr>
-				<td>Tariff ID</td>
+				<td>${tariff_id_label}</td>
 				<td>${requestScope.more.idTariff}</td>
 			</tr>
 			
 			<tr>
-				<td>Request Date</td>
+				<td>${date_label}</td>
 				<td>${requestScope.more.date}</td>
 			</tr>
 			
 			<tr>
-				<td>Service Action</td>
+				<td>${service_action_label}</td>
 				<c:if test="${requestScope.more.serviceAction == true}">
-					<td>Enable service</td>
+					<td>${enable_label}</td>
 				</c:if>
 
 				<c:if test="${requestScope.more.serviceAction != true}">
-					<td>Disable service</td>
+					<td>${disable_label}</td>
 				</c:if>
 			</tr>
 
@@ -80,7 +79,7 @@
 			</tr>
 			<tr>
 				<td>${balance_label}</td>
-				<td>${requestScope.user.balance} $</td>
+				<td>${requestScope.user.balance} ${dimension_price_per_month}</td>
 			</tr>
 			
 			<tr>
@@ -125,17 +124,9 @@
 					</form>
 				</td>
 			</tr>
-				  		
-		</table>
-		
-
-								
-								
-		
-						
+		</table>		
 	</div>
 
 	<%@include file="../../elements/el_footer.jspf" %>
-
 </body>
 </html>

@@ -32,7 +32,6 @@
 	        		<th>${title_label}</th>
 	        		<th>${type_label}</th>
 	        		<th>${price_label} ${dimension_price_per_month}</th>
-	        		
 	        		<th>${action_label}</th>		
 	      		</tr>
 	    	</thead> 

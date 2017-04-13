@@ -10,7 +10,7 @@
 	<%@include file="../../../elements/el_navigation.jspf" %>
 	<div class="wrapper container">
 		<div class="heading">
-			<h1>AGreement</h1>
+			<h1>${agreement_label}</h1>
 			<legend></legend>
 		</div>
 	
@@ -26,16 +26,12 @@
 			</div>
 		</c:if>
 	
-			
 		<c:if test="${not empty sessionScope.user.blockedTill}">							
 			<div class="alert alert-danger">
 				<strong>${blocked_to_label}:</strong> <c:out value="${sessionScope.user.blockedTill}" />
 			</div>
 		</c:if>
-
-
-
-			
+				
 		<table class="table table-hover" style="text-align: center;">
 			<tr>
 				<td>Agreement ID</td>
@@ -103,18 +99,9 @@
 						<button type="submit" class="btn btn-danger" name="agreement_id" value="${requestScope.more.idAgreement}">${remove_button}</button>
 					</form>
 				</td>
-			</tr>
-				  		
-		</table>
-		
-
-								
-								
-		
-						
+			</tr>  		
+		</table>					
 	</div>
-
 	<%@include file="../../elements/el_footer.jspf" %>
-
 </body>
 </html>

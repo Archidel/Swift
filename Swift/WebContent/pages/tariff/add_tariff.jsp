@@ -13,7 +13,6 @@
 			<h1>${add_tariff_label}</h1>
 			<legend></legend>
 		</div>
-	
 
    		<c:if test="${not empty requestScope.statusSuccess}">
 	   		<div class="alert alert-success">
@@ -28,62 +27,55 @@
 		</c:if>
 		
 		<div class="row">
-			<section class="col-md-17">				
-				<p>
-					<form action="Controller" method="post">
-		    			<input type="hidden" name="command" value="add_tariff"/>
-						<div class="form-group row">
-							<label for="tariffTitle" class="col-sm-2 col-form-label">${title_label}</label>
-							<div class="col-sm-10">
-								<input id="tariffTitle" class="form-control" type="text" name="tariff_title" required>
-							</div>
+			<form action="Controller" method="post">
+		    	<input type="hidden" name="command" value="add_tariff"/>
+				<div class="form-group row">
+					<label for="tariffTitle" class="col-sm-2 col-form-label">${title_label}</label>
+						<div class="col-sm-10">
+							<input id="tariffTitle" class="form-control" type="text" name="tariff_title" required>
 						</div>
+					</div>
 							
-						<div class="form-group row">
-							<label for="tariffType" class="col-sm-2 col-form-label">${select_type_of_tariff_label}</label>
-							<div class="col-sm-10">
-								<select id="tariffType" class="form-control" name="tariff_type" style="width: 300px;">
-							  		<c:forEach items="${requestScope.list}" var = "list">
-							    		<option>${list}</option>
-							 		</c:forEach>
-							  	</select>
-							  	<br>
-								<button type="button" onclick="sumbitUploadDataToAddTariff();">${tariff_load_type_label}</button>
-							</div>	
-							
-							
-							
-						</div>
+					<div class="form-group row">
+						<label for="tariffType" class="col-sm-2 col-form-label">${select_type_of_tariff_label}</label>
+						<div class="col-sm-10">
+							<select id="tariffType" class="form-control" name="tariff_type" style="width: 300px;">
+						  		<c:forEach items="${requestScope.list}" var = "list">
+						    		<option>${list}</option>
+						 		</c:forEach>
+						  	</select>
+						  	<br>
+							<button type="button" onclick="sumbitUploadDataToAddTariff();">${tariff_load_type_label}</button>
+						</div>	
+					</div>
 						
-						<div class="form-group row">
-							<label for="tariffPrice" class="col-sm-2 col-form-label">${price_label} ${dimension_price_per_month}</label>
-							<div class="col-sm-10">
-								<input id="tariffPrice" class="form-control" type="text" name="tariff_price" required>
-							</div>
-						</div>					
+					<div class="form-group row">
+						<label for="tariffPrice" class="col-sm-2 col-form-label">${price_label} ${dimension_price_per_month}</label>
+						<div class="col-sm-10">
+							<input id="tariffPrice" class="form-control" type="text" name="tariff_price" required>
+						</div>
+					</div>					
 													
-						<div class="form-group row">
-							<label for="tariffDescription" class="col-sm-2 col-form-label">${description_label}</label>
-							<br>
-							<div class="col-sm-10" style="width: 100%">
-								<textarea id="tariffDescription" class="form-control" name="tariff_description" rows="10" required></textarea>
-							</div>
+					<div class="form-group row">
+						<label for="tariffDescription" class="col-sm-2 col-form-label">${description_label}</label>
+						<br>
+						<div class="col-sm-10" style="width: 100%">
+							<textarea id="tariffDescription" class="form-control" name="tariff_description" rows="10" required></textarea>
 						</div>
+					</div>
 							
-						<div class="form-group row">
-							<div class="offset-sm-2 col-sm-10">
-								<button type="submit" class="btn btn-primary">${add_button}</button>
-						   	</div>
+					<div class="form-group row">
+						<div class="offset-sm-2 col-sm-10">
+							<button type="submit" class="btn btn-primary">${add_button}</button>
 						</div>
-					</form>
-				</p>
-			</section>		
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
 	
-	<form id="form-upload-to-add-tariff" action="Controller" method="get">
-		<input type="hidden" name="command" value="">	
-	</form>
+		<form id="form-upload-to-add-tariff" action="Controller" method="get">
+			<input type="hidden" name="command" value="">	
+		</form>
 	
 	<script type="text/javascript">
 		function sumbitUploadDataToAddTariff(){

@@ -52,8 +52,7 @@
 					<li><a href="index">${home_label}</a></li>
 					<li><a href="about">${about_us_label}</a></li>
 					<li><a onclick="submitGetNewsListUser();">${news_label}</a></li>
-					<li><a href="rules">${rules_label}</a></li>
-					
+					<li><a href="rules">${rules_label}</a></li>			
 <!-- Tariffs -->
 					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${tariffs_label}<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -152,19 +151,14 @@
 							</select>
 							
 						</div>
-				
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">${close_label}</button>
-					<button type="submit" class="btn btn-primary">${apply_button}</button>
-				</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">${close_label}</button>
+							<button type="submit" class="btn btn-primary">${apply_button}</button>
+						</div>
 						<input type="hidden" name="page" value="1">
-					
 					</form>
 				
 				</div>
-
-
-			
 			</div>
 		</div>
 	</div>

@@ -7,7 +7,6 @@
 <html>
 <body>
 	<%@include file="../../../elements/el_navigation.jspf" %>
-
 	<div class="wrapper container">
 	
 		<div class="heading">
@@ -23,7 +22,6 @@
 		
 		<div class="row">
 			<h4><span>${found_label}: ${requestScope.amountResult}</span></h4>
-			
 			<table class="table table-hover">
 			<caption><h2 style="text-align: center;">${tariffs_label}</h2></caption>
 		  		<thead>
@@ -36,7 +34,6 @@
 	      			</tr>
 	    		</thead>
 	    		<c:forEach items="${requestScope.list}" var = "list">
-					<section class="col-md-17" >
 				 	<tbody>
 				   		<tr>
 							<td>${list.id}</td>
@@ -68,14 +65,13 @@
 							  			</div>
 									</div>
 								</form>		      		
-						
 							</td>
 				 		</tr>	
-					</tbody>
-				</section>
+					</tbody>	
 				</c:forEach>
 			</table>
 		</div>
+		
 		<c:if test="${requestScope.amountResult > 10}">
 			<div class="text-center">
 				<ul class="pagination pagination-lg">
@@ -85,8 +81,8 @@
 								<li class="active"><a>${i}</a></li>
 							</c:when>
 							<c:otherwise>
-										<li><a href="Controller?command=get_tariff_list_admin&tariff_type=${tariffType}&page=${i}">${i}</a></li>
-					</c:otherwise>
+								<li><a href="Controller?command=get_tariff_list_admin&tariff_type=${tariffType}&page=${i}">${i}</a></li>
+							</c:otherwise>
 						</c:choose>
 					</c:forEach>
 				</ul>

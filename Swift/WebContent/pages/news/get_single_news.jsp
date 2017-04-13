@@ -7,9 +7,7 @@
 <html>
 <body>
 	<%@include file="../../elements/el_navigation.jspf" %>
-	
 	<div class="wrapper container">
-		
 		<c:if test="${not empty requestScope.result}">
 			<div class="alert alert-danger">
 				<strong>Error!</strong> <c:out value="${requestScope.result}" />
@@ -18,14 +16,14 @@
 		
 		<div style="overflow: hidden;">			
 			<div class="panel panel-primary">
-	    			<div class="panel-heading"><h2>${requestScope.more.title}</h2></div>
-	    			<div class="panel-body">
+	    		<div class="panel-heading"><h2>${requestScope.more.title}</h2></div>
+	    		<div class="panel-body">
 	    			<h4>${date_of_publication_label}: ${requestScope.more.datePublication}</h4>
 	    			<h3><br>${requestScope.more.description}</h3>
-	    			</div>
+	    		</div>
 	    	</div>
 		</div>
 	</div>
-<%@include file="../../elements/el_footer.jspf" %>
+	<%@include file="../../elements/el_footer.jspf" %>
 </body>
 </html>

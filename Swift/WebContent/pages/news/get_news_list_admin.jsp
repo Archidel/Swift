@@ -13,13 +13,11 @@
 			<h1>${news_get_all_label}</h1>
 			<legend></legend>
 		</div>
- 
 
 		<div class="row">
-				<h4><span>${found_label}: ${requestScope.amountResult}</span></h4>
-		
+			<h4><span>${found_label}: ${requestScope.amountResult}</span></h4>
 			<table class="table table-hover">	
-			<caption><h2 style="text-align: center;">${news_label}</h2></caption> 
+				<caption><h2 style="text-align: center;">${news_label}</h2></caption> 
 		  		<thead>
 	    	  		<tr>
 	        			<th>${id_label}</th>
@@ -29,60 +27,52 @@
 	      			</tr>
 	    		</thead>
 	    		<c:forEach items="${requestScope.list}" var = "list">
-		
-					<section class="col-md-17" >
-					 	<tbody>
-					   		<tr>
-								<td>${list.id}</td>
-							    <td>${list.title}</td>
-							    <td>${list.datePublication}</td>
-							    <td>
+					<tbody>
+						<tr>
+							<td>${list.id}</td>
+							<td>${list.title}</td>
+							<td>${list.datePublication}</td>
+							<td>
+								<form action="Controller" method="get">
+									<input type="hidden" name="command" value="get_single_news"/>	
+									<div class="form-group row">
+										<div class="offset-sm-2 col-sm-10">
+											<button type="submit" class="btn btn-info" name="news_id" value="${list.id}">${more_button}</button>
+								  		</div>
+									</div>
+								</form>	
 							   
 							   	<form action="Controller" method="get">
-										<input type="hidden" name="command" value="get_single_news"/>
-										
-										<div class="form-group row">
-											<div class="offset-sm-2 col-sm-10">
-												<button type="submit" class="btn btn-info" name="news_id" value="${list.id}">${more_button}</button>
-								  			</div>
-										</div>
-									</form>	
-							   
-							   
-							    	<form action="Controller" method="get">
-										<input type="hidden" name="command" value="upload_news_data_to_edit"/>
-										<div class="form-group row">
-											<div class="offset-sm-2 col-sm-10">
-												<button type="submit" class="btn btn-primary" name="news_id" value="${list.id}">${edit_button}</button>
-									 		</div>
-										</div>
-									</form>
+									<input type="hidden" name="command" value="upload_news_data_to_edit"/>
+									<div class="form-group row">
+										<div class="offset-sm-2 col-sm-10">
+											<button type="submit" class="btn btn-primary" name="news_id" value="${list.id}">${edit_button}</button>
+											</div>
+									</div>
+								</form>
 									
-									<form action="Controller" method="post">
-										<input type="hidden" name="command" value="remove_news"/>
-										<input type="hidden" name="page" value="${requestScope.page}">
-										<div class="form-group row">
-											<div class="offset-sm-2 col-sm-10">	
-												<c:if test="${list.status == true}">
-													<button type="submit" class="btn btn-success" name="news_id" value="${list.id}">${reestablish_button}</button>
-									  			</c:if>
+								<form action="Controller" method="post">
+									<input type="hidden" name="command" value="remove_news"/>
+									<input type="hidden" name="page" value="${requestScope.page}">
+									<div class="form-group row">
+										<div class="offset-sm-2 col-sm-10">	
+											<c:if test="${list.status == true}">
+												<button type="submit" class="btn btn-success" name="news_id" value="${list.id}">${reestablish_button}</button>
+								  			</c:if>
 									  			
-									  			<c:if test="${list.status == false}">
-													<button type="submit" class="btn btn-danger" name="news_id" value="${list.id}">${remove_button}</button>
-									  			</c:if>
-								  			</div>
+								  			<c:if test="${list.status == false}">
+												<button type="submit" class="btn btn-danger" name="news_id" value="${list.id}">${remove_button}</button>
+								  			</c:if>
 										</div>
-									</form>		      		
-							      	
-							      
-						
-								</td>
-					 		</tr>	
-						</tbody>
-					</section>
+									</div>
+								</form>		      		
+							</td>
+					 	</tr>	
+					</tbody>
 				</c:forEach>
 			</table>
 		</div>
+		
 		<c:if test="${requestScope.amountResult > 10}">
 			<div class="text-center">
 				<ul class="pagination pagination-lg">
@@ -99,7 +89,6 @@
 				</ul>
 			</div>
 		</c:if>
-		
 	</div>
 	<%@include file="../../elements/el_footer.jspf" %>
 </body>

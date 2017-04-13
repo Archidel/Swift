@@ -93,6 +93,7 @@
 <!-- EDIT -->
 	<fmt:message bundle="${loc}" key="local.label.edit.news" var="news_edit_label"/>
 	<fmt:message bundle="${loc}" key="local.label.edit.profile" var="profile_edit_label"/>
+	<fmt:message bundle="${loc}" key="local.label.edit.tariff" var="tariff_edit_label"/>
 
 <!-- ADD -->
 	<fmt:message bundle="${loc}" key="local.label.add.news" var="news_add_label"/>

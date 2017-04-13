@@ -37,14 +37,12 @@
 	      			</tr>
 	    		</thead>
 	    		<c:forEach items="${requestScope.list}" var = "list">
-					<section class="col-md-17" >
 				 	<tbody>
 				   		<tr>
 							<td>${list.idRequest}</td>
 						    <td>${list.idTariff}</td>
 						   	<td>${list.date}</td>
 						    <td>
-					
 						    	<c:if test="${list.serviceAction != true}">
 						    		${enable_label}
 						    	</c:if>
@@ -63,33 +61,29 @@
 								  		</div>
 									</div>
 								</form>		      		
-						
 							</td>
 				 		</tr>	
 					</tbody>
-				</section>
 				</c:forEach>
 			</table>
 		
-		<c:if test="${requestScope.amountResult > 10}">
-			<div class="text-center">
-				<ul class="pagination pagination-lg">
-					<c:forEach begin="1" end="${requestScope.amountPage}" var="i">
-						<c:choose>
-							<c:when test="${requestScope.numberPage eq i}">
-								<li class="active"><a>${i}</a></li>
-							</c:when>
-							<c:otherwise>
-										<li><a href="Controller?command=get_agreement_list&page=${i}">${i}</a></li>
-					</c:otherwise>
-						</c:choose>
-					</c:forEach>
-				</ul>
-			</div>
-		</c:if>
-		
-	</div>
-	
+			<c:if test="${requestScope.amountResult > 10}">
+				<div class="text-center">
+					<ul class="pagination pagination-lg">
+						<c:forEach begin="1" end="${requestScope.amountPage}" var="i">
+							<c:choose>
+								<c:when test="${requestScope.numberPage eq i}">
+									<li class="active"><a>${i}</a></li>
+								</c:when>
+								<c:otherwise>
+											<li><a href="Controller?command=get_agreement_list&page=${i}">${i}</a></li>
+						</c:otherwise>
+							</c:choose>
+						</c:forEach>
+					</ul>
+				</div>
+			</c:if>
+		</div>
 	<%@include file="../../elements/el_footer.jspf" %>
 </body>
 </html>

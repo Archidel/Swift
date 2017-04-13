@@ -7,10 +7,10 @@
 <html>
 <body>
 	<%@include file="../../../elements/el_navigation.jspf" %>
-	
 	<div class="wrapper container">
-		
-		<br><br><br>
+		<br>
+		<br>
+		<br>
 		
 		<c:if test="${not empty requestScope.result}">
 			<div class="alert alert-danger">
@@ -38,10 +38,8 @@
 		    			<br>
 	  					<div class="col-md-12">${requestScope.more.description}</div>
 		    		</div>
-	    		
-	    				    		<br><br>
-
-	    		
+	    			<br>
+	    			<br>
 	    		</div>
 	    	</div>
 		</div>

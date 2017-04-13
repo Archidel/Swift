@@ -38,7 +38,6 @@
 		<legend></legend>
 		<div class="col-md-8 col-md-offset-2">	
 			<span class="bg-info" style="font-size: 16px;">${agreement_rules_notation_label}</span>
-		
 			<form action="Controller" method="post" class="pull-right">
 				<input type="hidden" name="command" value="create_agreement">
 				<button type="submit" class="btn btn-success" style="margin-left: 30px;">${apply_button}</button>

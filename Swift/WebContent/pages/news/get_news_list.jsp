@@ -25,33 +25,29 @@
 		<div class="row">
 			<c:forEach items="${requestScope.list}" var="list">
 				<div class="panel panel-primary">
-					<div class="panel-heading">${list.title}
-						${list.datePublication}
-						<c:if
-							test="${(sessionScope.user.position eq 'admin') or (sessionScope.user.position eq 'moderator')}">
-							<form action="Controller" method="get" class="pull-right"
-								style="padding-left: 20px;">
+					<div class="panel-heading">${list.title} ${list.datePublication}
+						<c:if test="${(sessionScope.user.position eq 'admin') or (sessionScope.user.position eq 'moderator')}">
+							<form action="Controller" method="get" class="pull-right" style="padding-left: 20px;">
 								<input type="hidden" name="command" value="upload_news_data_to_edit" />
 								<div class="form-group row">
 									<div class="offset-sm-2 col-sm-10">
-										<button type="submit" class="btn btn-danger btn-sm"
-											name="news_id" value="${list.id}">${edit_button}</button>
+										<button type="submit" class="btn btn-danger btn-sm" name="news_id" value="${list.id}">${edit_button}</button>
 									</div>
 								</div>
 							</form>
 						</c:if>
+						
 						<form action="Controller" method="get" class="pull-right">
 							<input type="hidden" name="command" value="get_single_news" />
 							<div class="form-group row">
 								<div class="offset-sm-2 col-sm-10">
-									<button type="submit" class="btn btn-info btn-sm"
-										name="news_id" value="${list.id}">${more_button}</button>
+									<button type="submit" class="btn btn-info btn-sm" name="news_id" value="${list.id}">${more_button}</button>
 								</div>
 							</div>
 						</form>
 					</div>
-					<div class="panel-body" style="overflow: hidden; height: 150px">
-						${list.description}</div>
+					
+					<div class="panel-body" style="overflow: hidden; height: 150px"> ${list.description}</div>
 				</div>
 			</c:forEach>
 
@@ -71,8 +67,7 @@
 					</ul>
 				</div>
 			</c:if>
-
-
+			
 		</div>
 	</div>
 	<%@include file="../../elements/el_footer.jspf"%>

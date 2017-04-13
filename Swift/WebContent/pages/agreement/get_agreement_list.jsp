@@ -28,92 +28,83 @@
 	
 		<h4><span>${found_label}: ${requestScope.amountResult}</span></h4>
 			
-			<table class="table table-hover">
+		<table class="table table-hover">
 			<caption><h2 style="text-align: center;">${agreement_label}</h2></caption>
-		  		<thead>
-	    	  		<tr>
-	        			<th>${agreement_id_label}</th>
-	        			<th>${user_id_label}</th>
-	        			<th>${date_label}</th>	
-	        			<th>${accepted_label}</th>
-	        			<th>${action_label}</th>
-	      			</tr>
-	    		</thead>
-	    		<c:forEach items="${requestScope.list}" var = "list">
-					<section class="col-md-17" >
-				 	<tbody>
-				   		<tr>
-							<td>${list.idAgreement}</td>
-						    <td>${list.idUser}</td>
-						   	<td><fmt:formatDate type="both" dateStyle="medium" timeStyle="medium" value="${list.dateCreation}"/></td>
-						    <td>
-						    	<c:if test="${list.idAdmin != 0}">
-						    		${yes_label}
-						    	</c:if>
-						    	
-						    	<c:if test="${list.idAdmin == 0}">
-						    		${no_label}
-						    	</c:if>
-						    </td>
-						    <td>
-						    	<form action="Controller" method="get">
-									<input type="hidden" name="command" value="get_single_agreement"/>
-									<div class="form-group row">
-										<div class="offset-sm-2 col-sm-10">
-											<button type="submit" class="btn btn-info" name="agreement_id" value="${list.idAgreement}">${more_button}</button>
-								 		</div>
-									</div>
-								</form>
-								
-								<form action="Controller" method="get">
-									<input type="hidden" name="command" value="accept_agreement"/>
-									<div class="form-group row">
-										<div class="offset-sm-2 col-sm-10">
-											<button type="submit" class="btn btn-success" name="agreement_id" value="${list.idAgreement}">${apply_button}</button>
-								 		</div>
-									</div>
-								</form>
-								
-								
-								<form action="Controller" method="post">
-									<input type="hidden" name="command" value="remove_agreement"/>
-									<div class="form-group row">
-										<div class="offset-sm-2 col-sm-10">	
-								  			<button type="submit" class="btn btn-danger" name="agreement_id" value="${list.idAgreement}">${remove_button}</button>
-								  		</div>
-									</div>
-								</form>		      		
-						
-							</td>
-				 		</tr>	
-					</tbody>
-				</section>
-				</c:forEach>
-			</table>
-		
-		
-		<c:if test="${requestScope.amountResult > 10}">
-			<div class="text-center">
-				<ul class="pagination pagination-lg">
-					<c:forEach begin="1" end="${requestScope.amountPage}" var="i">
-						<c:choose>
-							<c:when test="${requestScope.numberPage eq i}">
-								<li class="active"><a>${i}</a></li>
-							</c:when>
-							<c:otherwise>
-										<li><a href="Controller?command=get_agreement_list&page=${i}">${i}</a></li>
-					</c:otherwise>
-						</c:choose>
-					</c:forEach>
-				</ul>
-			</div>
-		</c:if>
-		
-		
-		
-	</div>
+		  	<thead>
+	    		<tr>
+	        		<th>${agreement_id_label}</th>
+	        		<th>${user_id_label}</th>
+	        		<th>${date_label}</th>	
+	        		<th>${accepted_label}</th>
+	        		<th>${action_label}</th>
+	      		</tr>
+	    	</thead>
+	    	<c:forEach items="${requestScope.list}" var = "list">
+			 	<tbody>
+			   		<tr>
+						<td>${list.idAgreement}</td>
+					    <td>${list.idUser}</td>
+					   	<td><fmt:formatDate type="both" dateStyle="medium" timeStyle="medium" value="${list.dateCreation}"/></td>
+					    <td>
+					    	<c:if test="${list.idAdmin != 0}">
+					    		${yes_label}
+					    	</c:if>
+					    	
+					    	<c:if test="${list.idAdmin == 0}">
+					    		${no_label}
+					    	</c:if>
+					    </td>
+					    <td>
+					    	<form action="Controller" method="get">
+								<input type="hidden" name="command" value="get_single_agreement"/>
+								<div class="form-group row">
+									<div class="offset-sm-2 col-sm-10">
+										<button type="submit" class="btn btn-info" name="agreement_id" value="${list.idAgreement}">${more_button}</button>
+							 		</div>
+								</div>
+							</form>
+							
+							<form action="Controller" method="get">
+								<input type="hidden" name="command" value="accept_agreement"/>
+								<div class="form-group row">
+									<div class="offset-sm-2 col-sm-10">
+										<button type="submit" class="btn btn-success" name="agreement_id" value="${list.idAgreement}">${apply_button}</button>
+							 		</div>
+								</div>
+							</form>
+							
+							<form action="Controller" method="post">
+								<input type="hidden" name="command" value="remove_agreement"/>
+								<div class="form-group row">
+									<div class="offset-sm-2 col-sm-10">	
+							  			<button type="submit" class="btn btn-danger" name="agreement_id" value="${list.idAgreement}">${remove_button}</button>
+							  		</div>
+								</div>
+							</form>		      		
+					
+						</td>
+			 		</tr>	
+				</tbody>
+		</c:forEach>
+	</table>
 	
-	<%@include file="../../elements/el_footer.jspf" %>
-
+	<c:if test="${requestScope.amountResult > 10}">
+		<div class="text-center">
+			<ul class="pagination pagination-lg">
+				<c:forEach begin="1" end="${requestScope.amountPage}" var="i">
+					<c:choose>
+						<c:when test="${requestScope.numberPage eq i}">
+							<li class="active"><a>${i}</a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a href="Controller?command=get_agreement_list&page=${i}">${i}</a></li>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+			</ul>
+		</div>
+	</c:if>
+</div>
+<%@include file="../../elements/el_footer.jspf" %>
 </body>
 </html>

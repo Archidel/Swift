@@ -26,64 +26,50 @@
 			</div>
 		</c:if>
 
-
-<form action="Controller" method="post">
-	<input type="hidden" name="command" value="make_request_on_service">
-		<table>
-			<tr>
-				<td style="widows: 200px; height: 50px;">${type_label}: </td>
-				<td>
-					<select class="selectpicker" data-live-search="true" id="tariff_type" name="tariff_type">
-						<c:forEach items="${requestScope.tariffTypeList}" var = "typeList">
-							<option>${typeList}</option>
-						</c:forEach>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td>${title_label}: </td>
-				<td>
-					<select class="selectpicker" data-live-search="true" id="tariff_title" name="tariff_title">
-						<c:forEach items="${requestScope.list}" var = "list">
-							<option>${list.title} [Type: ${list.type}]</option>
-						</c:forEach>
-					</select>
-				</td>
-			</tr>	
-			
-			<tr>
-				<td>${peroid_label}:</td>
-				<td>
-				<input type="date" name="date_period">
-				
-				</td>
-			</tr>	
-
-	<tr>
-		<td>${service_action_label}:</td>
-		<td>
-			<select class="selectpicker" id="request_service_action" name="request_service_action">
-				<option>${enable_label}</option>
-				<option>${disable_label}</option>
-			</select>
-		</td>
-	</tr>
-
-
-
-		</table>
-		
-		
-		<br><br>
-		<button type="submit" class="btn btn-primary">${make_order_button}</button>
-		
-		
-</form>		
-		
-		<br><br>
+		<form action="Controller" method="post">
+			<input type="hidden" name="command" value="make_request_on_service">
+			<table>
+				<tr>
+					<td style="widows: 200px; height: 50px;">${type_label}: </td>
+					<td>
+						<select class="selectpicker" data-live-search="true" id="tariff_type" name="tariff_type">
+							<c:forEach items="${requestScope.tariffTypeList}" var = "typeList">
+								<option>${typeList}</option>
+							</c:forEach>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>${title_label}: </td>
+					<td>
+						<select class="selectpicker" data-live-search="true" id="tariff_title" name="tariff_title">
+							<c:forEach items="${requestScope.list}" var = "list">
+								<option>${list.title} [Type: ${list.type}]</option>
+							</c:forEach>
+						</select>
+					</td>
+				</tr>	
+				<tr>
+					<td>${peroid_label}:</td>
+					<td><input type="date" name="date_period"></td>
+				</tr>	
+				<tr>
+					<td>${service_action_label}:</td>
+					<td>
+						<select class="selectpicker" id="request_service_action" name="request_service_action">
+							<option>${enable_label}</option>
+							<option>${disable_label}</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<br>
+			<button type="submit" class="btn btn-primary">${make_order_button}</button>
+		</form>		
+		<br>
+		<br>
 	</div>
-	
 	<%@include file="../../elements/el_footer.jspf" %>
-
 </body>
 </html>
