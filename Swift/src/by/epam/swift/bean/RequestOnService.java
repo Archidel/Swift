@@ -3,14 +3,10 @@ package by.epam.swift.bean;
 import java.io.Serializable;
 import java.util.Date;
 
-/**	<h1>Request on service</h1>
- * 	The entity for create user's request with the properties:
- *	<b>id</b>, <b>id user</b>, <b>id tariff</b>, <b>type tariff</b>, 
- *	<b>status</b>, <b>service action</b>, <b>date</b>.
- *	This class has an implementation Serializable.
- * 	@author Albert Zarankovich
+/**
+ * @author Archangel
+ *
  */
-
 public class RequestOnService implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int idRequest;
@@ -22,50 +18,75 @@ public class RequestOnService implements Serializable{
 	
 	public RequestOnService() {}
 
+	/**
+	 * @returnidRequest
+	 */
 	public int getIdRequest() {
 		return idRequest;
 	}
-
+	/** set idRequest
+	 * @param idRequest
+	 */
 	public void setIdRequest(int idRequest) {
 		this.idRequest = idRequest;
 	}
-
+	/**
+	 * @returnidAgreement
+	 */
 	public int getIdAgreement() {
 		return idAgreement;
 	}
-
+	/** set idAgreement
+	 * @param idAgreement
+	 */
 	public void setIdAgreement(int idAgreement) {
 		this.idAgreement = idAgreement;
 	}
-
+	/**
+	 * @return idTariff
+	 */
 	public int getIdTariff() {
 		return idTariff;
 	}
-
+	/** set idTariff
+	 * @param idTariff
+	 */
 	public void setIdTariff(int idTariff) {
 		this.idTariff = idTariff;
 	}
-
+	/**
+	 * @return status
+	 */
 	public boolean isStatus() {
 		return status;
 	}
-
+	/** set status
+	 * @param status
+	 */
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-
+	/** 
+	 * @return serviceAction
+	 */
 	public boolean isServiceAction() {
 		return serviceAction;
 	}
-
+	/** set serviceAction
+	 * @param serviceAction
+	 */
 	public void setServiceAction(boolean serviceAction) {
 		this.serviceAction = serviceAction;
 	}
-
+	/**
+	 * @return date
+	 */
 	public Date getDate() {
 		return date;
 	}
-
+	/** set date
+	 * @param date
+	 */
 	public void setDate(Date date) {
 		this.date = date;
 	}

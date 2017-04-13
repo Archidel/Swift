@@ -24,122 +24,183 @@ public class User implements Serializable{
  
 	public User() {}
 
+	/**set id user
+	 * @return id
+	 */
 	public int getId() {
 		return id;
 	}
-
+	/**
+	 * @param id 
+	 */
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	/**
+	 * @return name
+	 */
 	public String getName() {
 		return name;
 	}
-
+	/** set name
+	 * @param name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	/**
+	 * @return surname
+	 */
 	public String getSurname() {
 		return surname;
 	}
-
+	/** set surname
+	 * @param surname
+	 */
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-
+	/**
+	 * @return login
+	 */
 	public String getLogin() {
 		return login;
 	}
-
+	/** set login
+	 * @param login
+	 */
 	public void setLogin(String login) {
 		this.login = login;
 	}
-
+	/**
+	 * @return password
+	 */
 	public int getPassword() {
 		return password;
 	}
-
+	/** set password
+	 * @param password
+	 */
 	public void setPassword(int password) {
 		this.password = password;
 	}
-
+	/**
+	 * @return email
+	 */
 	public String getEmail() {
 		return email;
 	}
-
+	/**set email
+	 * @param email
+	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
+	/**
+	 * @return birthdate
+	 */
 	public String getBirthdate() {
 		return birthdate;
 	}
-
+	/** set birthdate
+	 * @param birthdate
+	 */
 	public void setBirthdate(String birthdate) {
 		this.birthdate = birthdate;
 	}
-
+	/**
+	 * @return passport
+	 */
 	public String getPassport() {
 		return passport;
 	}
-
+	/** set passport
+	 * @param passport
+	 */
 	public void setPassport(String passport) {
 		this.passport = passport;
 	}
-
+	/**
+	 * @return phone
+	 */
 	public String getPhone() {
 		return phone;
 	}
-
+	/** set phone
+	 * @param phone
+	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
+	/**
+	 * @return address
+	 */
 	public String getAddress() {
 		return address;
 	}
-
+	/** set address
+	 * @param address
+	 */
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
+	/**
+	 * @return position
+	 */
 	public String getPosition() {
 		return position;
 	}
-
+	/** set position
+	 * @param position
+	 */
 	public void setPosition(String position) {
 		this.position = position;
 	}
-
+	/**
+	 * @return balance
+	 */
 	public double getBalance() {
 		return balance;
 	}
-
+	/** set balance
+	 * @param balance
+	 */
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
-
+	/**
+	 * @return status
+	 */
 	public boolean isStatus() {
 		return status;
 	}
-
+	/** set status
+	 * @param status
+	 */
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-
+	/**
+	 * @return blockedTill
+	 */
 	public Date getBlockedTill() {
 		return blockedTill;
 	}
-
+	/** set blockedTill
+	 * @param blockedTill
+	 */
 	public void setBlockedTill(Date blockedTill) {
 		this.blockedTill = blockedTill;
 	}
-
+	/**
+	 * @return list
+	 */
 	public List<Tariff> getList() {
 		return list;
 	}
-
+	/** set list
+	 * @param list
+	 */
 	public void setList(List<Tariff> list) {
 		this.list = list;
 	}

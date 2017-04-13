@@ -168,6 +168,7 @@
 	<fmt:message bundle="${loc}" key="local.label.accepted" var="accepted_label"/>
 	<fmt:message bundle="${loc}" key="local.label.yes" var="yes_label"/>
 	<fmt:message bundle="${loc}" key="local.label.no" var="no_label"/>
+	<fmt:message bundle="${loc}" key="local.label.result" var="result_label"/>
 	
 	<fmt:message bundle="${loc}" key="local.label.tariff.loadType" var="tariff_load_type_label"/>
 

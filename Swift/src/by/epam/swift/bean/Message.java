@@ -2,6 +2,10 @@ package by.epam.swift.bean;
 
 import java.io.Serializable;
 
+/**
+ * @author Archangel
+ *
+ */
 public class Message implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int idMessage;
@@ -10,35 +14,51 @@ public class Message implements Serializable{
 	private String description;
 	
 	public Message() {}
-
+	/**
+	 * @return idMessage
+	 */
 	public int getIdMessage() {
 		return idMessage;
 	}
-
+	/** set  idMessage
+	 * @param idMessage
+	 */
 	public void setIdMessage(int idMessage) {
 		this.idMessage = idMessage;
 	}
-
+	/**
+	 * @return idUser
+	 */
 	public int getIdUser() {
 		return idUser;
 	}
-
+	/** set idUser 
+	 * @param idUser
+	 */
 	public void setIdUser(int idUser) {
 		this.idUser = idUser;
 	}
-
+	/**
+	 * @return title
+	 */
 	public String getTitle() {
 		return title;
 	}
-
+	/** set title
+	 * @param title
+	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
+	/**
+	 * @return description
+	 */
 	public String getDescription() {
 		return description;
 	}
-
+	/** set description
+	 * @param description
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}

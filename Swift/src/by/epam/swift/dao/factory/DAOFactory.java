@@ -13,6 +13,10 @@ import by.epam.swift.dao.impl.RequestServiceDAOImpl;
 import by.epam.swift.dao.impl.TariffDAOImpl;
 import by.epam.swift.dao.impl.UserDAOImpl;
 
+/** A singleton class that connects a layer of services and dao
+ * @author Archangel
+ *
+ */
 public final class DAOFactory {
 	private static DAOFactory instance = null;
 	private final InitializationSourceDAO initializationSourceDAO = new InitializationSourceDAOImpl();

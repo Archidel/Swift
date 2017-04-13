@@ -12,25 +12,13 @@ import by.epam.swift.bean.User;
 public final class ValidationData {
 	
 	private ValidationData() {}
-
-	/** Method for check data for payment of service
-	 * @param type (tariff)
-	 * @param currency (BYN, USD, EUR)
-	 * @param money (amount)
-	 * @return true or false
+	/** Method for validtion request data
+	 * @param title
+	 * @param type
+	 * @param datePeriod
+	 * @param serviceAction
+	 * @return boolean 
 	 */
-	public static boolean validPay(String type, String currency, String money){
-		boolean validIsType = validString(type);
-		boolean validIsCurrency = validString(currency);
-		boolean validIsMoney = Pattern.matches(RegularExpression.DOUBLE_REGULAR, money);
-		if(validIsCurrency && validIsMoney && validIsType){
-			return true;
-		}else{
-			return false;
-		}
-	}
-
-	
 	public static boolean validRequest(String title, String type, String datePeriod, String serviceAction){
 		boolean isValidTitle = validString(title);
 		boolean isValidType = validString(type);
@@ -42,12 +30,11 @@ public final class ValidationData {
 			return false;			
 		}
 	}
-	
 	/** Method for check data for make request
 	 * @param idRequestOnService id request on service
 	 * @param idUser id user
 	 * @param typeTariff type of tariff
-	 * @return true or false 
+	 * @return boolean 
 	 */
 	public static boolean validRequest(int idRequestOnService, int idUser, String typeTariff){
 		boolean isValidIdRequest = validInteger(idRequestOnService);
@@ -59,27 +46,24 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	
 	/** Method for check series and passport number
 	 * @param passport user passport
-	 * @return true or false
+	 * @return boolean
 	 */
 	public static boolean validPassport(String passport){
 		return Pattern.matches(RegularExpression.PASSPORT_REGULAR, passport);
 	}
-	
 	/** Method for check user password
 	 * @param user password
-	 * @return true or false
+	 * @return boolean
 	 */
 	public static boolean validPassword(String password){
 		return Pattern.matches(RegularExpression.PASSWORD_REGULAR, password);
 	}
-	
 	/**Method for checking the password and its match
 	 * @param password
 	 * @param confirmPassword
-	 * @return true or false
+	 * @return boolean 
 	 */
 	public static boolean validPassword(String password, String confirmPassword){
 		boolean isValidPassword = Pattern.matches(RegularExpression.PASSWORD_REGULAR, password);
@@ -91,7 +75,10 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	
+	/** Validation tariff data
+	 * @param tariff
+	 * @return boolean 
+	 */
 	public static boolean validTariff(Tariff tariff){
 		boolean isValidTitle = validString(tariff.getTitle());
 		boolean isValidPrice = validDouble(tariff.getPrice());
@@ -102,8 +89,12 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	
-	
+	/** Validation tariff data
+	 * @param title
+	 * @param description
+	 * @param price
+	 * @return boolean
+	 */
 	public static boolean validTariff(String title, String description, double price){
 		boolean isValidTitle = validString(title);
 		boolean isValidPrice = validDouble(price);
@@ -114,7 +105,12 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	
+	/** Validation tariff data
+	 * @param title
+	 * @param description
+	 * @param price
+	 * @return boolean
+	 */
 	public static boolean validTariff(String title, String description, String price){
 		boolean isValidTitle = validString(title);
 		boolean isValidDoublePrice = Pattern.matches(RegularExpression.DOUBLE_REGULAR, price);
@@ -124,49 +120,11 @@ public final class ValidationData {
 		}else{
 			return false;
 		}
-	}
-	
-	
-	/**	Method for check user's data for make order
-	 * @param idUser
-	 * @param idTariff]
-	 * @param typeTariff
-	 * @return true or false 
-	 */
-	public static boolean validUserForMakeOrder(int idUser, int idTariff, String typeTariff){
-		boolean isValidIdUser = validInteger(idUser);
-		boolean isValidIdTariff = validInteger(idTariff);
-		boolean isValidTypeTariff = validString(typeTariff);
-
-		if(isValidIdUser && isValidIdTariff && isValidTypeTariff){
-			return true;
-		}else{
-			return false;
-		}
-	}
-	
-	/**Method for check user's data for make order (obj)
+	}	
+	/** Full validation user data
 	 * @param user
-	 * @return true of false
+	 * @return boolean
 	 */
-	public static boolean validUserForMakeOrder(User user){
-		boolean isValidName = validString(user.getName());
-		boolean isValidSurname = validString(user.getSurname());
-		boolean isValidLogin = validString(user.getLogin());
-		boolean isValidEmail = validString(user.getEmail());
-		boolean isValidPhone = validString(user.getPhone());
-		boolean isValidBirthdate = validString(user.getBirthdate());
-		boolean isValidPassport = validString(user.getPassport());
-		boolean isValidAdress = validString(user.getAddress());
-
-		if(isValidEmail && isValidLogin && isValidName && isValidPhone
-				&& isValidSurname && isValidBirthdate && isValidPassport && isValidAdress){
-			return true;
-		}else{
-			return false;
-		}
-	}
-	
 	public static boolean validUserFull(User user){
 		boolean isValidName = validString(user.getName());
 		boolean isValidSurname = validString(user.getSurname());
@@ -176,7 +134,6 @@ public final class ValidationData {
 		boolean isValidBirthdate = validString(user.getBirthdate());
 		boolean isValidPassport = validString(user.getPassport());
 		boolean isValidAdress = validString(user.getAddress());
-
 		if(isValidEmail && isValidLogin && isValidName && isValidPhone
 				&& isValidSurname && isValidBirthdate && isValidPassport && isValidAdress){
 			return true;
@@ -184,11 +141,9 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	
-	
-	/**Method for check user data (obj)
+	/** Validation user data
 	 * @param user
-	 * @return true or false
+	 * @return boolean
 	 */
 	public static boolean validUser(User user){
 		boolean isValidName = Pattern.matches(RegularExpression.NAME_REGULAR, user.getName());
@@ -202,12 +157,11 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	
 	/**Method for check user data for registration
 	 * @param user
 	 * @param password
 	 * @param confirmPassword
-	 * @return true or false
+	 * @return boolean
 	 */
 	public static boolean validSignUpData(User user, String password, String confirmPassword){
 		boolean isValidName = Pattern.matches(RegularExpression.NAME_REGULAR, user.getName());
@@ -224,7 +178,6 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	
 	/** Method for check user sign in data
 	 * @param login
 	 * @param password
@@ -237,7 +190,6 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	
 	/**Method for check new data
 	 * @param titile
 	 * @param description
@@ -250,7 +202,6 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	
 	/**Method for check integer < 0 
 	 * @param integer
 	 * @return true of false
@@ -262,15 +213,12 @@ public final class ValidationData {
 			return true;
 		}
 	}
-	
-	
 	public static boolean validInteger(String integer){
 		return Pattern.matches(RegularExpression.PRICE_REGULAR, integer);
 	}
-	
 	/**Method for check double < 0 
 	 * @param d
-	 * @return true or false
+	 * @return boolean
 	 */
 	public static boolean validDouble(double d){
 		if(d < 0){
@@ -279,16 +227,16 @@ public final class ValidationData {
 			return true;
 		}
 	}
-
+	/** Validation double valud
+	 * @param d
+	 * @return boolean
+	 */
 	public static boolean validDouble(String d){
 		return Pattern.matches(RegularExpression.DOUBLE_REGULAR, d);
 	}
-
-	
-	
 	/**Method for check edit news data
 	 * @param news
-	 * @return true of false
+	 * @return boolean
 	 */
 	public static boolean validEditNews(News news){
 		boolean isValidId = validInteger(news.getId());
@@ -300,7 +248,6 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	
 	/**Method for check String == null or isEmpty
 	 * @param line
 	 * @return true of false

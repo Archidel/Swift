@@ -1,6 +1,6 @@
 package by.epam.swift.controller.configuration;
 
-/** Store attribute names for response
+/** Store attribute names for response.
  * @author Archangel
  */
 public final class AttributeName {

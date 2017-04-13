@@ -28,7 +28,7 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 		try {
 			connection = pool.take();
 			statement = connection.createStatement();
-			statement.executeQuery(SQLCommand.FOREING_KET_CHECKS_FALSE);
+			statement.executeQuery(SQLCommand.FOREING_KEY_CHECKS_FALSE);
 			preparedStatement = connection.prepareStatement(SQLCommand.INSERT_REQUEST_ON_SERVICE);
 			preparedStatement.setInt(1, idAgreement);
 			preparedStatement.setInt(2, idTariff);
@@ -240,7 +240,7 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 		try {
 			connection = pool.take();
 			statement = connection.createStatement();
-			resultSet = statement.executeQuery(SQLCommand.FOREING_KET_CHECKS_FALSE);
+			resultSet = statement.executeQuery(SQLCommand.FOREING_KEY_CHECKS_FALSE);
 			
 			if(action){
 				preparedStatement = connection.prepareStatement(SQLCommand.INSERT_REQUEST_ENABLE_TARIFF);

@@ -281,7 +281,7 @@ public class TariffDAOImpl implements TariffDAO {
 		try {
 			connection = pool.take();
 			statement = connection.createStatement();
-			statement.execute(SQLCommand.FOREING_KET_CHECKS_FALSE);
+			statement.execute(SQLCommand.FOREING_KEY_CHECKS_FALSE);
 			preparedStatement = connection.prepareStatement(SQLCommand.INSERT_TARIFF);
 			preparedStatement.setString(1, title);
 			preparedStatement.setDouble(2, price);

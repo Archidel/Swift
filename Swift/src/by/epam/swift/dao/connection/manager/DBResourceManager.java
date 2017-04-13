@@ -2,6 +2,10 @@ package by.epam.swift.dao.connection.manager;
 
 import java.util.ResourceBundle;
 
+/**Provides access to a file(*.properties) with database settings.
+ * @author Archangel
+ *
+ */
 public class DBResourceManager {
 	private final static DBResourceManager instance = new DBResourceManager();
 	private ResourceBundle bundle = ResourceBundle.getBundle("resource.database");

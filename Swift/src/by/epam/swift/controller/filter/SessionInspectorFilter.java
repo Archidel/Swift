@@ -13,6 +13,9 @@ import javax.servlet.http.HttpSession;
 
 import by.epam.swift.controller.configuration.PageName;
 
+/** Whether the session exists. If not, it creates a new session and redirects to the index page.
+ * @author Archangel
+ */
 public class SessionInspectorFilter implements Filter{
 
 	@Override

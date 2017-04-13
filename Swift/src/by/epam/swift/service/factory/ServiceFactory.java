@@ -13,6 +13,9 @@ import by.epam.swift.service.impl.RequestServiceImpl;
 import by.epam.swift.service.impl.TariffServiceImpl;
 import by.epam.swift.service.impl.UserServiceImpl;
 
+/**A singleton class that connects a layer of Command and Service
+ * @author Archangel
+ */
 public final class ServiceFactory {
 	private static ServiceFactory instance = null;
 	private final InitializationSourceService initializationSourceService = new InitializationServiceImpl();

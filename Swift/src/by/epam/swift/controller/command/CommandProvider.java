@@ -45,7 +45,7 @@ import by.epam.swift.controller.command.user.SignIn;
 import by.epam.swift.controller.command.user.SignUp;
 import by.epam.swift.controller.command.user.UpPosition;
 import by.epam.swift.controller.command.user.AddBalance;
-import by.epam.swift.controller.command.user.BlockUser;
+import by.epam.swift.controller.command.user.SetBlockUser;
 import by.epam.swift.controller.command.wrong.Redirect;
 import by.epam.swift.controller.command.wrong.WrongRequest;
 import by.epam.swift.controller.configuration.CommandName;
@@ -99,7 +99,7 @@ public final class CommandProvider {
 		repository.put(CommandName.SIGN_UP, new SignUp());
 		repository.put(CommandName.LOGOUT, new Logout());
 		repository.put(CommandName.EDIT_PROFILE, new EditProfile());
-		repository.put(CommandName.BLOCK_USER, new BlockUser());
+		repository.put(CommandName.BLOCK_USER, new SetBlockUser());
 		repository.put(CommandName.GET_BALANCE, new GetBalance());
 		repository.put(CommandName.ADD_BALANCE, new AddBalance());
 		repository.put(CommandName.GET_USER_LIST, new GetUserList());

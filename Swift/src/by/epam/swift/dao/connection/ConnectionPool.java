@@ -21,6 +21,10 @@ import by.epam.swift.dao.connection.manager.DBResourceManager;
 import by.epam.swift.dao.exception.ConnectionPoolException;
 import by.epam.swift.dao.exception.DAOException;
 
+/**A class that provides connections for user requests
+ * @author Archangel
+ *
+ */
 public final class ConnectionPool implements Closeable{
 	private static final Logger LOGGER = Logger.getLogger(ConnectionPool.class);  
 	
@@ -34,6 +38,7 @@ public final class ConnectionPool implements Closeable{
 	private String password;
 	private String url;
  	
+	/** This constructor serves to initialize the connection parameters to the database */
 	private ConnectionPool() {
 		DBResourceManager resourceManager = DBResourceManager.getInstance();
 		this.driver = resourceManager.getValue(DBParameter.DB_DRIVER);
@@ -48,6 +53,9 @@ public final class ConnectionPool implements Closeable{
 		}	
 	}
 	
+	/**This method creates free connections. And also stores busy and free connections.
+	 * @throws ConnectionPoolException
+	 */
 	public void init() throws ConnectionPoolException{
 		freeConnection = new ArrayBlockingQueue<Connection>(poolsize);
 		busyConnection = new ArrayBlockingQueue<Connection>(poolsize);
@@ -65,6 +73,10 @@ public final class ConnectionPool implements Closeable{
 		
 	}
 	
+	/** The method provides a free connection
+	 * @return {@link Connection}
+	 * @throws ConnectionPoolException
+	 */
 	public Connection take() throws ConnectionPoolException{
 		Connection connection = null;
 		try {
@@ -76,6 +88,11 @@ public final class ConnectionPool implements Closeable{
 		return connection;
 	}
 	
+	/**Method of transferring a connection from a statute busy status is free
+	 * @param connection
+	 * @throws InterruptedException
+	 * @throws DAOException
+	 */
 	public void free(Connection connection) throws InterruptedException, DAOException{
 		if(connection == null){
 			throw new DAOException("Connection is null");

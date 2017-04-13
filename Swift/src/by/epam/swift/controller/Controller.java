@@ -10,7 +10,7 @@ import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.command.CommandProvider;
 import by.epam.swift.controller.configuration.CommandName;
 
-/**
+/** Main servlet
  * @author Archangel
  *
  */

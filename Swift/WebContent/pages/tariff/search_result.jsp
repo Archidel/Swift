@@ -9,7 +9,7 @@
 	<%@include file="../../elements/el_navigation.jspf" %>
 	<div class="wrapper container">
 		<div class="heading">
-			<h1>Search Result</h1>
+			<h1>${result_label}</h1>
 		</div>
 		<h4><span>${found_label}: ${requestScope.amountResult}</span></h4>
 		<legend></legend>
@@ -25,7 +25,7 @@
 				<div class="panel panel-primary">
 	    			
 	    			<div class="panel-heading">${title_label} : ${list.title}
-	    				<span class="pull-right">Type: ${list.type}</span>
+	    				<span class="pull-right">${type_label}: ${list.type}</span>
 	    			</div>
 	    			
 	    			<div class="panel-body" style="overflow: hidden;">
@@ -34,7 +34,7 @@
 							<div class="form-group row">
 								<div class="offset-sm-2 col-sm-10">
 									<input type="hidden" name="tariff_type" value="${list.type}">
-									<button type="submit" class="btn btn-info btn-sm" name="tariff_id" value="${list.id}">${more_button}</button>
+									<button type="submit" class="btn btn-info" name="tariff_id" value="${list.id}">${more_button}</button>
 			  					</div>
 							</div>
 						</form>	

@@ -1,5 +1,8 @@
 package by.epam.swift.dao.connection.manager;
 
+/**Stores keys for database settings
+ * @author Archangel
+ */
 public final class DBParameter {
 	private DBParameter() {}
 	public static final String DB_DRIVER = "db.driver";

@@ -24,13 +24,13 @@
 	    		<div class="panel-body">
 		    		<br>
 		    		<div class="row">
-		    			<div class="col-md-1">TYPE:</div>
+		    			<div class="col-md-1">${type_label}:</div>
 	  					<div class="col-md-4">${requestScope.more.type}</div>
 		    		</div>
 		    		<br>
 		    		<div class="row">
 		    			<div class="col-md-1">${price_label}:</div>
-	  					<div class="col-md-4">${requestScope.more.price} $ per MONTH</div>
+	  					<div class="col-md-4">${requestScope.more.price} ${dimension_price_per_month}</div>
 		    		</div>
 		    		<br>
 		    		<div class="row">

@@ -2,6 +2,10 @@ package by.epam.swift.bean;
 
 import java.io.Serializable;
 
+/**
+ * @author Archangel
+ *
+ */
 public class Tariff implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int id;
@@ -13,50 +17,75 @@ public class Tariff implements Serializable{
 	
 	public Tariff() {}
 
+	/**
+	 * @return id
+	 */
 	public int getId() {
 		return id;
 	}
-
+	/** set id tariff
+	 * @param id
+	 */
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	/**
+	 * @return title
+	 */
 	public String getTitle() {
 		return title;
 	}
-
+	/** set title
+	 * @param title
+	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
+	/**
+	 * @return type
+	 */
 	public String getType() {
 		return type;
 	}
-
+	/**set type
+	 * @param type 
+	 */
 	public void setType(String type) {
 		this.type = type;
 	}
-
+	/**
+	 * @return price
+	 */
 	public double getPrice() {
 		return price;
 	}
-
+	/** set price
+	 * @param price
+	 */
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
+	/**
+	 * @return description
+	 */
 	public String getDescription() {
 		return description;
 	}
-
+	/** set description
+	 * @param description
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
+	/**
+	 * @return status
+	 */
 	public boolean isStatus() {
 		return status;
 	}
-
+	/** set status
+	 * @param status
+	 */
 	public void setStatus(boolean status) {
 		this.status = status;
 	}

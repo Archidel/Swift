@@ -3,14 +3,10 @@ package by.epam.swift.bean;
 import java.io.Serializable;
 import java.util.Date;
 
-/**	<h1>Internet</h1>
- *	Subclass of {@link Tariff}.
- *	Class with the properties: 
- *	<b>title</b>, <b>date publication</b>, <b>description</b>, <b>status</b>.
- *	This class has an implementation Serializable.
- * 	@author Albert Zarankovich
+/**
+ * @author Archangel
+ *
  */
-
 public class News implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int id;
@@ -21,46 +17,67 @@ public class News implements Serializable{
 
 	public News() {}
 
+	/**
+	 * @return id
+	 */
 	public int getId() {
 		return id;
 	}
-
+	/** set  id
+	 * @param id
+	 */
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	/**
+	 * @return title
+	 */
 	public String getTitle() {
 		return title;
 	}
-
+	/** set  title
+	 * @param title
+	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
+	/**
+	 * @return datePublication
+	 */
 	public Date getDatePublication() {
 		return datePublication;
 	}
-
+	/** set  datePublication
+	 * @param datePublication
+	 */
 	public void setDatePublication(Date datePublication) {
 		this.datePublication = datePublication;
 	}
-
+	/**
+	 * @return description
+	 */
 	public String getDescription() {
 		return description;
 	}
-
+	/** set description
+	 * @param description
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
+	/**
+	 * @return status
+	 */
 	public boolean isStatus() {
 		return status;
 	}
-
+	/** set status
+	 * @param status
+	 */
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
