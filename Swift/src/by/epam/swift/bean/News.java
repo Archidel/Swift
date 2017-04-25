@@ -3,7 +3,7 @@ package by.epam.swift.bean;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
+/** This class is designed to store information about the news.
  * @author Archangel
  *
  */

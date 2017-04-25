@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+/**This class is designed to store information about the user.
+ * @author Archangel
+ *
+ */
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int id;

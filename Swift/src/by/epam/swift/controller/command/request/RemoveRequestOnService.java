@@ -13,6 +13,10 @@ import by.epam.swift.service.RequestService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
+/**Class for remove request on service.
+ * This class has implementation {@link Command}.
+ * @author Albert Zarankovich
+ */
 public class RemoveRequestOnService implements Command {
 	private static final Logger LOGGER = Logger.getLogger(RemoveRequestOnService.class);
 	

@@ -18,6 +18,10 @@ import by.epam.swift.service.NewsService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
+/**Class for get news list for administration with different status.
+ * This class has implementation {@link Command}.
+ * @author Albert Zarankovich
+ */
 public class GetNewsListAdmin implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetNewsListAdmin.class);
 	

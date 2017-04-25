@@ -10,6 +10,9 @@ import by.epam.swift.service.UserService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.validation.ValidationData;
 
+/** The class implements the interface {@link UserService}
+ * @author Archangel
+ */
 public class UserServiceImpl implements UserService{
 	
 	@Override

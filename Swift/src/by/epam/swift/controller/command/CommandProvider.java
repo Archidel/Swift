@@ -109,7 +109,6 @@ public final class CommandProvider {
 		repository.put(CommandName.GET_REQUEST_ON_SERVICE_LIST_USER, new GetRequestOnServiceListUser());
 		repository.put(CommandName.GET_REQUEST_ON_SERVICE_LIST_ADMIN, new GetRequestOnServiceListAdmin());
 		repository.put(CommandName.REDIRECT, new Redirect());
-
 	}
 	
 	/**Command representation by key

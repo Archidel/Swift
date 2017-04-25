@@ -17,6 +17,10 @@ import by.epam.swift.service.UserService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
+/**Class for blocking user.
+ * This class has implementation {@link Command}.
+ * @author Albert Zarankovich
+ */
 public class SetBlockUser implements Command {
 	private static final Logger LOGGER = Logger.getLogger(SetBlockUser.class);  
 	

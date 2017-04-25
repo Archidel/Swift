@@ -16,10 +16,9 @@ import by.epam.swift.service.NewsService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
-/** <h1>EditNews</h1>
- * This class has implementation {@link Command}.
+/**This class has implementation {@link Command}.
  * Class is used for add new news to the site.
- * @author Archangel
+ * @author Albert Zarankovich
  */
 
 public class EditNews implements Command {

@@ -10,6 +10,9 @@ import by.epam.swift.service.TariffService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.validation.ValidationData;
 
+/** The class implements the interface {@link TariffService}
+ * @author Archangel
+ */
 public class TariffServiceImpl implements TariffService {
 
 	@Override

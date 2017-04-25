@@ -13,6 +13,9 @@ import by.epam.swift.service.AgreementService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.validation.ValidationData;
 
+/** The class implements the interface {@link AgreementService}
+ * @author Archangel
+ */
 public class AgreementServiceImpl implements AgreementService {
 
 	@Override

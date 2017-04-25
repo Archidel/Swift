@@ -12,6 +12,10 @@ import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.configuration.AttributeName;
 import by.epam.swift.controller.configuration.PageName;
 
+/**Class for exit for user's account.
+ * This class has implementation {@link Command}.
+ * @author Albert Zarankovich
+ */
 public class Logout implements Command {
 	private static final Logger LOGGER = Logger.getLogger(Logout.class);
 

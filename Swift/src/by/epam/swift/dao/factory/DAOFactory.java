@@ -13,7 +13,8 @@ import by.epam.swift.dao.impl.RequestServiceDAOImpl;
 import by.epam.swift.dao.impl.TariffDAOImpl;
 import by.epam.swift.dao.impl.UserDAOImpl;
 
-/** A singleton class that connects a layer of services and dao
+/** A singleton class that connects a layer of services and dao.
+ * 	This class provides implementation objects.
  * @author Archangel
  *
  */

@@ -20,6 +20,10 @@ import by.epam.swift.service.RequestService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
+/**Class for get request on service list for user.
+ * This class has implementation {@link Command}.
+ * @author Albert Zarankovich
+ */
 public class GetRequestOnServiceListUser implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetRequestOnServiceListUser.class);
 	

@@ -13,6 +13,10 @@ import by.epam.swift.controller.configuration.AttributeName;
 import by.epam.swift.controller.configuration.PageName;
 import by.epam.swift.controller.configuration.ParameterName;
 
+/**Class for redirects on difference pages.
+ * This class has implementation {@link Command}.
+ * @author Albert Zarankovich
+ */
 public class Redirect implements Command {
 	private static final Logger LOGGER = Logger.getLogger(Redirect.class); 
 	

@@ -6,13 +6,13 @@ import by.epam.swift.bean.News;
 import by.epam.swift.bean.Tariff;
 import by.epam.swift.bean.User;
 
-/** Validate data
+/** Validate data.
  * @author Archangel
  */
 public final class ValidationData {
 	
 	private ValidationData() {}
-	/** Method for validtion request data
+	/** Method for validtion request data.
 	 * @param title
 	 * @param type
 	 * @param datePeriod
@@ -30,7 +30,7 @@ public final class ValidationData {
 			return false;			
 		}
 	}
-	/** Method for check data for make request
+	/** Method for check data for make request.
 	 * @param idRequestOnService id request on service
 	 * @param idUser id user
 	 * @param typeTariff type of tariff
@@ -46,21 +46,21 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	/** Method for check series and passport number
+	/** Method for check series and passport number.
 	 * @param passport user passport
 	 * @return boolean
 	 */
 	public static boolean validPassport(String passport){
 		return Pattern.matches(RegularExpression.PASSPORT_REGULAR, passport);
 	}
-	/** Method for check user password
+	/** Method for check user password.
 	 * @param user password
 	 * @return boolean
 	 */
 	public static boolean validPassword(String password){
 		return Pattern.matches(RegularExpression.PASSWORD_REGULAR, password);
 	}
-	/**Method for checking the password and its match
+	/**Method for checking the password and its match.
 	 * @param password
 	 * @param confirmPassword
 	 * @return boolean 
@@ -75,7 +75,7 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	/** Validation tariff data
+	/** Validation tariff data.
 	 * @param tariff
 	 * @return boolean 
 	 */
@@ -89,7 +89,7 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	/** Validation tariff data
+	/** Validation tariff data.
 	 * @param title
 	 * @param description
 	 * @param price
@@ -105,7 +105,7 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	/** Validation tariff data
+	/** Validation tariff data.
 	 * @param title
 	 * @param description
 	 * @param price
@@ -121,7 +121,7 @@ public final class ValidationData {
 			return false;
 		}
 	}	
-	/** Full validation user data
+	/** Full validation user data.
 	 * @param user
 	 * @return boolean
 	 */
@@ -141,7 +141,7 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	/** Validation user data
+	/** Validation user data.
 	 * @param user
 	 * @return boolean
 	 */
@@ -157,7 +157,7 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	/**Method for check user data for registration
+	/**Method for check user data for registration.
 	 * @param user
 	 * @param password
 	 * @param confirmPassword
@@ -178,7 +178,7 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	/** Method for check user sign in data
+	/** Method for check user sign in data.
 	 * @param login
 	 * @param password
 	 * @return true of false
@@ -190,7 +190,7 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	/**Method for check new data
+	/**Method for check new data.
 	 * @param titile
 	 * @param description
 	 * @return true of false
@@ -202,7 +202,7 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	/**Method for check integer < 0 
+	/**Method for check integer < 0.
 	 * @param integer
 	 * @return true of false
 	 */
@@ -216,7 +216,7 @@ public final class ValidationData {
 	public static boolean validInteger(String integer){
 		return Pattern.matches(RegularExpression.PRICE_REGULAR, integer);
 	}
-	/**Method for check double < 0 
+	/**Method for check double < 0.
 	 * @param d
 	 * @return boolean
 	 */
@@ -227,14 +227,14 @@ public final class ValidationData {
 			return true;
 		}
 	}
-	/** Validation double valud
+	/** Validation double valid.
 	 * @param d
 	 * @return boolean
 	 */
 	public static boolean validDouble(String d){
 		return Pattern.matches(RegularExpression.DOUBLE_REGULAR, d);
 	}
-	/**Method for check edit news data
+	/**Method for check edit news data.
 	 * @param news
 	 * @return boolean
 	 */
@@ -248,7 +248,7 @@ public final class ValidationData {
 			return false;
 		}
 	}
-	/**Method for check String == null or isEmpty
+	/**Method for check String == null or isEmpty.
 	 * @param line
 	 * @return true of false
 	 */

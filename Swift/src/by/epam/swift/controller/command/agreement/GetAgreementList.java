@@ -18,6 +18,10 @@ import by.epam.swift.service.AgreementService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
+/**Class for  get agreement list.
+ * This class has implementation {@link Command}.
+ * @author Albert Zarankovich
+ */
 public class GetAgreementList implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetAgreementList.class);
 

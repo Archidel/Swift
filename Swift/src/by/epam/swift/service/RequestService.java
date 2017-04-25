@@ -46,7 +46,7 @@ public interface RequestService {
 	 * @throws ServiceException
 	 */
 	int getAmountEntriesRequestList() throws ServiceException;
-	/**Accept the Requset on service from the user
+	/**Accept the Requset on service from the user.
 	 * @param idRequest
 	 * @param idUser
 	 * @param action

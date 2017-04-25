@@ -2,7 +2,7 @@ package by.epam.swift.bean;
 
 import java.io.Serializable;
 
-/**
+/**This class is designed to store information about the tariff.
  * @author Archangel
  *
  */

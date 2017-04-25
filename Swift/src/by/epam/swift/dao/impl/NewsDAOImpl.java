@@ -16,6 +16,9 @@ import by.epam.swift.dao.connection.ConnectionPool;
 import by.epam.swift.dao.exception.ConnectionPoolException;
 import by.epam.swift.dao.exception.DAOException;
 
+/** The class implements the interface {@link NewsDAO}
+ * @author Archangel
+ */
 public class NewsDAOImpl implements NewsDAO {
 	
 	@Override

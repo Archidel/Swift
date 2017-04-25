@@ -1,6 +1,6 @@
 package by.epam.swift.dao;
 
-/**Database column names column store
+/**Database column names column store.
  * @author Archangel
  *
  */

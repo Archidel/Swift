@@ -5,7 +5,7 @@ package by.epam.swift.controller.configuration;
  */
 public final class PageName {
 	private PageName() {}
-	
+//GENERAL
 	public static final String SECURITY_PAGE = "/security";
 	public static final String ERROR_REQUEST_PAGE = "/errorpage";
 	public static final String INDEX_PAGE = "/index";

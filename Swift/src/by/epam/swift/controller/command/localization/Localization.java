@@ -10,8 +10,7 @@ import by.epam.swift.controller.configuration.AttributeName;
 import by.epam.swift.controller.configuration.PageName;
 import by.epam.swift.controller.configuration.ParameterName;
 
-/** <h1>Localization</h1>
- * This class has implementation {@link Command}.
+/**This class has implementation {@link Command}.
  * Class is used for change the local.
  * @author Archangel
  */

@@ -17,6 +17,10 @@ import by.epam.swift.service.NewsService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
+/**This class has implementation {@link Command}.
+ * Class for upload news data to edit news form.
+ * @author Albert Zarankovich
+ */
 public class UploadNewsDataToEdit implements Command {
 	private static final Logger LOGGER = Logger.getLogger(UploadNewsDataToEdit.class);
 	

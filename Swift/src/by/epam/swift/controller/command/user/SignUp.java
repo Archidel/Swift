@@ -15,8 +15,7 @@ import by.epam.swift.service.UserService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
-/** <h1>Sign up</h1>
- * This class has implementation {@link Command}.
+/**This class has implementation {@link Command}.
  * Class is used for sign up.
  * @author Archangel
  */

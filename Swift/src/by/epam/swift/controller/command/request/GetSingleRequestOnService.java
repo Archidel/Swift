@@ -21,6 +21,10 @@ import by.epam.swift.service.UserService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
+/**Class for get more info about request on service.
+ * This class has implementation {@link Command}.
+ * @author Albert Zarankovich
+ */
 public class GetSingleRequestOnService implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetSingleRequestOnService.class);
 	

@@ -18,6 +18,10 @@ import by.epam.swift.service.TariffService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
+/**Class for get tariff list.
+ * This class has implementation {@link Command}.
+ * @author Albert Zarankovich
+ */
 public class GetTariffListUser implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetTariffListUser.class);
 	

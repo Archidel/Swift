@@ -10,6 +10,10 @@ import by.epam.swift.service.InitializationSourceService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
+/**This class has implementation {@link Command}.
+ * Class is used for destroy source.
+ * @author Archangel
+ */
 public class DestroySource implements Command {
 	private static final Logger LOGGER = Logger.getLogger(DestroySource.class);
 	 

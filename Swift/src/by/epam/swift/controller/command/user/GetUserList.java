@@ -18,6 +18,10 @@ import by.epam.swift.service.UserService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
+/**Class for get user list.
+ * This class has implementation {@link Command}.
+ * @author Albert Zarankovich
+ */
 public class GetUserList implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetUserList.class);
 	

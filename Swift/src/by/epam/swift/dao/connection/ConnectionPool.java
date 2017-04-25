@@ -125,6 +125,12 @@ public final class ConnectionPool implements Closeable{
 		}
 	}
 	
+	/** Overload method for close all connection.
+	 * @param con
+	 * @param st
+	 * @param preSt
+	 * @param rs
+	 */
 	public void closeConnection(Connection con, Statement st, PreparedStatement preSt, ResultSet rs){
 		if(con != null){
 			try {
@@ -159,6 +165,10 @@ public final class ConnectionPool implements Closeable{
 		}
 	}
 
+	/** Overload method for close all connection.
+	 * @param con
+	 * @param st
+	 */
 	public void closeConnection(Connection con, Statement st){
 		if(con != null){
 			try {
@@ -177,6 +187,10 @@ public final class ConnectionPool implements Closeable{
 		}
 	}
 	
+	/** Overload method for close all connection.
+	 * @param con
+	 * @param preSt
+	 */
 	public void closeConnection(Connection con, PreparedStatement preSt){
 		if(con != null){
 			try {
@@ -195,6 +209,10 @@ public final class ConnectionPool implements Closeable{
 		}
 	}
 	
+	/** Overload method for close all connection.
+	 * @param con
+	 * @param rs
+	 */
 	public void closeConnection(Connection con, ResultSet rs){
 		if(con != null){
 			try {
@@ -213,6 +231,11 @@ public final class ConnectionPool implements Closeable{
 		}
 	}
 	
+	/** Overload method for close all connection.
+	 * @param con
+	 * @param st
+	 * @param preSt
+	 */
 	public void closeConnection(Connection con, Statement st, PreparedStatement preSt){
 		if(con != null){
 			try {
@@ -240,6 +263,11 @@ public final class ConnectionPool implements Closeable{
 		
 	}
 	
+	/** Overload method for close all connection.
+	 * @param con
+	 * @param preSt
+	 * @param rs
+	 */
 	public void closeConnection(Connection con, PreparedStatement preSt, ResultSet rs){
 		if(con != null){
 			try {
@@ -266,6 +294,11 @@ public final class ConnectionPool implements Closeable{
 		}
 	}
 	
+	/** Overload method for close all connection.
+	 * @param con
+	 * @param st
+	 * @param rs
+	 */
 	public void closeConnection(Connection con, Statement st, ResultSet rs){
 		if(con != null){
 			try {

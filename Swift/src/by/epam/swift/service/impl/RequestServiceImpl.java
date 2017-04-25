@@ -15,6 +15,9 @@ import by.epam.swift.service.RequestService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.validation.ValidationData;
 
+/** The class implements the interface {@link RequestService}
+ * @author Archangel
+ */
 public class RequestServiceImpl implements RequestService {
 
 	@Override

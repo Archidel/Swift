@@ -6,6 +6,9 @@ import by.epam.swift.dao.factory.DAOFactory;
 import by.epam.swift.service.InitializationSourceService;
 import by.epam.swift.service.exception.ServiceException;
 
+/** The class implements the interface {@link InitializationSourceService}
+ * @author Archangel
+ */
 public class InitializationServiceImpl implements InitializationSourceService{
 
 	@Override

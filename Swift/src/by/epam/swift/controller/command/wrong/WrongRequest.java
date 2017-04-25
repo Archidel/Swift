@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.configuration.PageName;
 
+/** Command for worn request. When command not found we get this class. 
+ * This class has implementation {@link Command}.
+ * @author Archangel
+ */
 public class WrongRequest implements Command {
 	
 	@Override

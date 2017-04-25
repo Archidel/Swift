@@ -1,6 +1,6 @@
 package by.epam.swift.service.validation;
 
-/** Regular expression for {@link ValidationData}
+/** Regular expression for {@link ValidationData}.
  * @author Archangel
  */
 public final class RegularExpression {

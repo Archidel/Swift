@@ -12,6 +12,9 @@ import by.epam.swift.service.NewsService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.validation.ValidationData;
 
+/** The class implements the interface {@link NewsService}
+ * @author Archangel
+ */
 public class NewsServiceImpl implements NewsService {
 	
 	@Override

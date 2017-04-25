@@ -10,8 +10,7 @@ import by.epam.swift.service.InitializationSourceService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
-/** <h1>InitializationSource</h1>
- * This class has implementation {@link Command}.
+/**This class has implementation {@link Command}.
  * Class is used for initialization source.
  * @author Archangel
  */
