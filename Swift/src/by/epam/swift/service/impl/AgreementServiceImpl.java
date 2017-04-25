@@ -28,7 +28,7 @@ public class AgreementServiceImpl implements AgreementService {
 		try {
 			agreementDAO.createAgreement(user.getId(), sdf.format(new Date()));
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("",e);
 		}
 		
 	}

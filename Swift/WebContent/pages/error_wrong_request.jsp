@@ -12,10 +12,17 @@
 			<h1>${error_label}</h1>
 			<legend></legend>
 		</div>
-		
+
 		<h3>
-			${error_wrong_request_label}
+			<c:if test="${not empty requestScope.statusError}">
+				${requestScope.statusError}	
+			</c:if>
+				
+			<c:if test="${empty requestScope.statusError}">
+				${error_wrong_request_label}	
+			</c:if>
 		</h3>
+		
 		<a href="index"><button type="button" class="btn btn-lg  btn-primary" style="height: 50px">${security_button}</button></a>
 	</div>
 </body>

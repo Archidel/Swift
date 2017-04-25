@@ -17,7 +17,7 @@ public class RemoveRequestOnService implements Command {
 	private static final Logger LOGGER = Logger.getLogger(RemoveRequestOnService.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {		
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{		
 		String status = request.getParameter(ParameterName.STATUS_OF_OPERATION);
 		int idReqest = Integer.parseInt(request.getParameter(ParameterName.REQUEST_ID));
 		
@@ -26,17 +26,13 @@ public class RemoveRequestOnService implements Command {
 	
 		try {
 			requestService.removeRequestOnService(idReqest);
-		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-		
-		try {
 			if(status == null){
 				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_REQUEST_ON_SERVICE_LIST_USER);	
 			}else{
 				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_REQUEST_ON_SERVICE_LIST_ADMIN);					
 			}
-		} catch (IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
 		}
 	}

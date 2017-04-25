@@ -1,5 +1,7 @@
 package by.epam.swift.controller.command;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,5 +16,5 @@ public interface Command {
 	 * @param request
 	 * @param response
 	 */
-	void executeCommand(HttpServletRequest request, HttpServletResponse response);
+	void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException;
 }

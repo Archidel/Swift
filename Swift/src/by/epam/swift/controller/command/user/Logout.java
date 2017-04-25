@@ -16,7 +16,7 @@ public class Logout implements Command {
 	private static final Logger LOGGER = Logger.getLogger(Logout.class);
 
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession();
 		session.removeAttribute(AttributeName.LOGGED);
 		session.removeAttribute(AttributeName.USER);

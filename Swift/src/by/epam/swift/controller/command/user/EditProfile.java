@@ -21,7 +21,7 @@ public class EditProfile implements Command {
 	private static final Logger LOGGER = Logger.getLogger(EditProfile.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		User user = new User();
 		user.setName(request.getParameter(ParameterName.USER_NAME));
 		user.setSurname(request.getParameter(ParameterName.USER_SURNAME));
@@ -38,27 +38,16 @@ public class EditProfile implements Command {
 
 		ServiceFactory factory = ServiceFactory.getInstance();
 		UserService userService = factory.getUserService();
-		boolean statusOperation = false;
 		
 		try {
 			user = userService.editProfile(user, passport, address);
 			session.setAttribute(AttributeName.USER, user);
 			request.setAttribute(AttributeName.MORE, user);
-			statusOperation = true;
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_EDIT_PROFILE_SUCCESS);				
 		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_EDIT_PROFILE_ERROR);	
 			LOGGER.error(e);
 		}
-		
-		try {
-			if(statusOperation){
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_EDIT_PROFILE_SUCCESS);				
-			}else{
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_EDIT_PROFILE_ERROR);	
-			}
-		} catch (IOException e) {
-			LOGGER.error(e);
-		}
-		
 	}
 
 }

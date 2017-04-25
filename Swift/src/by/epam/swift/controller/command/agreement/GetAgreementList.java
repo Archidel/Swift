@@ -22,7 +22,7 @@ public class GetAgreementList implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetAgreementList.class);
 
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int numberPage = Integer.parseInt(request.getParameter(ParameterName.NUMBER_PAGE));
 		ServiceFactory factory = ServiceFactory.getInstance();
 		AgreementService agreementService = factory.getAgreementService();
@@ -36,16 +36,14 @@ public class GetAgreementList implements Command {
 
 			List<Agreement> list = agreementService.getAgreementList(numberPage);
 			request.setAttribute(AttributeName.LIST, list);
-		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-		
-		try {
 			request.getRequestDispatcher(PageName.GET_AGREEMENT_LIST).forward(request, response);
-		} catch (ServletException | IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);
+		} catch (ServletException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
 		}
-		
 	}
 
 }

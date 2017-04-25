@@ -5,8 +5,6 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
-
 import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.configuration.AttributeName;
 import by.epam.swift.controller.configuration.PageName;
@@ -18,18 +16,11 @@ import by.epam.swift.controller.configuration.ParameterName;
  * @author Archangel
  */
 public class Localization implements Command {
-	private static final Logger LOGGER = Logger.getLogger(Localization.class);  
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.getSession(true).setAttribute(AttributeName.LOCAL, request.getParameter(ParameterName.LOCAL));
-		
-		try {
-			response.sendRedirect(request.getContextPath() + PageName.INDEX_PAGE);
-		} catch (IOException e) {
-			LOGGER.error(e);
-		}
-		
+		response.sendRedirect(request.getContextPath() + PageName.INDEX_PAGE);
 	}
 	 
 }

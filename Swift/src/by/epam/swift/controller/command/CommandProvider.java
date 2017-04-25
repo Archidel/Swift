@@ -63,9 +63,7 @@ public final class CommandProvider {
 //INIT SOURCE
 		repository.put(CommandName.INITIALIZATION_SOURCE, new InitializationSource());
 		repository.put(CommandName.DESTROY_SOURCE, new DestroySource());
-		
 		repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
-
 		repository.put(CommandName.LOCALIZATION, new Localization());
 //NEWS
 		repository.put(CommandName.ADD_NEWS, new AddNews());
@@ -75,7 +73,6 @@ public final class CommandProvider {
 		repository.put(CommandName.REMOVE_NEWS, new RemoveNews());	
 		repository.put(CommandName.GET_NEWS_LIST, new GetNewsListUser());
 		repository.put(CommandName.GET_NEWS_LIST_ADMIN, new GetNewsListAdmin());
-		
 //TARIFF		
 		repository.put(CommandName.ADD_TARIFF, new AddTariff());
 		repository.put(CommandName.GET_SINGLE_TARIFF, new GetSingleTariff());
@@ -93,7 +90,6 @@ public final class CommandProvider {
 		repository.put(CommandName.REMOVE_AGREEMENT, new RemoveAgreement());
 		repository.put(CommandName.GET_SINGLE_AGREEMENT, new GetSingleAgreement());
 		repository.put(CommandName.ACCEPT_AGREEMENT, new AcceptAgreement());
-		
 //USER
 		repository.put(CommandName.SIGN_IN, new SignIn());
 		repository.put(CommandName.SIGN_UP, new SignUp());
@@ -104,7 +100,6 @@ public final class CommandProvider {
 		repository.put(CommandName.ADD_BALANCE, new AddBalance());
 		repository.put(CommandName.GET_USER_LIST, new GetUserList());
 		repository.put(CommandName.UP_POSITION, new UpPosition());
-		
 //REQUEST
 		repository.put(CommandName.REMOVE_REQUEST_ON_SERVICE, new RemoveRequestOnService());
 		repository.put(CommandName.MAKE_REQUEST_ON_SERVICE, new MakeRequestOnService());
@@ -113,8 +108,6 @@ public final class CommandProvider {
 		repository.put(CommandName.UPLOAD_DATA_TO_REQUEST_ON_SERVICE, new UploadDataToRequestOnService());
 		repository.put(CommandName.GET_REQUEST_ON_SERVICE_LIST_USER, new GetRequestOnServiceListUser());
 		repository.put(CommandName.GET_REQUEST_ON_SERVICE_LIST_ADMIN, new GetRequestOnServiceListAdmin());
-
-		
 		repository.put(CommandName.REDIRECT, new Redirect());
 
 	}

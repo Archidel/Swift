@@ -25,7 +25,7 @@ public class GetSingleRequestOnService implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetSingleRequestOnService.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		int idRequest = Integer.parseInt(request.getParameter(ParameterName.REQUEST_ID));
 		
 		ServiceFactory factory = ServiceFactory.getInstance();
@@ -39,16 +39,14 @@ public class GetSingleRequestOnService implements Command {
 			User user = userService.getUserById(agreement.getIdUser());
 			request.setAttribute(AttributeName.USER, user);
 			request.setAttribute(AttributeName.MORE, requestOnService);
+			request.getRequestDispatcher(PageName.GET_SINGLE_REQUEST_ON_SERVICE_PAGE).forward(request, response);	
 		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-		
-		try {
-			request.getRequestDispatcher(PageName.GET_SINGLE_REQUEST_ON_SERVICE_PAGE).forward(request, response);
-		} catch (ServletException | IOException e) {
-			LOGGER.error(e);
-		}
-		
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);		
+		} catch (ServletException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);		
+		}		
 	}
 
 }

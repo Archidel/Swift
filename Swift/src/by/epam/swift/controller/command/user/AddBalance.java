@@ -21,7 +21,7 @@ public class AddBalance implements Command {
 	private static final Logger LOGGER = Logger.getLogger(AddBalance.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute(AttributeName.USER);
 		int idUser = user.getId();
@@ -29,26 +29,14 @@ public class AddBalance implements Command {
 		
 		ServiceFactory factory = ServiceFactory.getInstance();
 		UserService userService = factory.getUserService();
-		boolean statusOperation = false;
 		
 		try {
 			userService.addBalance(balance, idUser);
-			statusOperation = true;
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_BALANCE_SUCCESS);		
 		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_BALANCE_ERROR);
 			LOGGER.error(e);
 		}
-	
-		try {
-			if(statusOperation){
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_BALANCE_SUCCESS);		
-			}else{
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_BALANCE_ERROR);
-			}
-		} catch (IOException e) {
-			LOGGER.error(e);
-		}
-			
-	
 	}
 
 }

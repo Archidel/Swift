@@ -12,7 +12,6 @@ import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.configuration.AttributeName;
 import by.epam.swift.controller.configuration.PageName;
 import by.epam.swift.controller.configuration.ParameterName;
-import by.epam.swift.controller.configuration.RequestMessage;
 import by.epam.swift.service.TariffService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
@@ -21,7 +20,7 @@ public class GetSingleTariff implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetSingleTariff.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String idTariff = request.getParameter(ParameterName.TARIFF_ID);
 		ServiceFactory factory = ServiceFactory.getInstance();
 		TariffService tariffService = factory.getTariffService();
@@ -29,17 +28,14 @@ public class GetSingleTariff implements Command {
 		try {
 			Tariff tariff = tariffService.getTariffById(idTariff);
 			request.setAttribute(AttributeName.MORE, tariff);
-		} catch (ServiceException e) {
-			request.setAttribute(AttributeName.STATUS_ERROR, RequestMessage.ERROR_RESULT);
-			LOGGER.error(e);
-		}
-		
-		try {
 			request.getRequestDispatcher(PageName.GET_SINGLE_TARIFF_PAGE).forward(request, response);
-		} catch (ServletException | IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);
+		} catch (ServletException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
 		}
-	
 	}
 
 }

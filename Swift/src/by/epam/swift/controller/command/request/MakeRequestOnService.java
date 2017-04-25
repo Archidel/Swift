@@ -21,7 +21,7 @@ public class MakeRequestOnService implements Command {
 	private static final Logger LOGGER = Logger.getLogger(MakeRequestOnService.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute(AttributeName.USER);
 		
@@ -33,25 +33,14 @@ public class MakeRequestOnService implements Command {
 		
 		ServiceFactory factory  = ServiceFactory.getInstance();
 		RequestService requestService = factory.getRequestService();
-		boolean statusOperation = false;
 		
 		try {
 			requestService.makeRequestOnService(title, type, datePeriod, serviceAction, idUser);
-			statusOperation = true;
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_MAKE_REQUEST_ON_SERVICE_SUCCESS);			
 		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_MAKE_REQUEST_ON_SERVICE_ERROR);	
 			LOGGER.error(e);
-		}
-
-		try {
-			if(statusOperation){
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_MAKE_REQUEST_ON_SERVICE_SUCCESS);			
-			}else{
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_MAKE_REQUEST_ON_SERVICE_ERROR);	
-			}	
-		} catch (IOException e) {
-			LOGGER.error(e);
-		}
-		
+		}		
 	}
 
 }

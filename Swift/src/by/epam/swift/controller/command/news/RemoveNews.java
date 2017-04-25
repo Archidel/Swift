@@ -17,23 +17,18 @@ public class RemoveNews implements Command {
 	private static final Logger LOGGER = Logger.getLogger(RemoveNews.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int idNews = Integer.parseInt(request.getParameter(ParameterName.NEWS_ID));
 		ServiceFactory factory = ServiceFactory.getInstance();
 		NewsService newsService = factory.getNewsService();
 		
 		try {
 			newsService.removeNews(idNews);
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_GET_NEWS_LIST_ADMIN_PAGE);
 		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
-		}
-
-		try {
-			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_GET_NEWS_LIST_ADNIM_PAGE);
-		} catch (IOException e) {
-			LOGGER.error(e);
-		}
-		
+		}		
 	}
 
 }

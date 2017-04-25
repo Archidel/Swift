@@ -14,7 +14,6 @@ import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.configuration.AttributeName;
 import by.epam.swift.controller.configuration.PageName;
 import by.epam.swift.controller.configuration.ParameterName;
-import by.epam.swift.controller.configuration.RequestMessage;
 import by.epam.swift.service.TariffService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
@@ -23,7 +22,7 @@ public class SearchTariff implements Command {
 	private static final Logger LOGGER = Logger.getLogger(SearchTariff.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		int numberPage = Integer.parseInt(request.getParameter(ParameterName.NUMBER_PAGE));
 		String tariff = request.getParameter(ParameterName.SEARCH_TARIFF);
 
@@ -40,17 +39,14 @@ public class SearchTariff implements Command {
 			
 			List<Tariff> list = tariffService.searchTariff(tariff, numberPage);
 			request.setAttribute(AttributeName.LIST, list);
-		} catch (ServiceException e) {
-			request.setAttribute(AttributeName.STATUS_ERROR, RequestMessage.ERROR_RESULT);
-			LOGGER.error(e);
-		}
-		
-		try {
 			request.getRequestDispatcher(PageName.SEARCH_TARIFF_RESULT_PAGE).forward(request, response);
-		} catch (ServletException | IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);
+		} catch (ServletException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
 		}
-		
 	}
 
 }

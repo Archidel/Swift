@@ -17,7 +17,7 @@ public class RemoveTariff implements Command {
 	private static final Logger LOGGER = Logger.getLogger(RemoveTariff.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String tariffType = request.getParameter(ParameterName.TARIFF_TYPE);
 		int idTariff = Integer.parseInt(request.getParameter(ParameterName.TARIFF_ID));
 		ServiceFactory factory = ServiceFactory.getInstance();
@@ -25,16 +25,11 @@ public class RemoveTariff implements Command {
 		
 		try {
 			tariffService.removeTariff(idTariff);
-		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-		
-		try {
 			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_REMOVE_TARIFF + tariffType + "&page=1");
-		} catch (IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
 		}
-		
 	}
 
 }

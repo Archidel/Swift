@@ -22,7 +22,7 @@ public class GetRequestOnServiceListAdmin implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetRequestOnServiceListAdmin.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int numberPage = Integer.parseInt(request.getParameter(ParameterName.NUMBER_PAGE));
 		
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
@@ -37,16 +37,14 @@ public class GetRequestOnServiceListAdmin implements Command {
 			
 			List<RequestOnService> list = requestService.getRequestOnServiceList(numberPage);
 			request.setAttribute(AttributeName.LIST, list);
-		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-	
-		try {
 			request.getRequestDispatcher(PageName.REQUEST_ON_SERVICE_LIST_ADMIN_PAGE).forward(request, response);
-		} catch (ServletException | IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
+		} catch (ServletException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);		
 		}
-		
 	}
 
 }

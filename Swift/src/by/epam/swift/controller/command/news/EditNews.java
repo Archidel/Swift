@@ -26,7 +26,7 @@ public class EditNews implements Command {
 	private static final Logger LOGGER = Logger.getLogger(EditNews.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String title = request.getParameter(ParameterName.NEWS_TITLE);
 		String description = request.getParameter(ParameterName.NEWS_DESCRIPTION);
 		int idNews = Integer.parseInt(request.getParameter(ParameterName.NEWS_ID));
@@ -43,16 +43,11 @@ public class EditNews implements Command {
 			newsService.editNews(news);
 			news = newsService.getNewsById(idNews);
 			request.setAttribute(AttributeName.MORE, news);
-		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-		
-		try {
 			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_EDIT_NEWS_PAGE + news.getId());
-		} catch (IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_EDIT_NEWS_PAGE + news.getId());
 			LOGGER.error(e);
 		}
-		
 	}
 
 }

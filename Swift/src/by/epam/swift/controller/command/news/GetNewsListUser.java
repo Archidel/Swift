@@ -14,7 +14,6 @@ import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.configuration.AttributeName;
 import by.epam.swift.controller.configuration.PageName;
 import by.epam.swift.controller.configuration.ParameterName;
-import by.epam.swift.controller.configuration.RequestMessage;
 import by.epam.swift.service.NewsService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
@@ -23,7 +22,7 @@ public class GetNewsListUser implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetNewsListUser.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		ServiceFactory factory  = ServiceFactory.getInstance();
 		NewsService newsService = factory.getNewsService();
 		int numberPage = Integer.parseInt(request.getParameter(ParameterName.NUMBER_PAGE));
@@ -37,16 +36,14 @@ public class GetNewsListUser implements Command {
 			
 			List<News> list = newsService.getNewsListUser(numberPage);
 			request.setAttribute(AttributeName.LIST, list);
-		} catch (ServiceException e){
-			request.setAttribute(AttributeName.RESULT, RequestMessage.ERROR_RESULT);
-			LOGGER.error(e);
-		}
-		
-		try {
 			request.getRequestDispatcher(PageName.GET_NEWS_LIST_USER_PAGE).forward(request, response);
-		} catch (ServletException | IOException e) {
+		} catch (ServiceException e){
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
-		}
+		} catch (ServletException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);
+		}		
 	}
 
 }

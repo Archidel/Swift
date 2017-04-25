@@ -23,31 +23,20 @@ public class AddNews implements Command {
 	private static final Logger LOGGER = Logger.getLogger(AddNews.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String title = request.getParameter(ParameterName.NEWS_TITLE);
 		String description = request.getParameter(ParameterName.NEWS_DESCRIPTION);
 		
 		ServiceFactory factory = ServiceFactory.getInstance();
 		NewsService newsService = factory.getNewsService();
-		boolean statusOperation = false;
 		
 		try {		
 			newsService.addNews(title, description);
-			statusOperation = true;
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_NEWS_SUCCESS);				
 		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_NEWS_ERROR);	
 			LOGGER.error(e);
-		}
-		
-		try {
-			if(statusOperation){
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_NEWS_SUCCESS);				
-			}else{
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_NEWS_ERROR);	
-			}
-		} catch (IOException e) {
-			LOGGER.error(e);
-		}
-		
+		}	
 	}
 
 }

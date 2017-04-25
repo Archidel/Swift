@@ -13,7 +13,6 @@ import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.configuration.AttributeName;
 import by.epam.swift.controller.configuration.PageName;
 import by.epam.swift.controller.configuration.ParameterName;
-import by.epam.swift.controller.configuration.RequestMessage;
 import by.epam.swift.service.NewsService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
@@ -22,7 +21,7 @@ public class UploadNewsDataToEdit implements Command {
 	private static final Logger LOGGER = Logger.getLogger(UploadNewsDataToEdit.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int idNews = Integer.parseInt(request.getParameter(ParameterName.NEWS_ID));
 		ServiceFactory factory = ServiceFactory.getInstance();
 		NewsService newsService = factory.getNewsService();
@@ -30,16 +29,13 @@ public class UploadNewsDataToEdit implements Command {
 		try {
 			News news = newsService.getNewsById(idNews);
 			request.setAttribute(AttributeName.MORE, news);
-		} catch (ServiceException e) {
-			request.setAttribute(AttributeName.RESULT, RequestMessage.NEWS_NOT_FOUND);
-			LOGGER.error(e);
-		}
-		
-		try {
 			request.getRequestDispatcher(PageName.EDIT_NEWS_PAGE).forward(request, response);
-		} catch (ServletException | IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);
+		} catch (ServletException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
 		}
 	}
-
 }

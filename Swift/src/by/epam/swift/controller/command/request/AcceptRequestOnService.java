@@ -16,7 +16,7 @@ public class AcceptRequestOnService implements Command {
 	private static final Logger LOGGER = Logger.getLogger(AcceptRequestOnService.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int idRequest = Integer.parseInt(request.getParameter(ParameterName.REQUEST_ID));
 		int idUser = Integer.parseInt(request.getParameter(ParameterName.USER_ID));
 		boolean action = Boolean.parseBoolean(request.getParameter(ParameterName.STATUS_OF_OPERATION));
@@ -26,16 +26,11 @@ public class AcceptRequestOnService implements Command {
 	
 		try {
 			requestService.acceptRequestOnService(idRequest, idUser, action);
-		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-		
-		try {
 			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_REQUEST_ON_SERVICE_LIST_ADMIN);
-		} catch (IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
 		}
-		
 	}
 
 }

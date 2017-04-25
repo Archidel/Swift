@@ -18,30 +18,19 @@ public class AddTariffType implements Command {
 	private static final Logger LOGGER = Logger.getLogger(AddTariffType.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String tariffType = request.getParameter(ParameterName.TARIFF_TYPE);
 		
 		ServiceFactory factory = ServiceFactory.getInstance();
 		TariffService tariffService = factory.getTariffService();
-		boolean statusOperation = false;
 		
 		try {
 			tariffService.addTariffType(tariffType);
-			statusOperation = true;
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_TARIFF_TYPE_SUCCESS);
 		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_TARIFF_TYPE_ERROR);	
 			LOGGER.error(e);
 		}
-	
-		try {
-			if(statusOperation){
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_TARIFF_TYPE_SUCCESS);
-			}else{
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_TARIFF_TYPE_ERROR);	
-			}
-		} catch (IOException e) {
-			LOGGER.error(e);
-		}		
-
 	}
 
 }

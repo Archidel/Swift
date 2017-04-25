@@ -21,7 +21,7 @@ public class RemoveAgreement implements Command {
 	private static final Logger LOGGER = Logger.getLogger(RemoveAgreement.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute(AttributeName.USER);
 
@@ -32,14 +32,9 @@ public class RemoveAgreement implements Command {
 		
 		try {
 			agreementService.removeAgreement(idAgreement, idAdmin);
-		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-		
-		
-		try {
 			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_AGREEMENT_LIST);				
-		} catch (IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);				
 			LOGGER.error(e);
 		}
 	}

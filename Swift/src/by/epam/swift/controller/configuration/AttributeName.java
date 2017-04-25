@@ -16,10 +16,8 @@ public final class AttributeName {
 	public static final String AMOUNT_RESULT = "amountResult";
 	public static final String AMOUNT_PAGE = "amountPage";
 	public static final String NUMBER_PAGE = "numberPage";
-	
 	public static final String TARIFF_TITLE_LIST = "tariffTitleList";
 	public static final String TARIFF_TYPE = "tariffType";
 	public static final String TARIFF_TYPE_LIST = "tariffTypeList";
 	public static final String TARIFF_NAME = "tariffName";
-	
 }

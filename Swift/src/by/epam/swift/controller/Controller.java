@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.command.CommandProvider;
 import by.epam.swift.controller.configuration.CommandName;
@@ -15,6 +17,7 @@ import by.epam.swift.controller.configuration.CommandName;
  *
  */
 public final class Controller extends HttpServlet {
+	private static final Logger LOGGER = Logger.getLogger(Controller.class);
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,7 +38,11 @@ public final class Controller extends HttpServlet {
 		CommandProvider provider = CommandProvider.getInstance();
 		String commandName = request.getParameter(CommandName.COMMAND.name().toLowerCase());
 		Command command = provider.getCommand(commandName);
-		command.executeCommand(request, response);
+		try{
+			command.executeCommand(request, response);			
+		}catch (IOException e) {
+			LOGGER.error(e);
+		}
 	}
 
 }

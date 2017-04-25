@@ -5,7 +5,6 @@ package by.epam.swift.controller.configuration;
  */
 public final class ParameterName {
 	private ParameterName() {}
-	
 // USER
 	public static final String USER_ID = "user_id";
 	public static final String USER_NAME = "user_name";
@@ -23,15 +22,12 @@ public final class ParameterName {
 	public static final String USER_ADDRESS = "user_address";
 	public static final String USER_BLOCK_TO = "user_block_to";
 	public static final String USER_BALANCE = "user_balance";
-	
-	
 //NEWS	
 	public static final String NEWS_TITLE = "news_title";
 	public static final String NEWS_DESCRIPTION = "news_description";
 	public static final String NEWS_ID = "news_id";
 	public static final String NEWS_ALL_NEWS = "all_news";
 	public static final String NEWS_EDIT_NEWS = "edit_news";
-	
 // TARIFF
 	public static final String TARIFF = "tariff";
 	public static final String TARIFF_ID = "tariff_id";
@@ -45,22 +41,12 @@ public final class ParameterName {
 	public static final String REQUEST_SERVICE_ACTION = "request_service_action";
 //AGREEMENT
 	public static final String AGREEMENT_ID = "agreement_id";
-	
-	
-	
-	
 	public static final String REQUEST_ID = "request_id";
 	public static final String LOCAL = "local";
 	public static final String PAYMENT_CURRENCY = "currency";
 	public static final String PAYMENT_AMOUNT_MONEY = "amount_money";	
-
 	public static final String PAGE_NAME = "pagename";
 	public static final String STATUS_OF_OPERATION = "status";
 	public static final String MESSAGE = "message";
-	
-	//pagination
 	public static final String NUMBER_PAGE = "page";
-	
-	
-	
 }

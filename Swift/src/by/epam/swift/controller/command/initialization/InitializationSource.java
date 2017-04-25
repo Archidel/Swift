@@ -18,7 +18,6 @@ import by.epam.swift.service.factory.ServiceFactory;
 public class InitializationSource implements Command {
 	private static final Logger LOGGER = Logger.getLogger(InitializationSource.class);
 	
-	
 	@Override
 	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
 		ServiceFactory factory = ServiceFactory.getInstance();
@@ -30,8 +29,7 @@ public class InitializationSource implements Command {
 		} catch (ServiceException e) {
 			LOGGER.info("Database has not been initialized");
 			LOGGER.error(e);
-		}
-		
+		}	
 	}
 
 }

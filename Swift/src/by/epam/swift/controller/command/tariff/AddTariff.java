@@ -18,7 +18,7 @@ public class AddTariff implements Command {
 	private static final Logger LOGGER = Logger.getLogger(AddTariff.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String title = request.getParameter(ParameterName.TARIFF_TITLE);
 		String price = request.getParameter(ParameterName.TARIFF_PRICE);
 		String type = request.getParameter(ParameterName.TARIFF_TYPE);
@@ -26,22 +26,12 @@ public class AddTariff implements Command {
 		
 		ServiceFactory factory = ServiceFactory.getInstance();
 		TariffService tariffService = factory.getTariffService();
-		boolean statusOperation = false;
 		
 		try {
 			tariffService.addTariff(title, description, type, price);
-			statusOperation = true;
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_TARIFF_SUCCESS);	
 		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-		
-		try {
-			if(statusOperation){
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_TARIFF_SUCCESS);		
-			}else{
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_TARIFF_ERROR);	
-			}
-		} catch (IOException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ADD_TARIFF_ERROR);	
 			LOGGER.error(e);
 		}
 	}

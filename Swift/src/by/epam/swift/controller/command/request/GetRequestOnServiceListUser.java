@@ -24,7 +24,7 @@ public class GetRequestOnServiceListUser implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetRequestOnServiceListUser.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute(AttributeName.USER);
 		
@@ -43,16 +43,14 @@ public class GetRequestOnServiceListUser implements Command {
 			
 			List<RequestOnService> list = requestService.getRequestOnServiceList(idUser, numberPage);
 			request.setAttribute(AttributeName.LIST, list);
+			request.getRequestDispatcher(PageName.REQUEST_ON_SERVICE_LIST_USER_PAGE).forward(request, response);		
 		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-		
-		try {
-			request.getRequestDispatcher(PageName.REQUEST_ON_SERVICE_LIST_USER_PAGE).forward(request, response);
-		} catch (ServletException | IOException e) {
-			LOGGER.error(e);
-		}
-		
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);		
+		} catch (ServletException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);		
+		}		
 	}
 
 }

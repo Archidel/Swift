@@ -21,7 +21,7 @@ public class SetBlockUser implements Command {
 	private static final Logger LOGGER = Logger.getLogger(SetBlockUser.class);  
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String blockDate = request.getParameter(ParameterName.USER_BLOCK_TO);
 		int idUser = Integer.parseInt(request.getParameter(ParameterName.USER_ID));
 		
@@ -32,16 +32,11 @@ public class SetBlockUser implements Command {
 			userService.setBlock(idUser, blockDate);
 			List<User> list = userService.getUserList();
 			request.setAttribute(AttributeName.LIST, list);
-		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-
-		try {
 			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_USER_LIST);
-		} catch (IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
 		}
-		
 	}
 
 }

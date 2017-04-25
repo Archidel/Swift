@@ -18,7 +18,7 @@ public class EditTariff implements Command {
 	private static final Logger LOGGER = Logger.getLogger(EditTariff.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		int idTariff = Integer.parseInt(request.getParameter(ParameterName.TARIFF_ID));
 		String title = request.getParameter(ParameterName.TARIFF_TITLE);
 		String description = request.getParameter(ParameterName.TARIFF_DESCRIPTION);
@@ -29,16 +29,11 @@ public class EditTariff implements Command {
 		
 		try {
 			tariffService.editTariff(idTariff, title, description, price);
-		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-		
-		try {
 			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_EDIT_TARIFF + idTariff);
-		} catch (IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
 		}
-		
 	}
 
 }

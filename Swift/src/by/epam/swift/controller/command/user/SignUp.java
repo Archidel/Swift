@@ -24,7 +24,7 @@ import by.epam.swift.service.factory.ServiceFactory;
 public class SignUp implements Command {
 	private static final Logger LOGGER = Logger.getLogger(SignUp.class);  
 	
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		User user = new User();
 		user.setName(request.getParameter(ParameterName.USER_NAME));
 		user.setSurname(request.getParameter(ParameterName.USER_SURNAME));
@@ -37,25 +37,14 @@ public class SignUp implements Command {
 		
 		ServiceFactory factory = ServiceFactory.getInstance();
 		UserService userService = factory.getUserService();
-		boolean statusOperation = false;
 		
 		try {
 			userService.signUp(user, password, confirmPassword);
-			statusOperation = true;
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_SIGN_UP_SUCCESS);
 		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_SIGN_UP_ERROR);
 			LOGGER.error(e);
 		}
-		
-		try {
-			if(statusOperation){
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_SIGN_UP_SUCCESS);
-			}else{
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_SIGN_UP_ERROR);
-			}
-		} catch (IOException e) {
-			LOGGER.error(e);
-		}
-		
 	}
 
 }

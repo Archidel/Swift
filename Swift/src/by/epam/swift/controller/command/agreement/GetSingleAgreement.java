@@ -22,7 +22,7 @@ public class GetSingleAgreement implements Command {
 	private static final Logger LOGGER = Logger.getLogger(GetSingleAgreement.class);
 	
 	@Override
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int idAgreement = Integer.parseInt(request.getParameter(ParameterName.AGREEMENT_ID));
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		AgreementService agreementService = serviceFactory.getAgreementService();
@@ -33,17 +33,13 @@ public class GetSingleAgreement implements Command {
 			User user = userService.getUserById(agreement.getIdUser());
 			request.setAttribute(AttributeName.MORE, agreement);
 			request.setAttribute(AttributeName.USER, user);
-		} catch (ServiceException e) {
-			e.printStackTrace();
-			LOGGER.error(e);
-		}
-
-		try {
 			request.getRequestDispatcher(PageName.GET_SINGLE_AGREEMENT_PAGE).forward(request, response);
-		} catch (ServletException | IOException e) {
+		} catch (ServiceException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);
+		} catch (ServletException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
 		}
-		
 	}
-
 }

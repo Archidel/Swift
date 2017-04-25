@@ -25,31 +25,21 @@ import by.epam.swift.service.factory.ServiceFactory;
 public class SignIn implements Command {
 	private static final Logger LOGGER = Logger.getLogger(SignIn.class);  
 	
-	public void executeCommand(HttpServletRequest request, HttpServletResponse response) {
+	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String login = request.getParameter(ParameterName.USER_LOGIN);
 		String password = request.getParameter(ParameterName.USER_PASSWORD);
 		
 		ServiceFactory factory = ServiceFactory.getInstance();
 		UserService userService = factory.getUserService();
-		boolean statusOperation = false;
 		
 		try {
 			User user = userService.signIn(login, password);			
 			HttpSession session = request.getSession();
 			session.setAttribute(AttributeName.USER, user);
 			session.setAttribute(AttributeName.LOGGED, true);
-			statusOperation = true;
+			response.sendRedirect(request.getContextPath() + PageName.INDEX_PAGE);
 		} catch (ServiceException e) {
-			LOGGER.error(e);
-		}
-		
-		try {
-			if(statusOperation){
-				response.sendRedirect(request.getContextPath() + PageName.INDEX_PAGE);
-			}else{
-				response.sendRedirect(request.getContextPath() + PageName.REDIRECT_SIGN_IN_ERROR);
-			}
-		} catch (IOException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_SIGN_IN_ERROR);
 			LOGGER.error(e);
 		}
 	}

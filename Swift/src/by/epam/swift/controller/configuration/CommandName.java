@@ -6,7 +6,7 @@ package by.epam.swift.controller.configuration;
  */
 
 public enum CommandName {
-	//GENERAL
+//GENERAL
 	
 	/**
 	 * General command

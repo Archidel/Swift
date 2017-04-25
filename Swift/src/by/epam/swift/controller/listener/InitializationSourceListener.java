@@ -1,7 +1,12 @@
 package by.epam.swift.controller.listener;
 
+import java.io.IOException;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+
+import org.apache.log4j.Logger;
+
 import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.command.CommandProvider;
 import by.epam.swift.controller.configuration.CommandName;
@@ -10,19 +15,28 @@ import by.epam.swift.controller.configuration.CommandName;
  * @author Archangel
  */
 public class InitializationSourceListener implements ServletContextListener  {
-	
+	private static final Logger LOGGER = Logger.getLogger(InitializationSourceListener.class);
+
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		CommandProvider provider = CommandProvider.getInstance();
 		Command command = provider.getCommand(CommandName.INITIALIZATION_SOURCE.name());
-		command.executeCommand(null, null);		
+		try {
+			command.executeCommand(null, null);
+		} catch (IOException e) {
+			LOGGER.error(e);
+		}		
 	}
 	
 	@Override
 	public void contextDestroyed(ServletContextEvent sce) {
 		CommandProvider provider = CommandProvider.getInstance();
 		Command command = provider.getCommand(CommandName.DESTROY_SOURCE.name());
-		command.executeCommand(null, null);	
+		try {
+			command.executeCommand(null, null);
+		} catch (IOException e) {
+			LOGGER.error(e);
+		}	
 	}
 
 }

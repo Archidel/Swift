@@ -339,7 +339,7 @@
   	</servlet>
   	<servlet-mapping>
     	<servlet-name>errorWrongRequest-page</servlet-name>
-    	<url-pattern>/errorPage</url-pattern>
+    	<url-pattern>/errorpage</url-pattern>
   	</servlet-mapping>
 
  	<error-page>
