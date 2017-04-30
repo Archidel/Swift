@@ -44,35 +44,35 @@
 					<div class="form-group row">
 						<label for="userName" class="col-sm-2 col-form-label">${name_label}</label>
 						<div class="col-sm-10">
-							<input id="userName" class="form-control" type="text"  name="user_name" value="${sessionScope.user.name}" required>
+							<input id="userName" class="form-control" type="text"  name="user_name" value="${sessionScope.user.name}" required pattern="[a-zA-Z0-9-]{3,16}$" title="${input_title_name}">
 						</div>
 					</div>
 													
 					<div class="form-group row">
 						<label for="userSurname" class="col-sm-2 col-form-label">${surname_label}</label>
 						<div class="col-sm-10">
-							<input id="userSurname" class="form-control" type="text" name="user_surname" value="${sessionScope.user.surname}" required>
+							<input id="userSurname" class="form-control" type="text" name="user_surname" value="${sessionScope.user.surname}" required pattern="[a-zA-Z0-9-]{3,16}$" title="${input_title_name}">
 						</div>
 					</div>
 					
 					<div class="form-group row">
 						<label for="userEmail" class="col-sm-2 col-form-label">${email_label}</label>
-						<div class="col-sm-10">
-					    	<input id="userEmail" class="form-control" type="text" name="user_email" value="${sessionScope.user.email}" required>
+						<div class="col-sm-10"> 
+					    	<input id="userEmail" class="form-control" type="text" name="user_email" value="${sessionScope.user.email}" required pattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$" title="${input_title_email}">
 					  	</div>
 					</div>
 						
 					<div class="form-group row">
 						<label for="userPhone" class="col-sm-2 col-form-label">${phone_label}</label>
 						<div class="col-sm-10">
-					   		<input id = "userPhone" class="form-control" type="text" name="user_phone" value="${sessionScope.user.phone}" required>
+					   		<input id = "userPhone" class="form-control" type="text" name="user_phone" value="${sessionScope.user.phone}" required  title="${input_title_phone}" pattern="^(1[ \\-\\+]{0,3}|\\+1[ -\\+]{0,3}|\\+1|\\+)?((\\(\\+?1-[2-9][0-9]{1,2}\\))|(\\(\\+?[2-8][0-9][0-9]\\))|(\\(\\+?[1-9][0-9]\\))|(\\(\\+?[17]\\))|(\\([2-9][2-9]\\))|([ \\-\\.]{0,3}[0-9]{2,4}))?([ \\-\\.][0-9])?([ \\-\\.]{0,3}[0-9]{2,4}){2,3}$">
 					  	</div>
 					</div>
 						
 					<div class="form-group row">
 						<label for="userLogin" class="col-sm-2 col-form-label">${login_label}</label>
 						<div class="col-sm-10">
-					   		<input id="userLogin" class="form-control" type="text" name="user_login" value="${sessionScope.user.login}" required>
+					   		<input id="userLogin" class="form-control" type="text" name="user_login" value="${sessionScope.user.login}" required pattern="[a-zA-Z0-9]{8,32}+$" title="${input_title_login}">
 					  	</div>
 					</div>
 	
@@ -86,7 +86,7 @@
 					<div class="form-group row">
 						<label for="userPassport" class="col-sm-2 col-form-label">${passport_label}</label>
 						<div class="col-sm-10">
-					   		<input id="userPassport" class="form-control" type="text" name="user_passport" value="${sessionScope.user.passport}">
+					   		<input id="userPassport" class="form-control" type="text" name="user_passport" value="${sessionScope.user.passport}" pattern="[a-zA-Z]{2}+[0-9]{7}+$" title="${input_title_passport}">
 					  	</div>
 					</div>
 						

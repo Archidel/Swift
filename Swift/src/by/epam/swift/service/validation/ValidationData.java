@@ -12,7 +12,7 @@ import by.epam.swift.bean.User;
 public final class ValidationData {
 	
 	private ValidationData() {}
-	/** Method for validtion request data.
+	/** Method for validation request data.
 	 * @param title
 	 * @param type
 	 * @param datePeriod
@@ -169,7 +169,7 @@ public final class ValidationData {
 		boolean isValidEmail = Pattern.matches(RegularExpression.EMAIL_REGULAR, user.getEmail());
 		boolean isValidLogin = Pattern.matches(RegularExpression.LOGIN_REGULAR, user.getLogin());
 		boolean isValidPhone = Pattern.matches(RegularExpression.PHONE_REGULAR, user.getPhone());
-		boolean isValidPassword = Pattern.matches(RegularExpression.PASSWORD_REGULAR, password);
+		boolean isValidPassword = Pattern.matches(RegularExpression.PASSWORD_REGULAR, password);		
 		boolean isEqualsPassword = password.equalsIgnoreCase(confirmPassword);
 		if(isValidEmail && isEqualsPassword && isValidLogin && isValidName && 
 				isValidPassword && isValidSurname && isValidPhone){
@@ -214,7 +214,7 @@ public final class ValidationData {
 		}
 	}
 	public static boolean validInteger(String integer){
-		return Pattern.matches(RegularExpression.PRICE_REGULAR, integer);
+		return Pattern.matches(RegularExpression.NUMBER_REGULAR, integer);
 	}
 	/**Method for check double < 0.
 	 * @param d

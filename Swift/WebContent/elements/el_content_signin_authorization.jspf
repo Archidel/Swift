@@ -12,14 +12,14 @@
     			<div class="form-group row">
       				<label for="userLogin" class="col-sm-2 col-form-label">${login_label}</label>
      				<div class="col-sm-10">
-        				<input id="userLogin" type="text" class="form-control" name="user_login" placeholder="${login_label}" required>
+        				<input id="userLogin" type="text" class="form-control" name="user_login" placeholder="${login_label}" required pattern="[a-zA-Z0-9_-]{3,16}+$" title="${input_title_login}">
       				</div>
     			</div>
     
     		   <div class="form-group row">
 				    <label for="userPassword" class="col-sm-2 col-form-label">${password_label}</label>
 					<div class="col-sm-10">
-				   		<input id="userPassword" type="password" class="form-control" name="user_password" placeholder="${password_label}" required>
+				   		<input id="userPassword" type="password" class="form-control" name="user_password" placeholder="${password_label}" required pattern="[a-zA-Z0-9]{8,32}+$" title="${input_title_password}">
 				  	</div>
 				</div>
 

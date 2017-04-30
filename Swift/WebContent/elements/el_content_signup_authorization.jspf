@@ -10,35 +10,35 @@
 				<div class="form-group row">
 					<label for="userName" class="col-sm-2 col-form-label">${name_label}</label>
 					<div class="col-sm-10">				
-						<input id="userName" class="form-control" type="text"  name="user_name" placeholder="Will" required pattern=".{3, 32}" title="3-32 characters">
+						<input id="userName" class="form-control" type="text"  name="user_name" required pattern="[a-zA-Z0-9-]{3,16}$" title="${input_title_name}">
 					</div>
 				</div>
 												
 				<div class="form-group row">
 					<label for="userSurname" class="col-sm-2 col-form-label">${surname_label}</label>
 					<div class="col-sm-10">
-						<input id="userSurname" class="form-control" type="text" name="user_surname" placeholder="Smith" required pattern=".{3, 32}" title="3-32 characters">
+						<input id="userSurname" class="form-control" type="text" name="user_surname" required pattern="[a-zA-Z0-9-]{3,16}$" title="${input_title_name}">
 					</div>
 				</div>
 					
 				<div class="form-group row">
 					<label for="userEmail" class="col-sm-2 col-form-label">${email_label}</label>
 					<div class="col-sm-10">
-				    	<input id="userEmail" class="form-control" type="text" name="user_email" placeholder="bootstrap@example.com" required>
+				    	<input id="userEmail" class="form-control" type="text" name="user_email" required pattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$" title="${input_title_email}">
 				  	</div>
 				</div>
 					
  				<div class="form-group row">
 					<label for="userPhone" class="col-sm-2 col-form-label">${phone_label}</label>
 					<div class="col-sm-10">
-				   		<input id = "userPhone" class="form-control" type="text" name="user_phone" placeholder="(44) 475-33-85" required>
+				   		<input id = "userPhone" class="form-control" type="text" name="user_phone" title="${input_title_phone}" required pattern="^(1[ \\-\\+]{0,3}|\\+1[ -\\+]{0,3}|\\+1|\\+)?((\\(\\+?1-[2-9][0-9]{1,2}\\))|(\\(\\+?[2-8][0-9][0-9]\\))|(\\(\\+?[1-9][0-9]\\))|(\\(\\+?[17]\\))|(\\([2-9][2-9]\\))|([ \\-\\.]{0,3}[0-9]{2,4}))?([ \\-\\.][0-9])?([ \\-\\.]{0,3}[0-9]{2,4}){2,3}$">
 				  	</div>
 				</div>
 					
 				<div class="form-group row">
 					<label for="userLogin" class="col-sm-2 col-form-label">${login_label}</label>
 					<div class="col-sm-10">
-				   		<input id="userLogin" class="form-control" type="text" name="user_login" placeholder="Hunter" required pattern=".{3, 16}" title="3-16 characters">
+				   		<input id="userLogin" class="form-control" type="text" name="user_login" required pattern="[a-zA-Z0-9]{8,32}+$" title="${input_title_login}">
 				  	</div>
 				</div>
 					
@@ -46,14 +46,14 @@
 				<div class="form-group row">
 					<label for="userPassword" class="col-sm-2 col-form-label">${password_label}</label>
 					<div class="col-sm-10">
-				    	<input id="userPassword" class="form-control" type="password" name="user_password" placeholder="********" required pattern=".{8, 32}" title="8-32 characters">
+				    	<input id="userPassword" class="form-control" type="password" name="user_password" required pattern="[a-zA-Z0-9]{8,32}+$" title="${input_title_password}">
 				  	</div>
 				</div>
 				
 				<div class="form-group row">
 					<label for="userConfirmPassword" class="col-sm-2 col-form-label">${confirm_password_label}</label>
 					<div class="col-sm-10">
-				    	<input id="userConfirmPassword" class="form-control" type="password" name="user_confirm_password" placeholder="********" required pattern=".{8, 32}" title="8-32 characters">
+				    	<input id="userConfirmPassword" class="form-control" type="password" name="user_confirm_password" required pattern="[a-zA-Z0-9]{8,32}+$" title="${input_title_password}">
 				  	</div>
 				</div>
 				

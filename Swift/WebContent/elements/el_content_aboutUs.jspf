@@ -8,30 +8,31 @@
 		<h2>${about_epam_label}</h2>
 	</p>
 
+	<br>
 		<div class="row">
 			<div class="col-sm">
-				<img src="images/aboutus/about_2.png" alt="" class="thumbnail" width="320" height="230">
+				<img src="images/aboutus/about_2.png" alt="Reception" class="thumbnail center-block" width="800" height="600">
 			</div>
 			<div class="col-sm">
-				<img src="images/aboutus/about_5.png" alt="" class="thumbnail" width="320" height="230">
+				<img src="images/aboutus/about_5.png" alt="Main building" class="thumbnail center-block" width="800" height="600">
 			</div>
 		</div>
 		
 		<div class="row">
 			<div class="col-sm">
-				<img src="images/aboutus/about_4.png" alt="" class="thumbnail" width="320" height="230">
+				<img src="images/aboutus/about_4.png" alt="Leisure room" class="thumbnail center-block" width="800" height="600">
 			</div>
 			<div class="col-sm">
-				<img src="images/aboutus/about_3.png" alt="" class="thumbnail" width="320" height="230">
+				<img src="images/aboutus/about_3.png" alt="Workplace" class="thumbnail center-block" width="800" height="600">
 			</div>
 		</div>
 		
 		<div class="row">
 			<div class="col-md-12">
-				<img src="images/aboutus/about_6.png" alt="" class="thumbnail" width="320" height="230">
+				<img src="images/aboutus/about_6.png" alt="Workplace" class="thumbnail  center-block" width="800" height="600">
 			</div>
 			<div class="col-md-12">
-				<img src="images/aboutus/about_1.png" alt="" class="thumbnail" width="320" height="230">
+				<img src="images/aboutus/about_1.png" alt="Reception" class="thumbnail center-block" width="800" height="600">
 			</div>
 		</div>
 				

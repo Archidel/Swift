@@ -20,7 +20,7 @@ public final class SQLCommand {
 	public static final String SELECT_REQUEST_ACTIVE_STATUS = "SELECT r_id, u_id, r_id_tariff, r_type_tariff, r_date, r_service_action FROM request WHERE r_status = 0 ORDER BY r_date DESC";
 	public static final String SELECT_REQUEST_BY_ID = "SELECT * FROM request where r_id = ?";
 //USER
-	public static final String INSERT_SIGN_UP_USER = "INSERT INTO user (u_name, u_surname, u_login, u_email, u_password, u_birthdate) VALUES (?,?,?,?,?,?)";
+	public static final String INSERT_SIGN_UP_USER = "INSERT INTO user (u_name, u_surname, u_login, u_email, u_password, u_birthdate, u_phone) VALUES (?,?,?,?,?,?, ?)";
 	public static final String UPDATE_USER = "UPDATE user SET u_name = ?, u_surname= ?, u_login = ?, u_passport = ?, u_email = ?, u_birthdate = ?, u_phone = ?, u_adress = ? WHERE u_id = ?";
 	public static final String UPDATE_USER_ADD_BALANCE = "UPDATE user SET u_balance = (u_balance + ?) WHERE u_id = ?";	
 	public static final String UPDATE_USER_BLOCK_BY_ID = "UPDATE user SET u_blocked_till = ? WHERE u_id = ?";

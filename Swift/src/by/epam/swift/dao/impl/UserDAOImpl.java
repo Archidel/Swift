@@ -61,6 +61,7 @@ public class UserDAOImpl implements UserDAO {
 			preparedStatement.setString(4, user.getEmail());
 			preparedStatement.setInt(5, user.getPassword());
 			preparedStatement.setString(6, user.getBirthdate());
+			preparedStatement.setString(7, user.getPhone());
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
 			throw new DAOException(e);

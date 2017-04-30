@@ -30,7 +30,7 @@
 			<input type="hidden" name="command" value="make_request_on_service">
 			<table>
 				<tr>
-					<td style="widows: 200px; height: 50px;">${type_label}: </td>
+					<td style="widows: 150px; height: 50px;">${type_label}: </td>
 					<td>
 						<select class="selectpicker" data-live-search="true" id="tariff_type" name="tariff_type">
 							<c:forEach items="${requestScope.tariffTypeList}" var = "typeList">

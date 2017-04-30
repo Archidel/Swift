@@ -76,7 +76,6 @@
 	<fmt:message bundle="${loc}" key="local.label.found" var="found_label"/>
 	<fmt:message bundle="${loc}" key="local.label.personalCabinet" var="personal_cabinet_label"/>
 	
-	
 <!-- LABESLS FOR GENERAL ACTIONS -->
 	<fmt:message bundle="${loc}" key="local.label.Swift" var="swift_label"/>
 	<fmt:message bundle="${loc}" key="local.label.language" var="language_label"/>
@@ -98,7 +97,7 @@
 <!-- ADD -->
 	<fmt:message bundle="${loc}" key="local.label.add.news" var="news_add_label"/>
 	
-<!-- get -->
+<!-- GET -->
 	<fmt:message bundle="${loc}" key="local.label.get.allNews" var="news_get_all_label"/>
 
 <!-- SECURITY -->
@@ -109,8 +108,6 @@
 	<fmt:message bundle="${loc}" key="local.error.404.message" var="error_404_message"/>
 	<fmt:message bundle="${loc}" key="local.error.414.message" var="error_414_message"/>
 	<fmt:message bundle="${loc}" key="local.error.504.message" var="error_504_message"/>
-	
-	
 	
 <!-- MESSAGESSSSSS -->
 	<fmt:message bundle="${loc}" key="local.label.logo.welcomeSite" var="welcome_site_label"/>
@@ -173,4 +170,11 @@
 	
 	<fmt:message bundle="${loc}" key="local.label.tariff.loadType" var="tariff_load_type_label"/>
 
+<!-- INPUT TITLE -->
+	<fmt:message bundle="${loc}" key="local.input.title.login" var="input_title_login"/>
+	<fmt:message bundle="${loc}" key="local.input.title.name" var="input_title_name"/>
+	<fmt:message bundle="${loc}" key="local.input.title.password" var="input_title_password"/>
+	<fmt:message bundle="${loc}" key="local.input.title.email" var="input_title_email"/>
+	<fmt:message bundle="${loc}" key="local.input.title.phone" var="input_title_phone"/>
+	<fmt:message bundle="${loc}" key="local.input.title.passport" var="input_title_passport"/>
 </html>
