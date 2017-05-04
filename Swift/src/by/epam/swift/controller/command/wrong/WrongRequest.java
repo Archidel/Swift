@@ -18,5 +18,5 @@ public class WrongRequest implements Command {
 	public void  executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		response.sendRedirect(request.getContextPath() + PageName.ERROR_REQUEST_PAGE);
 	}
-
+	
 }

@@ -6,10 +6,8 @@ package by.epam.swift.controller.configuration;
  */
 public final class RequestMessage {
 	private RequestMessage() {}
-	
 	public static final String NULL_PAGE = "Page not found. Business logic error";
-	public static final String WRONG_COMMAND = "Command not found or wrong";
-	
+	public static final String WRONG_COMMAND = "Command not found or wrong";	
 	public static final String EDIT_NEWS_ERROR = "Failed to edit news";
 	public static final String EDIT_NEWS_SUCCESS = "News editing was successfully";
 	public static final String EDIT_INTERNET_TARIFF_ERROR = "Failed to edit internet tariff";

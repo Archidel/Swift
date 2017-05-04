@@ -2,7 +2,6 @@ package by.epam.swift.dao;
 
 /**Database column names column store.
  * @author Archangel
- *
  */
 public final class ColumnLabel {
 	private ColumnLabel() {}

@@ -16,63 +16,43 @@ public class Agreement implements Serializable{
 	private boolean status;
 	
 	public Agreement() {}
-	/**
-	 * @return the idAgreement
-	 */
+
 	public int getIdAgreement() {
 		return idAgreement;
 	}
-	/**
-	 * @param set idAgreement
-	 */
+
 	public void setIdAgreement(int id) {
 		this.idAgreement = id;
 	}
-	/**
-	 * @return idUser
-	 */
+
 	public int getIdUser() {
 		return idUser;
 	}
-	/** set idUser
-	 * @param idUser
-	 */
+
 	public void setIdUser(int idUser) {
 		this.idUser = idUser;
 	}
-	/**
-	 * @return idAdmin
-	 */
+
 	public int getIdAdmin() {
 		return idAdmin;
 	}
-	/** set idAdmin
-	 * @param idAdmin
-	 */
+
 	public void setIdAdmin(int idAdmin) {
 		this.idAdmin = idAdmin;
 	}
-	/** 
-	 * @return  dateCreation
-	 */
+
 	public Date getDateCreation() {
 		return dateCreation;
 	}
-	/** set date
-	 * @param dateCreation
-	 */
+
 	public void setDateCreation(Date dateCreation) {
 		this.dateCreation = dateCreation;
 	}
-	/**
-	 * @return status
-	 */
+
 	public boolean isStatus() {
 		return status;
 	}
-	/** set status
-	 * @param status
-	 */
+
 	public void setStatus(boolean status) {
 		this.status = status;
 	}

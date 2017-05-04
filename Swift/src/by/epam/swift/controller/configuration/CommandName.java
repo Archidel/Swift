@@ -6,8 +6,6 @@ package by.epam.swift.controller.configuration;
  */
 
 public enum CommandName {
-//GENERAL
-	
 	/**
 	 * General command.
 	 */
@@ -20,7 +18,6 @@ public enum CommandName {
 	 * Command for redirects on difference pages.
 	 */
 	REDIRECT, 
-//INITIALIZATION
 	/**
 	 * Command for initialization connection with source.
 	 */
@@ -28,9 +25,7 @@ public enum CommandName {
 	/**
 	 * Command for destroy connection with source.
 	 */
-	DESTROY_SOURCE, 
-	
-	//USER
+	DESTROY_SOURCE, 	
 	/**
 	 *  Command for loginization.
 	 */
@@ -71,7 +66,6 @@ public enum CommandName {
 	 *  Command for up or down user's position.
 	 */
 	UP_POSITION,
-//TARIFF
 	/**
 	 * Command for searching tariff name.
 	 */
@@ -144,7 +138,6 @@ public enum CommandName {
 	 *  Command for blocking user.
 	 */
 	BLOCK_USER,
-//AGREEMENT
 	/**
 	 *  Command for  create new agreement.
 	 */
@@ -165,7 +158,6 @@ public enum CommandName {
 	 *  Command for accept agreement.
 	 */
 	ACCEPT_AGREEMENT,
-//REQUEST	
 	/**
 	 * Command for accept request on service.
 	 */

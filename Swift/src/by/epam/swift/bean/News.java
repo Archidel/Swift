@@ -17,63 +17,42 @@ public class News implements Serializable{
 
 	public News() {}
 
-	/**
-	 * @return id
-	 */
 	public int getId() {
 		return id;
 	}
-	/** set  id
-	 * @param id
-	 */
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	/**
-	 * @return title
-	 */
+
 	public String getTitle() {
 		return title;
 	}
-	/** set  title
-	 * @param title
-	 */
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	/**
-	 * @return datePublication
-	 */
+
 	public Date getDatePublication() {
 		return datePublication;
 	}
-	/** set  datePublication
-	 * @param datePublication
-	 */
+
 	public void setDatePublication(Date datePublication) {
 		this.datePublication = datePublication;
 	}
-	/**
-	 * @return description
-	 */
+
 	public String getDescription() {
 		return description;
 	}
-	/** set description
-	 * @param description
-	 */
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	/**
-	 * @return status
-	 */
+
 	public boolean isStatus() {
 		return status;
 	}
-	/** set status
-	 * @param status
-	 */
+
 	public void setStatus(boolean status) {
 		this.status = status;
 	}

@@ -63,6 +63,7 @@ public final class CommandProvider {
 //INIT SOURCE
 		repository.put(CommandName.INITIALIZATION_SOURCE, new InitializationSource());
 		repository.put(CommandName.DESTROY_SOURCE, new DestroySource());
+
 		repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
 		repository.put(CommandName.LOCALIZATION, new Localization());
 //NEWS

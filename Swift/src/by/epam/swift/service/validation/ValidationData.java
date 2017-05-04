@@ -213,6 +213,11 @@ public final class ValidationData {
 			return true;
 		}
 	}
+	
+	/**Method for check integer < 0.
+	 * @param integer
+	 * @return
+	 */
 	public static boolean validInteger(String integer){
 		return Pattern.matches(RegularExpression.NUMBER_REGULAR, integer);
 	}
