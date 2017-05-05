@@ -34,7 +34,7 @@ public class TariffDAOImpl implements TariffDAO {
 			connection = pool.take();
 			list = new ArrayList<Tariff>();
 			preparedStatement = connection.prepareStatement(SQLCommand.SELECT_TARIFF_BY_TITLE_LIMIT);
-			preparedStatement.setString(1, tariffName);
+			preparedStatement.setString(1, tariffName + "%");
 			preparedStatement.setInt(2, begin);
 			preparedStatement.setInt(3, offset);
 			resultSet = preparedStatement.executeQuery();
@@ -452,6 +452,8 @@ public class TariffDAOImpl implements TariffDAO {
 			throw new DAOException(e);
 		} catch (SQLException e) {
 			throw new DAOException(e);
+		}finally{
+			pool.closeConnection(connection, statement, resultSet);
 		}
 		
 		return list;
@@ -478,6 +480,8 @@ public class TariffDAOImpl implements TariffDAO {
 			throw new DAOException(e);
 		} catch (SQLException e) {
 			throw new DAOException(e);
+		}finally{
+			pool.closeConnection(connection, statement, resultSet);
 		}
 		
 		return list;

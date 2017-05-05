@@ -51,7 +51,9 @@ public final class SQLCommand {
 	public static final String SELECT_TARIFF_ID_TYPE_BY_TITLE = "SELECT tt_id FROM tariff_type WHERE tt_type = ?";
 	public static final String SELECT_TARIFF_BY_TITLE = "SELECT t_title, t_price, t_description, t_status, tt_type FROM tariff LEFT JOIN tariff_type ON tariff.tt_id = tariff_type.tt_id WHERE t_title = ?";
 	public static final String SELECT_TARIFF_BY_TITLE_COUNT = "SELECT COUNT(*) as amount FROM tariff WHERE t_status = 0 AND t_title = ?";
-	public static final String SELECT_TARIFF_BY_TITLE_LIMIT = "SELECT t_id, t_price, t_description, t_status, tt_type FROM tariff LEFT JOIN tariff_type ON tariff.tt_id = tariff_type.tt_id WHERE t_title = ? LIMIT ?,?";
+	
+	public static final String SELECT_TARIFF_BY_TITLE_LIMIT = "SELECT t_id, t_price, t_description, t_status, tt_type FROM tariff LEFT JOIN tariff_type ON tariff.tt_id = tariff_type.tt_id WHERE t_title LIKE ? LIMIT ?,?";
+	
 	public static final String SELECT_TARIFF_ACTIVE_STATUS = "SELECT t_id, t_title, t_price, t_description, t_status, tt_type FROM tariff LEFT JOIN tariff_type ON tariff.tt_id = tariff_type.tt_id WHERE t_status = 0 AND tt_type = ? ORDER BY t_title ASC";
 	public static final String SELECT_TARIFF_ACTIVE_STATUS_NO_TYPE = "SELECT t_id, t_title, t_price, t_description, t_status, tt_type FROM tariff LEFT JOIN tariff_type ON tariff.tt_id = tariff_type.tt_id WHERE t_status = 0 ORDER BY t_title ASC";
 	public static final String SELECT_TARIFF_ACTIVE_STATUS_LIMIT = "SELECT t_id, t_title, t_price, t_description, t_status, tt_type FROM tariff LEFT JOIN tariff_type ON tariff.tt_id = tariff_type.tt_id WHERE t_status = 0 AND tt_type = ? ORDER BY t_title ASC LIMIT ?, ?";

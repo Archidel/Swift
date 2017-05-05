@@ -29,8 +29,8 @@
 		<form action="Controller" method="post">
 			<input type="hidden" name="command" value="make_request_on_service">
 			<table>
-				<tr>
-					<td style="widows: 150px; height: 50px;">${type_label}: </td>
+				<tr style="height: 50px;">
+					<td style="width:150px;">${type_label}: </td>
 					<td>
 						<select class="selectpicker" data-live-search="true" id="tariff_type" name="tariff_type">
 							<c:forEach items="${requestScope.tariffTypeList}" var = "typeList">
@@ -39,7 +39,7 @@
 						</select>
 					</td>
 				</tr>
-				<tr>
+				<tr style="height: 50px;">
 					<td>${title_label}: </td>
 					<td>
 						<select class="selectpicker" data-live-search="true" id="tariff_title" name="tariff_title">
@@ -49,11 +49,11 @@
 						</select>
 					</td>
 				</tr>	
-				<tr>
+				<tr style="height: 50px;">
 					<td>${peroid_label}:</td>
 					<td><input type="date" name="date_period"></td>
 				</tr>	
-				<tr>
+				<tr style="height: 50px;">
 					<td>${service_action_label}:</td>
 					<td>
 						<select class="selectpicker" id="request_service_action" name="request_service_action">
