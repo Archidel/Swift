@@ -1,7 +1,6 @@
 package by.epam.swift.dao.impl;
 
 import java.io.IOException;
-
 import by.epam.swift.dao.InitializationSourceDAO;
 import by.epam.swift.dao.connection.ConnectionPool;
 import by.epam.swift.dao.exception.ConnectionPoolException;
@@ -19,7 +18,7 @@ public class InitializationSourceDAOImpl implements InitializationSourceDAO{
 		try {
 			connectionPool.init();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		}
 	}
 
@@ -30,7 +29,7 @@ public class InitializationSourceDAOImpl implements InitializationSourceDAO{
 		try {
 			connectionPool.close();
 		} catch (IOException e) {
-			throw new DAOException(e);
+			throw new DAOException("Failure to close all connections", e);
 		}
 		
 	}

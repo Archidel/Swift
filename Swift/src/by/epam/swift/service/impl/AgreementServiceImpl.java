@@ -31,7 +31,7 @@ public class AgreementServiceImpl implements AgreementService {
 		try {
 			agreementDAO.createAgreement(user.getId(), sdf.format(new Date()));
 		} catch (DAOException e) {
-			throw new ServiceException("",e);
+			throw new ServiceException("Error of creation of agreement",e);
 		}
 		
 	}
@@ -47,7 +47,7 @@ public class AgreementServiceImpl implements AgreementService {
 		try {
 			list = agreementDAO.getAgreementList(begin, offset);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting list of agremenet",e);
 		}
 		
 		return list;
@@ -62,7 +62,7 @@ public class AgreementServiceImpl implements AgreementService {
 		try {
 			numberEntries = agreementDAO.getAmountEntriesListAgreement();
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting amount entries of agrement",e);
 		}
 		
 		return numberEntries;
@@ -80,7 +80,7 @@ public class AgreementServiceImpl implements AgreementService {
 		try {
 			agreement = agreementDAO.getAgreementById(idAgreement);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting agreement by id",e);
 		}
 		
 		return agreement;
@@ -102,7 +102,7 @@ public class AgreementServiceImpl implements AgreementService {
 		try {
 			agreementDAO.removeAgreement(idAgreement, idAdmin);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Agreement removal agreement",e);
 		}	
 	}
 
@@ -122,7 +122,7 @@ public class AgreementServiceImpl implements AgreementService {
 		try {
 			agreementDAO.acceptAgreement(idAgreement, idAdmin);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error accept agreement",e);
 		}
 	}
 

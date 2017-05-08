@@ -33,7 +33,7 @@ public class RequestServiceImpl implements RequestService {
 		try {
 			requestOnService = requestServiceDAO.getRequestOnServiceById(idRequest);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting request on service by id", e);
 		}
 		
 		return requestOnService;
@@ -51,7 +51,7 @@ public class RequestServiceImpl implements RequestService {
 		try {
 			requestServiceDAO.removeRequestOnService(idRequestOnService);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Removal request on service error", e);
 		}
 		
 	}
@@ -87,7 +87,7 @@ public class RequestServiceImpl implements RequestService {
 			requestServiceDAO.makeRequestOnService(idAgreement, idTariff, sdf.format(new Date()), action);
 			
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Erorr creating request on service", e);
 		}
 	}
 
@@ -113,7 +113,7 @@ public class RequestServiceImpl implements RequestService {
 			int idAgreement = agreementDAO.getIdAgreementByUserIdAccepted(idUser);
 			list = requestServiceDAO.getRequestOnServiceList(idAgreement, begin, offset);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting list of request on service", e);
 		}
 		
 		return list;
@@ -132,7 +132,7 @@ public class RequestServiceImpl implements RequestService {
 		try {
 			numberEntries = requestServiceDAO.getAmountEntriesRequestList(idUser);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting amount entries list of request", e);
 		}
 		
 		return numberEntries;
@@ -154,7 +154,7 @@ public class RequestServiceImpl implements RequestService {
 		try {
 			list = requestServiceDAO.getRequestOnServiceList(begin, offset);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting list of request on service", e);
 		}
 		
 		return list;
@@ -169,7 +169,7 @@ public class RequestServiceImpl implements RequestService {
 		try {
 			numberEntries = requestServiceDAO.getAmountEntriesRequestList();
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting amount entries list of request on service", e);
 		}
 		
 		return numberEntries;
@@ -195,7 +195,7 @@ public class RequestServiceImpl implements RequestService {
 			requestServiceDAO.acceptRequestOnService(agreement.getIdUser(), requestOnService.getIdTariff(), action);
 			requestServiceDAO.removeRequestOnService(idRequest);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error accepted request on service", e);
 		}
 	}
 

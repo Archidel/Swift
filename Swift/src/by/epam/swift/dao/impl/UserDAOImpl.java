@@ -37,9 +37,9 @@ public class UserDAOImpl implements UserDAO {
 			resultSet = preparedStatement.executeQuery();
 			userExistance = resultSet.next();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_user_id_by_login_password'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}
@@ -64,9 +64,9 @@ public class UserDAOImpl implements UserDAO {
 			preparedStatement.setString(7, user.getPhone());
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'insert_sign_up_user'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -104,9 +104,9 @@ public class UserDAOImpl implements UserDAO {
 				user.setBlockedTill(resultSet.getDate(ColumnLabel.USER_BLOCKED_TILL));
 			}
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_user_by_login_password'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}
@@ -145,9 +145,9 @@ public class UserDAOImpl implements UserDAO {
 //				user.setBlockedTill(resultSet.getString(ColumnLabel.USER_BLOCKED_TILL));
 			}
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_user_by_id'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}
@@ -175,9 +175,9 @@ public class UserDAOImpl implements UserDAO {
 			preparedStatement.setInt(9, user.getId());
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'update_user'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -218,9 +218,9 @@ public class UserDAOImpl implements UserDAO {
 			}
 		
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_user'", e);
 		}finally {
 			pool.closeConnection(connection, statement, resultSet);
 		}	
@@ -240,9 +240,9 @@ public class UserDAOImpl implements UserDAO {
 			preparedStatement.setInt(2, idUser);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'update_user_block_by_id'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -260,9 +260,9 @@ public class UserDAOImpl implements UserDAO {
 			preparedStatement.setInt(2, idUser);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'update_user_block_by_id'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -282,12 +282,11 @@ public class UserDAOImpl implements UserDAO {
 			preparedStatement.setInt(1, idUser);
 			resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			balance = resultSet.getInt(ColumnLabel.USER_BALANCE);
-		
+			balance = resultSet.getInt(ColumnLabel.USER_BALANCE);		
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_user_balance_by_id'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}
@@ -308,9 +307,9 @@ public class UserDAOImpl implements UserDAO {
 			preparedStatement.setInt(2, idUser);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'update_user_add_balance'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -332,9 +331,9 @@ public class UserDAOImpl implements UserDAO {
 			resultSet.next();
 			numberEntries = resultSet.getInt(ColumnLabel.AMOUNT);
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_user_list_count'", e);
 		}finally {
 			pool.closeConnection(connection, statement, resultSet);
 		}

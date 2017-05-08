@@ -50,10 +50,9 @@ public class TariffDAOImpl implements TariffDAO {
 			}
 			
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_by_title_limit'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}	
@@ -77,9 +76,9 @@ public class TariffDAOImpl implements TariffDAO {
 			resultSet.next();
 			numberEntries = resultSet.getInt(ColumnLabel.AMOUNT);
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_by_title_count'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}		
@@ -99,9 +98,9 @@ public class TariffDAOImpl implements TariffDAO {
 			preparedStatement.setString(1, tariffType);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'insert_add_tariff_type'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -138,9 +137,9 @@ public class TariffDAOImpl implements TariffDAO {
 			}
 		
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_active_status_limit'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}	
@@ -178,9 +177,9 @@ public class TariffDAOImpl implements TariffDAO {
 			}
 		
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_inactive_status_limit'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}	
@@ -212,10 +211,9 @@ public class TariffDAOImpl implements TariffDAO {
 			}
 			
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new DAOException(e);	
+			throw new DAOException("Error executing the query 'select_tariff_by_id'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}				
@@ -240,9 +238,9 @@ public class TariffDAOImpl implements TariffDAO {
 				title = resultSet.getString(ColumnLabel.TARIFF_TITLE);
 			}
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_titlte_by_id'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}		
@@ -265,9 +263,9 @@ public class TariffDAOImpl implements TariffDAO {
 			preparedStatement.setInt(4,tariff.getId());
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'update_tariff'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -293,9 +291,9 @@ public class TariffDAOImpl implements TariffDAO {
 			preparedStatement.executeUpdate();
 			
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'insert_tariff'", e);
 		}finally {
 			pool.closeConnection(connection, statement, preparedStatement);
 		}
@@ -318,9 +316,9 @@ public class TariffDAOImpl implements TariffDAO {
 			}
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'update_tariff_status'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -344,9 +342,9 @@ public class TariffDAOImpl implements TariffDAO {
 				status = resultSet.getBoolean(ColumnLabel.TARIFF_STATUS);
 			}
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_status_by_id'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}
@@ -370,9 +368,9 @@ public class TariffDAOImpl implements TariffDAO {
 			resultSet.next();
 			numberEntries = resultSet.getInt(ColumnLabel.AMOUNT);
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_active_status_count'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}		
@@ -396,9 +394,9 @@ public class TariffDAOImpl implements TariffDAO {
 			resultSet.next();
 			numberEntries = resultSet.getInt(ColumnLabel.AMOUNT);
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_inactive_status_count'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}		
@@ -421,9 +419,9 @@ public class TariffDAOImpl implements TariffDAO {
 			resultSet.next();
 			idTariffType = resultSet.getInt(ColumnLabel.TARIFF_TYPE_ID);			
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_id_type_by_title'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}
@@ -449,9 +447,9 @@ public class TariffDAOImpl implements TariffDAO {
 				list.add(resultSet.getString(ColumnLabel.TARIFF_TYPE_TITLE));
 			}
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_type_title'", e);
 		}finally{
 			pool.closeConnection(connection, statement, resultSet);
 		}
@@ -477,9 +475,9 @@ public class TariffDAOImpl implements TariffDAO {
 				list.add(resultSet.getString(ColumnLabel.TARIFF_TITLE));
 			}
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_title'", e);
 		}finally{
 			pool.closeConnection(connection, statement, resultSet);
 		}
@@ -514,9 +512,9 @@ public class TariffDAOImpl implements TariffDAO {
 			}
 		
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_active_status_on_type'", e);
 		}finally {
 			pool.closeConnection(connection, statement, resultSet);
 		}	
@@ -540,9 +538,9 @@ public class TariffDAOImpl implements TariffDAO {
 			resultSet.next();
 			idTariff = resultSet.getInt(ColumnLabel.TARIFF_ID);
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_tariff_id_by_title_and_type'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}	

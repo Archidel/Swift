@@ -39,9 +39,9 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 			preparedStatement.setBoolean(4, serviceAction);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'inser_request_on_serivce'", e);
 		}finally {
 			pool.closeConnection(connection, statement, preparedStatement);
 		}		
@@ -78,9 +78,9 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 			}
 		
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_user_request_on_service_list_limit'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}	
@@ -104,9 +104,9 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 			resultSet.next();
 			amountEntries = resultSet.getInt(ColumnLabel.AMOUNT);
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_user_request_on_service_list_count'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}
@@ -143,9 +143,9 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 			}
 		
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_admin_request_on_service_list_limit'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}	
@@ -168,9 +168,9 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 			resultSet.next();
 			amountEntries = resultSet.getInt(ColumnLabel.AMOUNT);
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_admin_request_on_service_list_count'", e);
 		}finally {
 			pool.closeConnection(connection, statement, resultSet);
 		}
@@ -201,9 +201,9 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 				requestOnService.setServiceAction(resultSet.getBoolean(ColumnLabel.REQUEST_ON_SERVICE_ACTION));
 			}
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_request_by_id'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}	
@@ -223,9 +223,9 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 			preparedStatement.setInt(1, idRequestOnService);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'insert_news'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -254,9 +254,9 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 			preparedStatement.setInt(2, idTariff);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'insert_request_enable_tariff or update_request_disable_tariff'", e);
 		}finally {
 			pool.closeConnection(connection, statement, preparedStatement, resultSet);
 		}

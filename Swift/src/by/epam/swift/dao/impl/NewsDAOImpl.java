@@ -35,9 +35,9 @@ public class NewsDAOImpl implements NewsDAO {
 			preparedStatement.setString(3, date);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'insert_news'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -71,9 +71,9 @@ public class NewsDAOImpl implements NewsDAO {
 			}
 		
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_news_active_status_limit'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}		
@@ -103,9 +103,9 @@ public class NewsDAOImpl implements NewsDAO {
 				news.setDescription(resultSet.getString(ColumnLabel.NEWS_DESCRIPTION));
 			}
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_news_by_id'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}				
@@ -127,9 +127,9 @@ public class NewsDAOImpl implements NewsDAO {
 			preparedStatement.setInt(3, news.getId());
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'update_news'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -152,9 +152,9 @@ public class NewsDAOImpl implements NewsDAO {
 			}
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'update_news_status'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -176,9 +176,9 @@ public class NewsDAOImpl implements NewsDAO {
 			resultSet.next();
 			status = resultSet.getBoolean(ColumnLabel.NEWS_STATUS);
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_news_status_by_id'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}
@@ -215,9 +215,9 @@ public class NewsDAOImpl implements NewsDAO {
 			}
 		
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_news_inactive_status_limit'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}		
@@ -240,9 +240,9 @@ public class NewsDAOImpl implements NewsDAO {
 			resultSet.next();
 			numberEntries = resultSet.getInt(ColumnLabel.AMOUNT);
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_news_active_status_count'", e);
 		}finally {
 			pool.closeConnection(connection, statement, resultSet);
 		}		
@@ -265,9 +265,9 @@ public class NewsDAOImpl implements NewsDAO {
 			resultSet.next();
 			numberEntries = resultSet.getInt(ColumnLabel.AMOUNT);	
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_news_inactive_status_count'", e);
 		}finally {
 			pool.closeConnection(connection, statement, resultSet);
 		}		

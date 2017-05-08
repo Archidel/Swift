@@ -19,7 +19,7 @@ public class InitializationServiceImpl implements InitializationSourceService{
 		try {
 			initializationDAO.initSource();
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error initialization source",e);
 		}
 	
 	}
@@ -32,7 +32,7 @@ public class InitializationServiceImpl implements InitializationSourceService{
 		try {
 			initializationDAO.destroySource();
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error close connections",e);
 		}
 		
 	}

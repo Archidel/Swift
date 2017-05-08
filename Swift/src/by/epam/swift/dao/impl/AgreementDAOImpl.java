@@ -40,9 +40,9 @@ public class AgreementDAOImpl implements AgreementDAO {
 			}
 			
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_agreement_id_by_userid'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}
@@ -62,9 +62,9 @@ public class AgreementDAOImpl implements AgreementDAO {
 			preparedStatement.setString(2, date);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'insert_agreement'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -97,9 +97,9 @@ public class AgreementDAOImpl implements AgreementDAO {
 			}
 		
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_agreement_status_limit'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}
@@ -122,9 +122,9 @@ public class AgreementDAOImpl implements AgreementDAO {
 			resultSet.next();
 			numerEntries = resultSet.getInt(ColumnLabel.AMOUNT);
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_agreement_active_status_count'", e);
 		}finally {
 			pool.closeConnection(connection, statement, resultSet);
 		}
@@ -155,9 +155,9 @@ public class AgreementDAOImpl implements AgreementDAO {
 			agreement.setDateCreation(resultSet.getDate(ColumnLabel.AGREEMENT_DATE_CREATION));
 		
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_agreement_by_id'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}
@@ -178,9 +178,9 @@ public class AgreementDAOImpl implements AgreementDAO {
 			preparedStatement.setInt(2, idAgreement);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'upadte_agreement_adminid_status'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -199,9 +199,9 @@ public class AgreementDAOImpl implements AgreementDAO {
 			preparedStatement.setInt(2, idAgreement);
 			preparedStatement.executeUpdate();
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'update_agreement_adminid'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement);
 		}
@@ -223,9 +223,9 @@ public class AgreementDAOImpl implements AgreementDAO {
 			resultSet.next();
 			idAgreement = resultSet.getInt(ColumnLabel.AGREEMENT_ID);
 		} catch (ConnectionPoolException e) {
-			throw new DAOException(e);
+			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException(e);
+			throw new DAOException("Error executing the query 'select_agreement_id_by_userid_accepted'", e);
 		}finally {
 			pool.closeConnection(connection, preparedStatement, resultSet);
 		}

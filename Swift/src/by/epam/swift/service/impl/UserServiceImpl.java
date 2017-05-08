@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService{
 			}
 			user = userDao.getUserByLoginAndPassword(login, password);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error sign in", e);
 		}
 		
 		return user;
@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService{
 		try {
 			userDAO.signUp(user);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error sing up", e);
 		}
 	}
 
@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService{
 		try {
 			user = userDAO.getUserById(idUser);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error asdasdasdasd", e);
 		}
 		
 		return user;
@@ -97,7 +97,7 @@ public class UserServiceImpl implements UserService{
 			userDAO.editProfile(user);	
 			user = userDAO.getUserById(user.getId());
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error edit profile user", e);
 		}
 				
 		return user;
@@ -112,7 +112,7 @@ public class UserServiceImpl implements UserService{
 		try {
 			list = userDAO.getUserList();
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting list of user", e);
 		}
 		
 		return list;
@@ -134,7 +134,7 @@ public class UserServiceImpl implements UserService{
 		try {
 			userDAO.setBlock(idUser, date.replace("-", "."));
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Set block error", e);
 		}
 	}
 
@@ -150,7 +150,7 @@ public class UserServiceImpl implements UserService{
 		try {
 			userDAO.removeBlock(idUser);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Remove block error", e);
 		}
 	}
 
@@ -168,7 +168,7 @@ public class UserServiceImpl implements UserService{
 		try {
 			balance = userDAO.getBalance(id);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting balance", e);
 		}
 		
 		return balance;
@@ -191,7 +191,7 @@ public class UserServiceImpl implements UserService{
 		try {
 			userDAO.addBalance(dBalance, idUser);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error add balance ", e);
 		}
 	}
 
@@ -204,7 +204,7 @@ public class UserServiceImpl implements UserService{
 		try {
 			numberEntries = userDAO.getAmountEntriesListUser();
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting amount entrues list of user", e);
 		}
 		
 		return numberEntries;

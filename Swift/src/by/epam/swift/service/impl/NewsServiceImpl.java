@@ -31,7 +31,7 @@ public class NewsServiceImpl implements NewsService {
 			
 			newsDAO.addNews(title, description, sdf.format(new Date()));
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error add new news",e);
 		}
 	}
 
@@ -50,7 +50,7 @@ public class NewsServiceImpl implements NewsService {
 		try {
 			list = newsDAO.getNewsListUser(begin, offset);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting list of news for user",e);
 		}
 		
 		return list;
@@ -69,7 +69,7 @@ public class NewsServiceImpl implements NewsService {
 		try {
 			news = newsDAO.getNewsById(idNews);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting news by id",e);
 		}
 		
 		return news;
@@ -87,7 +87,7 @@ public class NewsServiceImpl implements NewsService {
 		try {
 			newsDAO.editNews(news);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error editing news",e);
 		}
 
 	}
@@ -105,7 +105,7 @@ public class NewsServiceImpl implements NewsService {
 			boolean newsStatus = newsDAO.getNewsStatusById(idNews);
 			newsDAO.removeNews(idNews, newsStatus);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("News removal error",e);
 		}
 	}
 
@@ -124,7 +124,7 @@ public class NewsServiceImpl implements NewsService {
 		try {
 			list = newsDAO.getNewsListAdmin(begin, offset);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting news of list for administration",e);
 		}
 
 		return list;
@@ -139,7 +139,7 @@ public class NewsServiceImpl implements NewsService {
 		try {
 			numberEntries = newsDAO.getAmountEntriesNewsListUser();
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting amount entries list of news for user",e);
 		}
 		
 		return numberEntries;
@@ -154,7 +154,7 @@ public class NewsServiceImpl implements NewsService {
 		try {
 			numberEntries = newsDAO.getAmountEntriesNewsListAdmin();
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting amount entries list of news for administration",e);
 		}
 		
 		return numberEntries;

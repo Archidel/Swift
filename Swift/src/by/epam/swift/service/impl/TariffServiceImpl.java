@@ -35,8 +35,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			list = tariffDAO.searchTariff(tariff, begin, offset);
 		} catch (DAOException e) {
-			e.printStackTrace();
-			throw new ServiceException(e);
+			throw new ServiceException("Error searching tariff", e);
 		}
 		
 		return list;
@@ -55,7 +54,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			numberEntries = tariffDAO.getAmountEntriesSearchTariff(tariff);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting amount entries search tariff", e);
 		}
 		
 		return numberEntries;
@@ -73,7 +72,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			tariffDAO.addTariffType(tariffType);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error add type of tariff", e);
 		}
 		
 	}
@@ -97,7 +96,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			list = tariffDAO.getListTariffActiveStatus(begin, offset, tariffType);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting tariff active status", e);
 		}
 		
 		return list;
@@ -118,7 +117,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			list = tariffDAO.getListTariffInactiveStatus(begin, offset, tariffType);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting list of tariff inactive status", e);
 		}
 		
 		return list;
@@ -137,7 +136,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			tariff = tariffDAO.getTariffById(idTariff);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting by id", e);
 		}
 		
 		return tariff;
@@ -156,7 +155,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			title = tariffDAO.getTariffTitleById(idTariff);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting tariff title by id", e);
 		}
 		
 		return title;
@@ -180,7 +179,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			tariffDAO.editTariff(tariff);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error edit tariff", e);
 		}
 	}
 
@@ -198,7 +197,7 @@ public class TariffServiceImpl implements TariffService {
 			int idTariffType = tariffDAO.getIdTariffTypeByTitle(type);
 			tariffDAO.addTariff(title, description, idTariffType, dPrice);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error add new tariff", e);
 		}
 		
 	}
@@ -216,7 +215,7 @@ public class TariffServiceImpl implements TariffService {
 			boolean status = tariffDAO.getTariffStatusById(idTariff);
 			tariffDAO.removeTariff(idTariff, status);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Remove tariff error", e);
 		}
 		
 	}
@@ -234,7 +233,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			numberEntries = tariffDAO.getAmountEntriesListTariffActiveStatus(tariffType);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting amount entries list of tariff active status", e);
 		}
 		
 		return numberEntries;
@@ -253,7 +252,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			numberEntries = tariffDAO.getAmountEntriesListTariffInactiveStatus(tariffType);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting amount entries list of tariff inactive status", e);
 		}
 		
 		return numberEntries;
@@ -268,7 +267,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			list = tariffDAO.getListTypeOfTariff();
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting type of tariff", e);
 		}
 		
 		return list;
@@ -283,7 +282,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			list = tariffDAO.getListTitleOfTariff();
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting title of tariff list", e);
 		}
 		
 		return list;
@@ -298,7 +297,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			list = tariffDAO.getListTariffActiveStatus();
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting tairff activa status", e);
 		}
 		
 		return list;
@@ -318,7 +317,7 @@ public class TariffServiceImpl implements TariffService {
 		try {
 			tariff = tariffDAO.getTariffById(id);
 		} catch (DAOException e) {
-			throw new ServiceException(e);
+			throw new ServiceException("Error getting tariff by id", e);
 		}
 		
 		return tariff;
