@@ -14,7 +14,6 @@ import by.epam.swift.dao.exception.ConnectionPoolException;
 import by.epam.swift.dao.exception.DAOException;
 import by.epam.swift.dao.factory.DAOFactory;
 
-
 public class TestUserDAOImpl {
 	
 	@BeforeClass
