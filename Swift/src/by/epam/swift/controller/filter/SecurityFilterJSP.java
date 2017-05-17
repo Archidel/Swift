@@ -18,7 +18,7 @@ import by.epam.swift.controller.configuration.PageName;
 /**Tracks if user has rights to access certain pages.
  * @author Archangel
  */
-public class SecurityFilter implements Filter{
+public class SecurityFilterJSP implements Filter{
 	public static final String ADMIN = "admin";
 	public static final String MODERATOR = "moderator";
 	public static final String USER = "user";
