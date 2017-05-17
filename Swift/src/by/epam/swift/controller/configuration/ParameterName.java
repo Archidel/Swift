@@ -22,6 +22,7 @@ public final class ParameterName {
 	public static final String USER_ADDRESS = "user_address";
 	public static final String USER_BLOCK_TO = "user_block_to";
 	public static final String USER_BALANCE = "user_balance";
+	public static final String USER_POSITION = "user_position";
 //NEWS	
 	public static final String NEWS_TITLE = "news_title";
 	public static final String NEWS_DESCRIPTION = "news_description";

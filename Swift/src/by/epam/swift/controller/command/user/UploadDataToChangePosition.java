@@ -1,8 +1,8 @@
 package by.epam.swift.controller.command.user;
 
 import java.io.IOException;
-import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,30 +17,28 @@ import by.epam.swift.service.UserService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
 
-/**Class for blocking user.
- * This class has implementation {@link Command}.
- * @author Albert Zarankovich
- */
-public class SetBlockUser implements Command {
-	private static final Logger LOGGER = Logger.getLogger(SetBlockUser.class);  
-	
+public class UploadDataToChangePosition implements Command {
+	private static final Logger LOGGER = Logger.getLogger(UploadDataToChangePosition.class);
+
 	@Override
 	public void executeCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String blockDate = request.getParameter(ParameterName.USER_BLOCK_TO);
 		int idUser = Integer.parseInt(request.getParameter(ParameterName.USER_ID));
 		
 		ServiceFactory factory = ServiceFactory.getInstance();
 		UserService userService = factory.getUserService();
 		
 		try {
-			userService.setBlock(idUser, blockDate);
-			List<User> list = userService.getUserList();
-			request.setAttribute(AttributeName.LIST, list);
-			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_USER_LIST);
+			User user = userService.getUserById(idUser);
+			request.setAttribute(AttributeName.USER, user);
+			request.getRequestDispatcher(PageName.CHANGE_POSITION_PAGE).forward(request, response);
 		} catch (ServiceException e) {
 			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);
+		} catch (ServletException e) {
+			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
+			LOGGER.error(e);
 		}
+
 	}
 
 }

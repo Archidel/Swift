@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User getUserById(int idUser) throws ServiceException {
 		if(!ValidationData.validInteger(idUser)){
-			throw new ServiceException("Inccorent id user");
+			throw new ServiceException("Incorrent id user");
 		}
 		
 		DAOFactory factory = DAOFactory.getInstance();
@@ -76,7 +76,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User editProfile(User user, String passport, String address) throws ServiceException {
 		if(!ValidationData.validUser(user)){
-			throw new ServiceException("Inccorent user data");
+			throw new ServiceException("Incorrent user data");
 		}
 		
 		DAOFactory factory = DAOFactory.getInstance();
@@ -84,7 +84,7 @@ public class UserServiceImpl implements UserService{
 		
 		if(passport != null && !passport.isEmpty()){
 			if(!ValidationData.validPassport(passport)){
-				throw new ServiceException("Inccorent user passport");
+				throw new ServiceException("Incorrent user passport");
 			}
 			user.setPassport(passport);
 		}
@@ -121,11 +121,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void setBlock(int idUser, String date) throws ServiceException {
 		if(!ValidationData.validInteger(idUser)){
-			throw new ServiceException("Inccorent user id");
+			throw new ServiceException("Incorrent user id");
 		}
 		
 		if(!ValidationData.validString(date)){
-			throw new ServiceException("Inccorent user date");
+			throw new ServiceException("Incorrent user date");
 		}
 		
 		DAOFactory factory = DAOFactory.getInstance();
@@ -141,7 +141,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void removeBlock(int idUser) throws ServiceException {
 		if(!ValidationData.validInteger(idUser)){
-			throw new ServiceException("Inccorent user id");
+			throw new ServiceException("Incorrent user id");
 		}
 		
 		DAOFactory factory = DAOFactory.getInstance();
@@ -177,11 +177,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void addBalance(String balance, int idUser) throws ServiceException {
 		if(!ValidationData.validDouble(balance)){
-			throw new ServiceException("Inccorrent entered balance");
+			throw new ServiceException("Incorrent entered balance");
 		}
 		
 		if(!ValidationData.validInteger(idUser)){
-			throw new ServiceException("Inccorrent id user");
+			throw new ServiceException("Incorrent id user");
 		}
 		
 		double dBalance = Double.parseDouble(balance);
@@ -208,6 +208,27 @@ public class UserServiceImpl implements UserService{
 		}
 		
 		return numberEntries;
+	}
+
+	@Override
+	public void changePosition(int idUser, String position) throws ServiceException {
+		if(!ValidationData.validInteger(idUser)){
+			throw new ServiceException("Incorrent user id");
+		}
+		
+		if(!ValidationData.validString(position)){
+			throw new ServiceException("Incorrent user position");
+		}
+		
+		DAOFactory factory = DAOFactory.getInstance();
+		UserDAO userDAO = factory.getUserDAO();
+		
+		try {
+			userDAO.changePosition(idUser, position);
+		} catch (DAOException e) {
+			throw new ServiceException("error changing user position", e);
+		}
+		
 	}
 	
 }

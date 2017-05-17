@@ -65,7 +65,7 @@ public enum CommandName {
 	/**
 	 *  Command for up or down user's position.
 	 */
-	UP_POSITION,
+	CHANGE_POSITION,
 	/**
 	 * Command for searching tariff name.
 	 */
@@ -137,7 +137,7 @@ public enum CommandName {
 	/**
 	 *  Command for blocking user.
 	 */
-	BLOCK_USER,
+	SET_USER_BLOCK,
 	/**
 	 *  Command for  create new agreement.
 	 */
@@ -185,5 +185,5 @@ public enum CommandName {
 	/**
 	 *  Command for get request on service list for administrations.
 	 */
-	GET_REQUEST_ON_SERVICE_LIST_ADMIN;
+	GET_REQUEST_ON_SERVICE_LIST_ADMIN, UPLOAD_DATA_TO_CHANGE_POSITION, UPLOAD_DATA_TO_SET_BLOCK;
 }

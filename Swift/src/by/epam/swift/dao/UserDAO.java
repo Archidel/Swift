@@ -72,4 +72,13 @@ public interface UserDAO {
 	 * @throws DAOException
 	 */
 	int getAmountEntriesListUser() throws DAOException;
+	
+	
+	
+	
+	
+	
+	
+	
+	void changePosition(int idUser, String position) throws DAOException;
 }

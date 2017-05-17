@@ -24,6 +24,8 @@ public final class PageName {
 	public static final String EDIT_PROFILE_PAGE = "/editprofile";
 	public static final String GET_USER_LIST_PAGE = "/userlist";
 	public static final String USER_BALANCE_PAGE = "/balance";
+	public static final String CHANGE_POSITION_PAGE = "/changeposition";
+	public static final String SET_USER_BLOCK_PAGE = "/setuserblock";
 //TARIFF	
 	public static final String TARIFF_LIST_USER_PAGE = "/tarifflist";	
 	public static final String TARIFF_LIST_ADMIN_PAGE = "/tarifflistadmin";
@@ -63,4 +65,5 @@ public final class PageName {
 	public static final String REDIRECT_REQUEST_ON_SERVICE_LIST_USER =  "/Controller?command=get_request_on_service_list_user&page=1";
 	public static final String REDIRECT_REQUEST_ON_SERVICE_LIST_ADMIN =  "/Controller?command=get_request_on_service_list_admin&page=1";
 	public static final String REDIRECT_USER_LIST = "/Controller?command=get_user_list&page=1";
+	
 }

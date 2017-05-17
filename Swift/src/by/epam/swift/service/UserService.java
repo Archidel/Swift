@@ -71,4 +71,15 @@ public interface UserService {
 	 * @throws ServiceException
 	 */
 	int getAmountEntriesListUser() throws ServiceException;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	void changePosition(int idUser, String position) throws ServiceException;
+	
 }

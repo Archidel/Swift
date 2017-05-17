@@ -142,7 +142,7 @@ public class UserDAOImpl implements UserDAO {
 				user.setPosition(resultSet.getString(ColumnLabel.USER_POSITION));
 				user.setBalance(resultSet.getDouble(ColumnLabel.USER_BALANCE));
 				user.setStatus(resultSet.getBoolean(ColumnLabel.USER_STATUS));
-//				user.setBlockedTill(resultSet.getString(ColumnLabel.USER_BLOCKED_TILL));
+				user.setBlockedTill(resultSet.getDate(ColumnLabel.USER_BLOCKED_TILL));
 			}
 		} catch (ConnectionPoolException e) {
 			throw new DAOException("There was a problem connecting to the database", e);
@@ -213,7 +213,7 @@ public class UserDAOImpl implements UserDAO {
 				user.setPosition(resultSet.getString(ColumnLabel.USER_POSITION));
 				user.setBalance(resultSet.getDouble(ColumnLabel.USER_BALANCE));
 				user.setStatus(resultSet.getBoolean(ColumnLabel.USER_STATUS));
-//				user.setBlockedTill(resultSet.getString(ColumnLabel.USER_BLOCKED_TILL));
+				user.setBlockedTill(resultSet.getDate(ColumnLabel.USER_BLOCKED_TILL));
 				userList.add(user);
 			}
 		
@@ -339,6 +339,27 @@ public class UserDAOImpl implements UserDAO {
 		}
 		
 		return numberEntries;
+	}
+
+	@Override
+	public void changePosition(int idUser, String position) throws DAOException {
+		ConnectionPool pool  = ConnectionPool.getInstance();
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try {
+			connection = pool.take();
+			preparedStatement = connection.prepareStatement(SQLCommand.UP_DATE_USER_POSITION_BY_ID);
+			preparedStatement.setString(1, position);
+			preparedStatement.setInt(2, idUser);
+			preparedStatement.executeUpdate();
+		} catch (ConnectionPoolException e) {
+			throw new DAOException("There was a problem connecting to the database", e);
+		} catch (SQLException e) {
+			throw new DAOException("Error executing the query 'up_date_user_position_by_id'", e);
+		}finally {
+			pool.closeConnection(connection, preparedStatement);
+		}
 	}
 	
 }

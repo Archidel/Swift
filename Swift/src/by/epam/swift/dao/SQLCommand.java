@@ -24,12 +24,14 @@ public final class SQLCommand {
 	public static final String UPDATE_USER = "UPDATE user SET u_name = ?, u_surname= ?, u_login = ?, u_passport = ?, u_email = ?, u_birthdate = ?, u_phone = ?, u_adress = ? WHERE u_id = ?";
 	public static final String UPDATE_USER_ADD_BALANCE = "UPDATE user SET u_balance = (u_balance + ?) WHERE u_id = ?";	
 	public static final String UPDATE_USER_BLOCK_BY_ID = "UPDATE user SET u_blocked_till = ? WHERE u_id = ?";
+	public static final String UP_DATE_USER_POSITION_BY_ID = "UPDATE user SET u_position = ? WHERE u_id = ?";
 	public static final String SELECT_USER = "SELECT * FROM user";
 	public static final String SELECT_USER_ID_BY_LOGIN_PASSWORD = "SELECT u_id FROM user WHERE u_login = ? AND u_password = ?";
 	public static final String SELECT_USER_BY_LOGIN_PASSWORD = "SELECT * FROM user WHERE u_login = ? AND u_password = ?";
 	public static final String SELECT_USER_BY_ID = "SELECT * FROM user WHERE u_id = ?";
 	public static final String SELECT_USER_BALANCE_BY_ID = "SELECT u_balance FROM user WHERE u_id = ?";
 	public static final String SELECT_USER_LIST_COUNT = "SELECT COUNT(*) as amount FROM user";
+	
 //AGREEMENT
 	public static final String INSERT_AGREEMENT = "INSERT INTO agreement (u_id, a_date_creation) VALUES (?,?)";
 	public static final String UPDATE_AGREEMENT_ADMINID_STATUS = "UPDATE agreement SET a_status = 1, admin_u_id = ? WHERE a_id = ?";

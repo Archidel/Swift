@@ -43,9 +43,11 @@ import by.epam.swift.controller.command.user.GetUserList;
 import by.epam.swift.controller.command.user.Logout;
 import by.epam.swift.controller.command.user.SignIn;
 import by.epam.swift.controller.command.user.SignUp;
-import by.epam.swift.controller.command.user.UpPosition;
+import by.epam.swift.controller.command.user.UploadDataToChangePosition;
+import by.epam.swift.controller.command.user.UploadDataToSetBlock;
+import by.epam.swift.controller.command.user.ChangePosition;
 import by.epam.swift.controller.command.user.AddBalance;
-import by.epam.swift.controller.command.user.SetBlockUser;
+import by.epam.swift.controller.command.user.SetUserBlock;
 import by.epam.swift.controller.command.wrong.Redirect;
 import by.epam.swift.controller.command.wrong.WrongRequest;
 import by.epam.swift.controller.configuration.CommandName;
@@ -96,11 +98,14 @@ public final class CommandProvider {
 		repository.put(CommandName.SIGN_UP, new SignUp());
 		repository.put(CommandName.LOGOUT, new Logout());
 		repository.put(CommandName.EDIT_PROFILE, new EditProfile());
-		repository.put(CommandName.BLOCK_USER, new SetBlockUser());
+		repository.put(CommandName.SET_USER_BLOCK, new SetUserBlock());
 		repository.put(CommandName.GET_BALANCE, new GetBalance());
 		repository.put(CommandName.ADD_BALANCE, new AddBalance());
 		repository.put(CommandName.GET_USER_LIST, new GetUserList());
-		repository.put(CommandName.UP_POSITION, new UpPosition());
+		repository.put(CommandName.CHANGE_POSITION, new ChangePosition());
+		repository.put(CommandName.UPLOAD_DATA_TO_CHANGE_POSITION, new UploadDataToChangePosition());
+		repository.put(CommandName.UPLOAD_DATA_TO_SET_BLOCK, new UploadDataToSetBlock());
+		
 //REQUEST
 		repository.put(CommandName.REMOVE_REQUEST_ON_SERVICE, new RemoveRequestOnService());
 		repository.put(CommandName.MAKE_REQUEST_ON_SERVICE, new MakeRequestOnService());

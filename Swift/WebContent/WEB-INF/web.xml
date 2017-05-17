@@ -51,7 +51,25 @@
     	<servlet-name>editProfile-page</servlet-name>
     	<url-pattern>/editprofile</url-pattern>
   	</servlet-mapping>
-	
+  	
+  	<servlet>
+  		<servlet-name>changePosition-page</servlet-name>
+    	<jsp-file>/pages/user/change_position.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>changePosition-page</servlet-name>
+    	<url-pattern>/changeposition</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>setUserBlock-page</servlet-name>
+    	<jsp-file>/pages/user/set_user_block.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>setUserBlock-page</servlet-name>
+    	<url-pattern>/setuserblock</url-pattern>
+  	</servlet-mapping>
+  	
  	<servlet>
   		<servlet-name>getBalance-page</servlet-name>
     	<jsp-file>/pages/user/get_balance.jsp</jsp-file>
