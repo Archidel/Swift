@@ -9,7 +9,7 @@
 	
 	<div class="wrapper container">
 		<div class="heading">
-			<h1>CHANGE POSITION</h1>
+			<h1>${set_block_label}</h1>
 			<legend></legend>
 		</div>
 
@@ -27,25 +27,25 @@
 	
 		<%@include file="../../../elements/el_content_user_info.jspf" %>	
 		<form action="Controller" method="post">
-    		
-		<table cellpadding="4" cellspacing="0" align="center">
-   			<caption style="text-align: center;">Choose date for block user</caption>
-   			<tr>
-    			<th>
-    				<label>Set block: </label>
-    			</th>
-    			<th>
-    				<input type="date" style="width: 150px;" name="user_block_to">
-				</th>
-   			</tr>
-   			<tr>
-    			<th colspan="2">
-    				<input type="hidden" name="command" value="set_user_block">
-    				<button class="btn btn-success form-control" type="submit" name="user_id" value="${requestScope.user.id}">${apply_button}</button>	
-    			</th>
-   			</tr> 
-  		</table>
-			</form>
+  	
+			<table cellpadding="4" cellspacing="0" align="center">
+	   			<caption style="text-align: center;">${select_date_for_block_label}</caption>
+	   			<tr>
+	    			<th>
+	    				<label for="blockDate">${set_block_label}: </label>
+	    			</th>
+	    			<th>
+	    				<input type="date" style="width: 150px;" name="user_block_to" id="blockDate">
+					</th>
+	   			</tr>
+	   			<tr>
+	    			<th colspan="2">
+	    				<input type="hidden" name="command" value="set_user_block">
+	    				<button class="btn btn-success form-control" type="submit" name="user_id" value="${requestScope.user.id}">${apply_button}</button>	
+	    			</th>
+	   			</tr> 
+	  		</table>
+		</form>
     	
 	</div>
 	<br><br><br>

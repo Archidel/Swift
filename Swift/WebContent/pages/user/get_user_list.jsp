@@ -10,7 +10,7 @@
 	<div class="wrapper container">
 
 		<div class="heading">
-			<h1>${show_user_lsit_label}</h1>
+			<h1>${get_user_list_label}</h1>
 			<legend></legend>
 		</div>
 
@@ -46,7 +46,7 @@
 						    		<input type="hidden" name="command" value="upload_data_to_set_block">
 									<div class="form-group row">
 										<div class="offset-sm-2 col-sm-10">										
-											<button type="submit" class="btn btn-danger" name="user_id" value="${list.id}">Set block</button>		
+											<button type="submit" class="btn btn-danger" name="user_id" value="${list.id}">${set_block_label}</button>		
 										</div>
 								 	</div>
 								</form>
@@ -55,7 +55,7 @@
 									<input type="hidden" name="command" value="upload_data_to_change_position"/>
 									<div class="form-group row">
 										<div class="offset-sm-2 col-sm-10">	
-											<button type="submit" class="btn btn-default" name="user_id" value="${list.id}">Change Position</button>
+											<button type="submit" class="btn btn-default" name="user_id" value="${list.id}">${change_position_label}</button>
 								  		</div>
 									</div>
 								</form>		      		

@@ -57,7 +57,7 @@
 	<fmt:message bundle="${loc}" key="local.label.address" var="address_label"/>
 	<fmt:message bundle="${loc}" key="local.label.internetServicesProvider" var="internet_services_provider_label"/>
 	<fmt:message bundle="${loc}" key="local.label.getServiceRequests" var="get_service_requests_label"/>
-	<fmt:message bundle="${loc}" key="local.label.getUserList" var="get_user_lsit_label"/>
+	<fmt:message bundle="${loc}" key="local.label.getUserList" var="get_user_list_label"/>
 	<fmt:message bundle="${loc}" key="local.label.type" var="type_label"/>
 	<fmt:message bundle="${loc}" key="local.label.infoAboutProject" var="info_about_project_label"/>
 	<fmt:message bundle="${loc}" key="local.label.themeOfTheProject" var="theme_of_the_proejct_label"/>
@@ -75,6 +75,13 @@
 	<fmt:message bundle="${loc}" key="local.label.infoAboutUser" var="info_about_user_label"/>
 	<fmt:message bundle="${loc}" key="local.label.found" var="found_label"/>
 	<fmt:message bundle="${loc}" key="local.label.personalCabinet" var="personal_cabinet_label"/>
+	<fmt:message bundle="${loc}" key="local.label.selectPosition" var="select_position_label"/>
+	<fmt:message bundle="${loc}" key="local.label.changePosition" var="change_position_label"/>
+	
+	<fmt:message bundle="${loc}" key="local.label.setBlock" var="set_block_label"/>
+	<fmt:message bundle="${loc}" key="local.label.selectDateForBlock" var="select_date_for_block_label"/>
+	
+	
 	
 <!-- LABESLS FOR GENERAL ACTIONS -->
 	<fmt:message bundle="${loc}" key="local.label.Swift" var="swift_label"/>
@@ -159,6 +166,7 @@
 	<fmt:message bundle="${loc}" key="local.label.selectTypeOfTariff" var="select_type_of_tariff_label"/>
 	<fmt:message bundle="${loc}" key="local.label.addTariff" var="add_tariff_label"/>
 	<fmt:message bundle="${loc}" key="local.label.getTariffList" var="get_tariff_list_label"/>
+	<fmt:message bundle="${loc}" key="local.label.userInfo" var="user_info_label"/>
 	
 	
 	<fmt:message bundle="${loc}" key="local.label.enable" var="enable_label"/>

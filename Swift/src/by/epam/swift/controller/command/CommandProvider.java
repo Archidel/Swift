@@ -60,7 +60,7 @@ public final class CommandProvider {
 	private final static CommandProvider instance = new CommandProvider();
 	private final Map<CommandName, Command> repository = new HashMap<CommandName, Command>();
 		
-	/** Initializing keys and commands */
+	/** Initializing keys and commands. */
 	private CommandProvider(){
 //INIT SOURCE
 		repository.put(CommandName.INITIALIZATION_SOURCE, new InitializationSource());
@@ -105,7 +105,6 @@ public final class CommandProvider {
 		repository.put(CommandName.CHANGE_POSITION, new ChangePosition());
 		repository.put(CommandName.UPLOAD_DATA_TO_CHANGE_POSITION, new UploadDataToChangePosition());
 		repository.put(CommandName.UPLOAD_DATA_TO_SET_BLOCK, new UploadDataToSetBlock());
-		
 //REQUEST
 		repository.put(CommandName.REMOVE_REQUEST_ON_SERVICE, new RemoveRequestOnService());
 		repository.put(CommandName.MAKE_REQUEST_ON_SERVICE, new MakeRequestOnService());

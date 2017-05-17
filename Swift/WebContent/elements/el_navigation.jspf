@@ -21,7 +21,7 @@
 			<li><a href="#" onclick="submitGetBalance();">${get_your_balance_label}</a></li>
 		<c:if test="${(sessionScope.user.position eq 'admin') or (sessionScope.user.position eq 'moderator')}">
 			<li class="sidebar-brand"><a style="color: blue;">${management_label}</a></li>
-			<li><a href="#" onclick="submitGetUserList();">${get_user_lsit_label}</a></li>
+			<li><a href="#" onclick="submitGetUserList();">${get_user_list_label}</a></li>
 			<li><a href="#" onclick="submitGetAgreementList();">${get_agreement_list_label}</a></li>
 			<li><a href="#" onclick="submitGetRequestOnServiceListAdmin();">${get_request_list_label}</a></li>
 			<li><a href="addnews">${news_add_label}</a></li>

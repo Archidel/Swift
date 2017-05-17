@@ -9,7 +9,7 @@
 	
 	<div class="wrapper container">
 		<div class="heading">
-			<h1>CHANGE POSITION</h1>
+			<h1>${change_position_label}</h1>
 			<legend></legend>
 		</div>
 
@@ -29,10 +29,10 @@
 		<form action="Controller" method="post">
     		
 		<table cellpadding="4" cellspacing="0" style="width: 300px;" align="center">
-   			<caption style="text-align: center;">Choose new user position</caption>
+   			<caption style="text-align: center;">${select_position_label}</caption>
    			<tr>
     			<th>
-    				<label>User position</label>
+    				<label for="user_position">${position_label}</label>
     			</th>
     			<th>
 					<select class="form-control" id="user_position" name="user_position">

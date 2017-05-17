@@ -17,7 +17,6 @@
 		<div class="row">
 			<h4><span>${found_label}: ${requestScope.amountResult}</span></h4>
 			<table class="table table-hover">	
-				<caption><h2 style="text-align: center;">${news_label}</h2></caption> 
 		  		<thead>
 	    	  		<tr>
 	        			<th>${id_label}</th>
