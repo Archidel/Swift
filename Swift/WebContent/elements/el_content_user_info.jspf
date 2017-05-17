@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	<table class="table table-hover" style="text-align: center;">
+		<caption style="text-align: center; font-size: 18px;">User info</caption>
+		<tr>
+			<td>USER ID</td>
+			<td>${requestScope.user.id}</td>
+		</tr>	
+		
+		<tr>
+			<td>${position_label}</td>
+			<td>${requestScope.user.position}</td>
+		</tr>
+		
+		<tr>
+			<td>${name_label}</td>
+			<td>${requestScope.user.name}</td>
+		</tr>
+		<tr>
+			<td>${surname_label}</td>
+			<td>${requestScope.user.surname}</td>
+		</tr>
+		<tr>
+			<td>${balance_label}</td>
+			<td>${requestScope.user.balance} $</td>
+		</tr>
+		
+		<tr>
+			<td>${login_label}</td>
+			<td>${requestScope.user.login}</td>
+		</tr>
+		<tr>
+			<td>${email_label}</td>
+			<td>${requestScope.user.email}</td>
+		</tr>
+		<tr>
+			<td>${phone_label}</td>
+			<td>${requestScope.user.phone}</td>
+		</tr>
+		<tr>
+			<td>${birth_date_label}</td>
+			<td>${requestScope.user.birthdate}</td>
+		</tr>
+		<tr>
+			<td>${passport_label}</td>
+			<td>${requestScope.user.passport}</td>
+		</tr>
+		<tr>
+			<td>${address_label}</td>
+			<td>${requestScope.user.address}</td>
+		</tr>
+		
+		<tr>
+			<td>${blocked_to_label}</td>
+			<td>${requestScope.user.blockedTill}</td>
+		</tr>
+				
+	</table>
+
+</body>
+</html>
