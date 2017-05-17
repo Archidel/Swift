@@ -72,13 +72,10 @@ public interface UserDAO {
 	 * @throws DAOException
 	 */
 	int getAmountEntriesListUser() throws DAOException;
-	
-	
-	
-	
-	
-	
-	
-	
+	/**Method for changing position user. Example: user, moderator, administrator.
+	 * @param idUser
+	 * @param position
+	 * @throws DAOException
+	 */
 	void changePosition(int idUser, String position) throws DAOException;
 }

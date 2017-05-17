@@ -185,5 +185,13 @@ public enum CommandName {
 	/**
 	 *  Command for get request on service list for administrations.
 	 */
-	GET_REQUEST_ON_SERVICE_LIST_ADMIN, UPLOAD_DATA_TO_CHANGE_POSITION, UPLOAD_DATA_TO_SET_BLOCK;
+	GET_REQUEST_ON_SERVICE_LIST_ADMIN, 
+	/**
+	 * Command for upload data for change position form.
+	 */
+	UPLOAD_DATA_TO_CHANGE_POSITION, 
+	/**
+	 *  Command for upload data set user block form.
+	 */
+	UPLOAD_DATA_TO_SET_BLOCK;
 }

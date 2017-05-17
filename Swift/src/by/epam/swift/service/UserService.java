@@ -70,16 +70,11 @@ public interface UserService {
 	 * @return int
 	 * @throws ServiceException
 	 */
-	int getAmountEntriesListUser() throws ServiceException;
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	int getAmountEntriesListUser() throws ServiceException;	
+	/** Method for changing position user. Example: user, moderator, administrator.
+	 * @param idUser
+	 * @param position
+	 * @throws ServiceException
+	 */
 	void changePosition(int idUser, String position) throws ServiceException;
-	
 }
