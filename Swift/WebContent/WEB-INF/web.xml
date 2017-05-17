@@ -314,6 +314,18 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping> 
 
+ 	<filter>
+ 		<filter-name>SecurityFilterCommand</filter-name>
+ 		<filter-class>by.epam.swift.controller.filter.SecurityFilterCommand</filter-class>
+ 	</filter>
+
+	<filter-mapping>
+		<filter-name>SecurityFilterCommand</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+
+
+
 
 
 	<servlet>
@@ -330,26 +342,60 @@
  		<filter-class>by.epam.swift.controller.filter.SecurityFilter</filter-class>
  	</filter>
  	
- 
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/userlist</url-pattern>
+	</filter-mapping> 
 
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/agreementlist</url-pattern>
+	</filter-mapping> 
 
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/addnews</url-pattern>
+	</filter-mapping> 
+	
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/listnewsadmin</url-pattern>
+	</filter-mapping> 
 
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/editnews</url-pattern>
+	</filter-mapping> 
+	
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/changeposition</url-pattern>
+	</filter-mapping> 
 
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/setuserblock</url-pattern>
+	</filter-mapping> 
 
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/tarifflistadmin</url-pattern>
+	</filter-mapping> 
 
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/addtariff</url-pattern>
+	</filter-mapping> 
 
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/edittariff</url-pattern>
+	</filter-mapping> 
 
-
-
-
-
-
-
-
-
-
-
-
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/requestlistadmin</url-pattern>
+	</filter-mapping> 
 
 	<servlet>
   		<servlet-name>errorWrongRequest-page</servlet-name>

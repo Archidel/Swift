@@ -50,4 +50,8 @@ public final class ParameterName {
 	public static final String STATUS_OF_OPERATION = "status";
 	public static final String MESSAGE = "message";
 	public static final String NUMBER_PAGE = "page";
+//Command
+	public static final String COMMAND = "command";
+	
+	
 }
