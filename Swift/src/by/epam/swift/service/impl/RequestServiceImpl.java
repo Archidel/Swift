@@ -57,10 +57,16 @@ public class RequestServiceImpl implements RequestService {
 	}
 
 	@Override
-	public void makeRequestOnService(String title, String type, String datePeriod, String serviceAction, int idUser) throws ServiceException {
+	public void makeRequestOnService(String title, String type, String datePeriod, String serviceAction, int idUser, Date blockDate) throws ServiceException {
 		if(!ValidationData.validRequest(title, type, datePeriod, serviceAction)){
 			throw new ServiceException("Incorrent data for make request no serivce");
 		}
+		
+		Date currentDate = new Date();
+		if((blockDate != null) && (blockDate.compareTo(currentDate) == 1)){
+			throw new ServiceException("This user is blocked and can't to create request on service");
+		}
+		
 		
 		title = title.split("\\[")[0].trim().toLowerCase();
 		
@@ -73,6 +79,10 @@ public class RequestServiceImpl implements RequestService {
 		TariffDAO tariffDAO = daoFactory.getTariffDAO();
 		RequestServiceDAO requestServiceDAO = daoFactory.getRequestServiceDAO();
 		AgreementDAO agreementDAO = daoFactory.getAgreementDAO();
+		
+		
+		
+		
 		
 		try {
 			int idTariffType = tariffDAO.getIdTariffTypeByTitle(type);		

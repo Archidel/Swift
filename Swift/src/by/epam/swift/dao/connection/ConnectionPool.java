@@ -111,8 +111,8 @@ public final class ConnectionPool implements Closeable{
 	@Override
 	public void close() throws IOException {
 		List<Connection> listConnection = new ArrayList<Connection>();
-		listConnection.addAll(busyConnection);
-		listConnection.addAll(freeConnection);
+		listConnection.addAll(this.busyConnection);
+		listConnection.addAll(this.freeConnection);
 		
 		for(Connection connection: listConnection){
 			try {

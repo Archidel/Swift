@@ -1,6 +1,7 @@
 package by.epam.swift.controller.command.request;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +31,7 @@ public class MakeRequestOnService implements Command {
 		User user = (User) session.getAttribute(AttributeName.USER);
 		
 		int idUser = user.getId();
+		Date blockDate = user.getBlockedTill();
 		String title = request.getParameter(ParameterName.TARIFF_TITLE);
 		String type = request.getParameter(ParameterName.TARIFF_TYPE);
 		String datePeriod = request.getParameter(ParameterName.TARIFF_DATE_PERIOD);
@@ -39,7 +41,7 @@ public class MakeRequestOnService implements Command {
 		RequestService requestService = factory.getRequestService();
 		
 		try {
-			requestService.makeRequestOnService(title, type, datePeriod, serviceAction, idUser);
+			requestService.makeRequestOnService(title, type, datePeriod, serviceAction, idUser, blockDate);
 			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_MAKE_REQUEST_ON_SERVICE_SUCCESS);			
 		} catch (ServiceException e) {
 			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_MAKE_REQUEST_ON_SERVICE_ERROR);	

@@ -51,7 +51,7 @@ public final class PageName {
 	public static final String REDIRECT_EDIT_PROFILE_SUCCESS = "/Controller?command=redirect&pagename=editprofile&message=Users profile edition was successfully&status=true";
 	public static final String REDIRECT_ADD_BALANCE_ERROR = "/Controller?command=redirect&pagename=index&message=Error Replenishing balance&status=false";
 	public static final String REDIRECT_ADD_BALANCE_SUCCESS = "/Controller?command=redirect&pagename=index&message=Balance replenishment was successful&status=true";
-	public static final String REDIRECT_CREATE_AGREEMENT_ERROR = "/Controller?command=redirect&pagename=createagreement&message=Error sending the agreement, check if all the data is filled in&status=false";
+	public static final String REDIRECT_CREATE_AGREEMENT_ERROR = "/Controller?command=redirect&pagename=createagreement&message=Error sending the agreement, check if all the data is filled in or you blocked chek your profile&status=false";
 	public static final String REDIRECT_CREATE_AGREEMENT_SUCCESS = "/Controller?command=redirect&pagename=createagreement&message=The agreement was sent to the administration for consideration&status=true";
 	public static final String REDIRECT_ADD_TARIFF_TYPE_ERROR = "/Controller?command=redirect&pagename=index&message=Failed to add type of tariff&status=false";
 	public static final String REDIRECT_ADD_TARIFF_TYPE_SUCCESS = "/Controller?command=redirect&pagename=index&message=Type of tariff added successfully&status=true";
@@ -61,7 +61,7 @@ public final class PageName {
 	public static final String REDIRECT_REMOVE_TARIFF = "/Controller?command=get_tariff_list_admin&tariff_type=";
 	public static final String REDIRECT_AGREEMENT_LIST = "/Controller?command=get_agreement_list&page=1";
 	public static final String REDIRECT_MAKE_REQUEST_ON_SERVICE_SUCCESS = "/Controller?command=redirect&pagename=index&message=Your request to add a service has been sent to the administration&status=true";
-	public static final String REDIRECT_MAKE_REQUEST_ON_SERVICE_ERROR = "/Controller?command=redirect&pagename=index&message=Error sending a request to add a service, check the entered data&status=false";
+	public static final String REDIRECT_MAKE_REQUEST_ON_SERVICE_ERROR = "/Controller?command=redirect&pagename=index&message=Error sending a request to add a service, check the entered data or you blocked, check yuor profile&status=false";
 	public static final String REDIRECT_REQUEST_ON_SERVICE_LIST_USER =  "/Controller?command=get_request_on_service_list_user&page=1";
 	public static final String REDIRECT_REQUEST_ON_SERVICE_LIST_ADMIN =  "/Controller?command=get_request_on_service_list_admin&page=1";
 	public static final String REDIRECT_USER_LIST = "/Controller?command=get_user_list&page=1";

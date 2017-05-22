@@ -58,7 +58,7 @@
 					<div class="form-group row">
 						<label for="userEmail" class="col-sm-2 col-form-label">${email_label}</label>
 						<div class="col-sm-10"> 
-					    	<input id="userEmail" class="form-control" type="text" name="user_email" value="${sessionScope.user.email}" required pattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$" title="${input_title_email}">
+					    	<input id="userEmail" class="form-control" type="text" name="user_email" value="${sessionScope.user.email}" required>
 					  	</div>
 					</div>
 						

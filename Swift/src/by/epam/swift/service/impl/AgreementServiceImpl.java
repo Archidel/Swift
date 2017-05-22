@@ -24,6 +24,13 @@ public class AgreementServiceImpl implements AgreementService {
 			throw new ServiceException("Not enought information for createing agreement");
 		}
 		
+		Date blockDate = user.getBlockedTill();
+		Date currentDate = new Date();
+		
+		if((blockDate != null) && (blockDate.compareTo(currentDate) == 1)){
+			throw new ServiceException("This user is blocked and can't to create agreement");
+		}
+		
 		DAOFactory daoFactory = DAOFactory.getInstance();
 		AgreementDAO agreementDAO = daoFactory.getAgreementDAO();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
