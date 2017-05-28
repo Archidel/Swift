@@ -13,6 +13,7 @@ public final class SQLCommand {
 	public static final String INSERT_REQUEST_ENABLE_TARIFF = "INSERT IGNORE INTO user_m2m_tariff(u_id, t_id) VALUES (?,?)";
 	public static final String UPDATE_REQUEST_STATUS = "UPDATE request SET r_status = 1 WHERE r_id = ?";
 	public static final String UPDATE_REQUEST_DISABLE_TARIFF = "UPDATE user_m2m_tariff SET u_id = 0, t_id = 0 WHERE u_id = ? AND t_id = ?";
+	public static final String DElETE_REQUEST_TARIFF = "DELETE FROM user_m2m_tariff WHERE u_id = ? AND t_id = ?";
 	public static final String SELECT_USER_REQUEST_ON_SERVLICE_LIST_LIMIT = "SELECT r_id, t_id, r_date, r_service_action FROM request WHERE r_status = 0 AND a_id = ? ORDER BY r_date DESC LIMIT ?, ?";
 	public static final String SELECT_ADMIN_REQUEST_ON_SERVLICE_LIST_LIMIT = "SELECT r_id, a_id, t_id, r_date, r_service_action FROM request WHERE r_status = 0 ORDER BY r_date DESC LIMIT ?, ?";
 	public static final String SELECT_USER_REQUEST_ON_SERVICE_LIST_COUNT = "SELECT COUNT(*) as amount FROM request WHERE a_id = ? AND r_status = 0";
@@ -24,13 +25,15 @@ public final class SQLCommand {
 	public static final String UPDATE_USER = "UPDATE user SET u_name = ?, u_surname= ?, u_login = ?, u_passport = ?, u_email = ?, u_birthdate = ?, u_phone = ?, u_adress = ? WHERE u_id = ?";
 	public static final String UPDATE_USER_ADD_BALANCE = "UPDATE user SET u_balance = (u_balance + ?) WHERE u_id = ?";	
 	public static final String UPDATE_USER_BLOCK_BY_ID = "UPDATE user SET u_blocked_till = ? WHERE u_id = ?";
-	public static final String UP_DATE_USER_POSITION_BY_ID = "UPDATE user SET u_position = ? WHERE u_id = ?";
+	public static final String UPDATE_USER_POSITION_BY_ID = "UPDATE user SET u_position = ? WHERE u_id = ?";
 	public static final String SELECT_USER = "SELECT * FROM user";
 	public static final String SELECT_USER_ID_BY_LOGIN_PASSWORD = "SELECT u_id FROM user WHERE u_login = ? AND u_password = ?";
 	public static final String SELECT_USER_BY_LOGIN_PASSWORD = "SELECT * FROM user WHERE u_login = ? AND u_password = ?";
 	public static final String SELECT_USER_BY_ID = "SELECT * FROM user WHERE u_id = ?";
 	public static final String SELECT_USER_BALANCE_BY_ID = "SELECT u_balance FROM user WHERE u_id = ?";
 	public static final String SELECT_USER_LIST_COUNT = "SELECT COUNT(*) as amount FROM user";
+	public static final String UPDATE_WITHDRAW_MONEY = "UPDATE user SET u_balance = (u_balance - ?) WHERE u_id = ?";
+	public static final String SELECT_USER_TARIFF_LIST = "SELECT t_id FROM user_m2m_tariff WHERE u_id = ?";
 //AGREEMENT
 	public static final String INSERT_AGREEMENT = "INSERT INTO agreement (u_id, a_date_creation) VALUES (?,?)";
 	public static final String UPDATE_AGREEMENT_ADMINID_STATUS = "UPDATE agreement SET a_status = 1, admin_u_id = ? WHERE a_id = ?";

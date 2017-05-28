@@ -349,7 +349,7 @@ public class UserDAOImpl implements UserDAO {
 		
 		try {
 			connection = pool.take();
-			preparedStatement = connection.prepareStatement(SQLCommand.UP_DATE_USER_POSITION_BY_ID);
+			preparedStatement = connection.prepareStatement(SQLCommand.UPDATE_USER_POSITION_BY_ID);
 			preparedStatement.setString(1, position);
 			preparedStatement.setInt(2, idUser);
 			preparedStatement.executeUpdate();

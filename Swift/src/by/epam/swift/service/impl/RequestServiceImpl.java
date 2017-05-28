@@ -6,9 +6,12 @@ import java.util.List;
 
 import by.epam.swift.bean.Agreement;
 import by.epam.swift.bean.RequestOnService;
+import by.epam.swift.bean.Tariff;
+import by.epam.swift.bean.User;
 import by.epam.swift.dao.AgreementDAO;
 import by.epam.swift.dao.RequestServiceDAO;
 import by.epam.swift.dao.TariffDAO;
+import by.epam.swift.dao.UserDAO;
 import by.epam.swift.dao.exception.DAOException;
 import by.epam.swift.dao.factory.DAOFactory;
 import by.epam.swift.service.RequestService;
@@ -67,11 +70,9 @@ public class RequestServiceImpl implements RequestService {
 			throw new ServiceException("This user is blocked and can't to create request on service");
 		}
 		
-		
 		title = title.split("\\[")[0].trim().toLowerCase();
-		
 		boolean action = false;
-		if(serviceAction.equalsIgnoreCase("ENABLE")){
+		if(serviceAction.equalsIgnoreCase("ENABLE") || serviceAction.equalsIgnoreCase("Включить")){
 			action = true;
 		}
 		
@@ -80,10 +81,6 @@ public class RequestServiceImpl implements RequestService {
 		RequestServiceDAO requestServiceDAO = daoFactory.getRequestServiceDAO();
 		AgreementDAO agreementDAO = daoFactory.getAgreementDAO();
 		
-		
-		
-		
-		
 		try {
 			int idTariffType = tariffDAO.getIdTariffTypeByTitle(type);		
 			int idTariff = tariffDAO.getIdTariffByTitleAndType(title, idTariffType);
@@ -91,11 +88,24 @@ public class RequestServiceImpl implements RequestService {
 			if(idTariff == 0){
 				throw new ServiceException("This tariff not found");
 			}
-			int idAgreement = agreementDAO.getIdAgreementByUserId(idUser);
 			
+			if(!action){
+				boolean tariffIsFound = false;
+				List<Integer> list = requestServiceDAO.getUserTariffList(idUser);
+				for(int i = 0; i < list.size(); i++){
+					if(list.get(i) == idTariff){
+						tariffIsFound = true;
+						break;
+					}
+				}
+				if(!tariffIsFound){
+					throw new ServiceException("The user does not have this tariff");
+				}
+			}
+			
+			int idAgreement = agreementDAO.getIdAgreementByUserId(idUser);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			requestServiceDAO.makeRequestOnService(idAgreement, idTariff, sdf.format(new Date()), action);
-			
 		} catch (DAOException e) {
 			throw new ServiceException("Erorr creating request on service", e);
 		}
@@ -186,23 +196,36 @@ public class RequestServiceImpl implements RequestService {
 	}
 
 	@Override
-	public void acceptRequestOnService(int idRequest, int idUser, boolean action) throws ServiceException {
+	public void acceptRequestOnService(int idRequest, int idAdmin, int idUser, boolean action) throws ServiceException {
 		if(!ValidationData.validInteger(idRequest)){
 			throw new ServiceException("Icorrent id request");
 		}
 		
-		if(!ValidationData.validInteger(idUser)){
+		if(!ValidationData.validInteger(idAdmin)){
+			throw new ServiceException("Icorrent id admin");
+		}
+		
+		if(!ValidationData.validInteger(idAdmin)){
 			throw new ServiceException("Icorrent id user");
 		}
 		
 		DAOFactory daoFactory = DAOFactory.getInstance();
+		UserDAO userDAO = daoFactory.getUserDAO();
 		RequestServiceDAO requestServiceDAO = daoFactory.getRequestServiceDAO();
 		AgreementDAO agreementDAO = daoFactory.getAgreementDAO();
+		TariffDAO tariffDAO = daoFactory.getTariffDAO();
 		
 		try {
 			RequestOnService requestOnService = requestServiceDAO.getRequestOnServiceById(idRequest);
+			User user = userDAO.getUserById(idUser);
+			Tariff tariff = tariffDAO.getTariffById(requestOnService.getIdTariff());
+
+			if(user.getBalance() < tariff.getPrice()){
+				throw new ServiceException("Not enough money");
+			}
+			
 			Agreement agreement = agreementDAO.getAgreementById(requestOnService.getIdAgreement());
-			requestServiceDAO.acceptRequestOnService(agreement.getIdUser(), requestOnService.getIdTariff(), action);
+			requestServiceDAO.acceptRequestOnService(agreement.getIdUser(), requestOnService.getIdTariff(), action, idAdmin, tariff.getPrice());
 			requestServiceDAO.removeRequestOnService(idRequest);
 		} catch (DAOException e) {
 			throw new ServiceException("Error accepted request on service", e);

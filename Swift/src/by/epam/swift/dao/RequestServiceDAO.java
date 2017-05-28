@@ -45,22 +45,31 @@ public interface RequestServiceDAO {
 	 * @throws DAOException
 	 */
 	int getAmountEntriesRequestList() throws DAOException;
-	/**Get Request on service by id
+	/**Get Request on service by id.
 	 * @param idRequest
 	 * @return {@link RequestOnService}
 	 * @throws DAOException
 	 */
 	RequestOnService getRequestOnServiceById(int idRequest) throws DAOException;
-	/** Remove request on service by id
+	/** Remove request on service by id.
 	 * @param idRequest
 	 * @throws DAOException
 	 */
 	void removeRequestOnService(int idRequest) throws DAOException;
-	/** Accept the Requset on service from the user
+	/** Accept the Request on service from the user.
 	 * @param idUser
 	 * @param idTariff
 	 * @param status
+	 * @param idAdmin
+	 * @param tariffPrice
 	 * @throws DAOException
 	 */
-	void acceptRequestOnService(int idUser, int idTariff, boolean status) throws DAOException;
+	void acceptRequestOnService(int idUser, int idTariff, boolean status, int idAdmin, double tariffPrice) throws DAOException;
+
+	/** Get users' tariffs list(ID).
+	 * @param idUser
+	 * @return
+	 * @throws DAOException
+	 */
+	List<Integer> getUserTariffList(int idUser) throws DAOException;
 }

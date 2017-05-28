@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -233,34 +234,85 @@ public class RequestServiceDAOImpl implements RequestServiceDAO {
 	}
 
 	@Override
-	public void acceptRequestOnService(int idUser, int idTariff, boolean action) throws DAOException {
+	public void acceptRequestOnService(int idUser, int idTariff, boolean action, int idAdmin, double tariffPrice) throws DAOException {
 		ConnectionPool pool  = ConnectionPool.getInstance();
 		Connection connection = null;
 		Statement statement = null;
-		ResultSet resultSet = null;
-		PreparedStatement preparedStatement = null;
+		PreparedStatement preparedStatement1 = null;
+		PreparedStatement preparedStatement2 = null;
+		PreparedStatement preparedStatement3 = null;
 		
 		try {
 			connection = pool.take();
 			statement = connection.createStatement();
-			resultSet = statement.executeQuery(SQLCommand.FOREING_KEY_CHECKS_FALSE);
-			
+			statement.executeQuery(SQLCommand.FOREING_KEY_CHECKS_FALSE);			
+			connection.setAutoCommit(false);		
+			//The second operation
 			if(action){
-				preparedStatement = connection.prepareStatement(SQLCommand.INSERT_REQUEST_ENABLE_TARIFF);
+				preparedStatement1 = connection.prepareStatement(SQLCommand.INSERT_REQUEST_ENABLE_TARIFF);
+				preparedStatement1.setInt(1, idUser);
+				preparedStatement1.setInt(2, idTariff);
+				preparedStatement1.executeUpdate();
 			}else{
-				preparedStatement = connection.prepareStatement(SQLCommand.UPDATE_REQUEST_DISABLE_TARIFF);
-			}
-			preparedStatement.setInt(1, idUser);
-			preparedStatement.setInt(2, idTariff);
-			preparedStatement.executeUpdate();
+				preparedStatement1 = connection.prepareStatement(SQLCommand.DElETE_REQUEST_TARIFF);
+				preparedStatement1.setInt(1, idUser);
+				preparedStatement1.setInt(2, idTariff);
+				preparedStatement1.executeUpdate();
+			}			
+			//The third operation
+			preparedStatement2 = connection.prepareStatement(SQLCommand.UPDATE_USER_ADD_BALANCE);
+			preparedStatement2.setDouble(1, tariffPrice);
+			preparedStatement2.setInt(2, idAdmin);
+			preparedStatement2.executeUpdate();
+			//The fourth operation
+			preparedStatement3 = connection.prepareStatement(SQLCommand.UPDATE_WITHDRAW_MONEY);
+			preparedStatement3.setDouble(1, tariffPrice);
+			preparedStatement3.setInt(2, idUser);
+			preparedStatement3.executeUpdate();	
+			connection.commit();
+			
 		} catch (ConnectionPoolException e) {
 			throw new DAOException("There was a problem connecting to the database", e);
 		} catch (SQLException e) {
-			throw new DAOException("Error executing the query 'insert_request_enable_tariff or update_request_disable_tariff'", e);
+			try {
+				if(connection != null){
+					connection.rollback();					
+				}
+			} catch (SQLException e1) {
+				throw new DAOException("Error executing the rollback ", e1);			}
+			throw new DAOException("Error executing the query 'insert_request_enable_tariff or update_request_disable_tariff, update_user_add_balance, update_withdraw_money'", e);
 		}finally {
-			pool.closeConnection(connection, statement, preparedStatement, resultSet);
+			pool.closeConnection(connection, statement, preparedStatement1, preparedStatement2, preparedStatement3);
 		}
 		
+	}
+
+	@Override
+	public List<Integer> getUserTariffList(int idUser) throws DAOException {
+		ConnectionPool pool  = ConnectionPool.getInstance();
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		List<Integer> list = null;
+		
+		try {
+			connection = pool.take();
+			preparedStatement = connection.prepareStatement(SQLCommand.SELECT_USER_TARIFF_LIST);
+			preparedStatement.setInt(1, idUser);
+			resultSet = preparedStatement.executeQuery();
+			list = new ArrayList<Integer>();
+			while (resultSet.next()) {
+				list.add(resultSet.getInt(ColumnLabel.TARIFF_ID));
+			}
+		} catch (ConnectionPoolException e) {
+			throw new DAOException("There was a problem connecting to the database", e);
+		} catch (SQLException e) {
+			throw new DAOException("Error executing the query 'select_user_tariff_list'",e);
+		}finally {
+			pool.closeConnection(connection, preparedStatement, resultSet);
+		}
+		
+		return list;
 	}
 
 }

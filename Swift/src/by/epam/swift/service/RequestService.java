@@ -62,5 +62,5 @@ public interface RequestService {
 	 * @param blockDate
 	 * @throws ServiceException
 	 */
-	void acceptRequestOnService(int idRequest, int idUser, boolean action) throws ServiceException;
+	void acceptRequestOnService(int idRequest, int idAdmin,int idUser, boolean action) throws ServiceException;
 }

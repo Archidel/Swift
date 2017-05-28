@@ -79,7 +79,7 @@
 			</tr>
 			<tr>
 				<td>${balance_label}</td>
-				<td>${requestScope.user.balance} ${dimension_price_per_month}</td>
+				<td>${requestScope.user.balance} $</td>
 			</tr>
 			
 			<tr>

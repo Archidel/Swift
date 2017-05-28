@@ -325,5 +325,47 @@ public final class ConnectionPool implements Closeable{
 		}
 	}
 	
+	public void closeConnection(Connection con, Statement st, PreparedStatement ps1, PreparedStatement ps2, PreparedStatement ps3){
+		if(con != null){
+			try {
+				free(con);
+			} catch (InterruptedException | DAOException e) {
+				LOGGER.log(Level.ERROR, "Connection isn't return to the pool", e);
+			}
+		}
+		
+		if(st != null){
+			try {
+				st.close();
+			} catch (SQLException e) {
+				LOGGER.log(Level.ERROR, "Statement isn't closed", e);
+			}
+		}
+		
+		if(ps1 != null){
+			try {
+				ps1.close();
+			} catch (SQLException e) {
+				LOGGER.log(Level.ERROR, "PrepareStatement1 ins't closed", e);
+			}
+		}
+		
+		if(ps2 != null){
+			try {
+				ps2.close();
+			} catch (SQLException e) {
+				LOGGER.log(Level.ERROR, "PrepareStatement2 ins't closed", e);
+			}
+		}
+		
+		if(ps2 != null){
+			try {
+				ps2.close();
+			} catch (SQLException e) {
+				LOGGER.log(Level.ERROR, "PrepareStatement3 ins't closed", e);
+			}
+		}
+	}
+	
 	
 }
