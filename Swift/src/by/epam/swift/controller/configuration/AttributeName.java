@@ -13,6 +13,7 @@ public final class AttributeName {
 	public static final String RESULT = "result";
 	public static final String LIST= "list";
 	public static final String MORE = "more";
+	public static final String TARIFF = "tariff";
 	public static final String AMOUNT_RESULT = "amountResult";
 	public static final String AMOUNT_PAGE = "amountPage";
 	public static final String NUMBER_PAGE = "numberPage";

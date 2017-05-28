@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+		<tr>
+			<td>${tariff_id_label}</td>
+			<td>${requestScope.tariff.id}</td>
+		</tr>	
+		
+		<tr>
+			<td>${title_label}</td>
+			<td>${requestScope.tariff.title}</td>
+		</tr>
+		
+		<tr>
+			<td>${type_label}</td>
+			<td>${requestScope.tariff.type}</td>
+		</tr>
+		<tr>
+			<td>${price_label}</td>
+			<td>${requestScope.tariff.price} ${dimension_price_per_month}</td>
+		</tr>
+
+</body>
+</html>

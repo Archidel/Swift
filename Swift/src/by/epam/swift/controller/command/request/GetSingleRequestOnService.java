@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 
 import by.epam.swift.bean.Agreement;
 import by.epam.swift.bean.RequestOnService;
+import by.epam.swift.bean.Tariff;
 import by.epam.swift.bean.User;
 import by.epam.swift.controller.command.Command;
 import by.epam.swift.controller.configuration.AttributeName;
@@ -17,6 +18,7 @@ import by.epam.swift.controller.configuration.PageName;
 import by.epam.swift.controller.configuration.ParameterName;
 import by.epam.swift.service.AgreementService;
 import by.epam.swift.service.RequestService;
+import by.epam.swift.service.TariffService;
 import by.epam.swift.service.UserService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
@@ -36,11 +38,14 @@ public class GetSingleRequestOnService implements Command {
 		RequestService requestService = factory.getRequestService();
 		UserService userService = factory.getUserService();
 		AgreementService agreementService = factory.getAgreementService();
+		TariffService tariffService = factory.getTariffService();
 		
 		try {
 			RequestOnService requestOnService = requestService.getRequestOnServiceById(idRequest);
 			Agreement agreement = agreementService.getAgreementById(requestOnService.getIdAgreement());
 			User user = userService.getUserById(agreement.getIdUser());
+			Tariff tariff = tariffService.getTariffById(requestOnService.getIdTariff());
+			request.setAttribute(AttributeName.TARIFF, tariff);
 			request.setAttribute(AttributeName.USER, user);
 			request.setAttribute(AttributeName.MORE, requestOnService);
 			request.getRequestDispatcher(PageName.GET_SINGLE_REQUEST_ON_SERVICE_PAGE).forward(request, response);	

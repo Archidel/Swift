@@ -32,6 +32,7 @@
 			</div>
 		</c:if>
 
+
 		<table class="table table-hover" style="text-align: center;">
 			<tr>
 				<td>${request_id_label}</td>
@@ -42,12 +43,9 @@
 				<td>${agreement_id_label}</td>
 				<td>${requestScope.more.idAgreement}</td>
 			</tr>	
+	
+			<%@include file="../../../elements/el_content_tariff_info.jspf" %>
 
-			<tr>
-				<td>${tariff_id_label}</td>
-				<td>${requestScope.more.idTariff}</td>
-			</tr>
-			
 			<tr>
 				<td>${date_label}</td>
 				<td>${requestScope.more.date}</td>
