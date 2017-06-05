@@ -1,4 +1,4 @@
-package by.epam.swift.controller.configuration;
+package by.epam.swift.controller.command;
 
 /**	<h1>Command name</h1>
  * This enumeration is used to initialize all possible commands.

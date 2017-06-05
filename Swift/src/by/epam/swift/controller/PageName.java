@@ -1,4 +1,4 @@
-package by.epam.swift.controller.configuration;
+package by.epam.swift.controller;
 
 /**Store all URLs of all pages and redirect commands
  * @author Archangel

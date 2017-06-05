@@ -1,4 +1,4 @@
-package by.epam.swift.controller.configuration;
+package by.epam.swift.controller;
 
 /** Store a name for all parameters
  * @author Archangel

@@ -1,4 +1,4 @@
-package by.epam.swift.controller.configuration;
+package by.epam.swift.controller;
 
 /**Stores system messages. These keys can be passed to the JSP with
 	By using the AttributeNames.MESSAGE_ATTRIBUTE attribute of the request object.
