@@ -48,11 +48,7 @@
 							</c:forEach>
 						</select>
 					</td>
-				</tr>	
-				<tr style="height: 50px;">
-					<td>${peroid_label}:</td>
-					<td><input type="date" name="date_period"></td>
-				</tr>	
+				</tr>		
 				<tr style="height: 50px;">
 					<td>${service_action_label}:</td>
 					<td>

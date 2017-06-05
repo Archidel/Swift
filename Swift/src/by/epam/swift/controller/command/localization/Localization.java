@@ -5,10 +5,10 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import by.epam.swift.controller.AttributeName;
+import by.epam.swift.controller.PageName;
+import by.epam.swift.controller.ParameterName;
 import by.epam.swift.controller.command.Command;
-import by.epam.swift.controller.configuration.AttributeName;
-import by.epam.swift.controller.configuration.PageName;
-import by.epam.swift.controller.configuration.ParameterName;
 
 /**This class has implementation {@link Command}.
  * Class is used for change the local.

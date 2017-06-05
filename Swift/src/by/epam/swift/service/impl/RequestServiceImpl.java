@@ -60,8 +60,8 @@ public class RequestServiceImpl implements RequestService {
 	}
 
 	@Override
-	public void makeRequestOnService(String title, String type, String datePeriod, String serviceAction, int idUser, Date blockDate) throws ServiceException {
-		if(!ValidationData.validRequest(title, type, datePeriod, serviceAction)){
+	public void makeRequestOnService(String title, String type, String serviceAction, int idUser, Date blockDate) throws ServiceException {
+		if(!ValidationData.validRequest(title, type, serviceAction)){
 			throw new ServiceException("Incorrent data for make request no serivce");
 		}
 		

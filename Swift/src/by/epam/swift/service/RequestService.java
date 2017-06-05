@@ -25,12 +25,11 @@ public interface RequestService {
 	/**Create new request on service from user.
 	 * @param title
 	 * @param type
-	 * @param datePeriod
 	 * @param serviceAction
 	 * @param idUser
 	 * @throws ServiceException
 	 */
-	void makeRequestOnService(String title, String type, String datePeriod, String serviceAction, int idUser, Date blockDate) throws ServiceException;	
+	void makeRequestOnService(String title, String type, String serviceAction, int idUser, Date blockDate) throws ServiceException;	
 	/** The method returns request on service list for user.
 	 * @param idUser
 	 * @param numberPage

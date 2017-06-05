@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import by.epam.swift.bean.User;
-import by.epam.swift.controller.configuration.AttributeName;
-import by.epam.swift.controller.configuration.PageName;
-import by.epam.swift.controller.configuration.ParameterName;
+import by.epam.swift.controller.AttributeName;
+import by.epam.swift.controller.PageName;
+import by.epam.swift.controller.ParameterName;
 
 /**Tracks if user has rights to access certain pages.
  * @author Archangel

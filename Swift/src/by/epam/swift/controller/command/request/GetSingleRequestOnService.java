@@ -12,10 +12,10 @@ import by.epam.swift.bean.Agreement;
 import by.epam.swift.bean.RequestOnService;
 import by.epam.swift.bean.Tariff;
 import by.epam.swift.bean.User;
+import by.epam.swift.controller.AttributeName;
+import by.epam.swift.controller.PageName;
+import by.epam.swift.controller.ParameterName;
 import by.epam.swift.controller.command.Command;
-import by.epam.swift.controller.configuration.AttributeName;
-import by.epam.swift.controller.configuration.PageName;
-import by.epam.swift.controller.configuration.ParameterName;
 import by.epam.swift.service.AgreementService;
 import by.epam.swift.service.RequestService;
 import by.epam.swift.service.TariffService;
@@ -42,7 +42,8 @@ public class GetSingleRequestOnService implements Command {
 		
 		try {
 			RequestOnService requestOnService = requestService.getRequestOnServiceById(idRequest);
-			Agreement agreement = agreementService.getAgreementById(requestOnService.getIdAgreement());
+			int idAgreement = requestOnService.getIdAgreement();
+			Agreement agreement = agreementService.getAgreementById(idAgreement);
 			User user = userService.getUserById(agreement.getIdUser());
 			Tariff tariff = tariffService.getTariffById(requestOnService.getIdTariff());
 			request.setAttribute(AttributeName.TARIFF, tariff);

@@ -8,9 +8,9 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
+import by.epam.swift.controller.AttributeName;
+import by.epam.swift.controller.PageName;
 import by.epam.swift.controller.command.Command;
-import by.epam.swift.controller.configuration.AttributeName;
-import by.epam.swift.controller.configuration.PageName;
 
 /**Class for exit for user's account.
  * This class has implementation {@link Command}.

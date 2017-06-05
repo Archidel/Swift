@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import by.epam.swift.controller.AttributeName;
+import by.epam.swift.controller.PageName;
+import by.epam.swift.controller.ParameterName;
 import by.epam.swift.controller.command.Command;
-import by.epam.swift.controller.configuration.AttributeName;
-import by.epam.swift.controller.configuration.PageName;
-import by.epam.swift.controller.configuration.ParameterName;
 
 /**Class for redirects on difference pages.
  * This class has implementation {@link Command}.

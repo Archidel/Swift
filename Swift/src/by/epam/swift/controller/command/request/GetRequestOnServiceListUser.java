@@ -12,10 +12,10 @@ import org.apache.log4j.Logger;
 
 import by.epam.swift.bean.RequestOnService;
 import by.epam.swift.bean.User;
+import by.epam.swift.controller.AttributeName;
+import by.epam.swift.controller.PageName;
+import by.epam.swift.controller.ParameterName;
 import by.epam.swift.controller.command.Command;
-import by.epam.swift.controller.configuration.AttributeName;
-import by.epam.swift.controller.configuration.PageName;
-import by.epam.swift.controller.configuration.ParameterName;
 import by.epam.swift.service.RequestService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;
@@ -49,6 +49,7 @@ public class GetRequestOnServiceListUser implements Command {
 			request.setAttribute(AttributeName.LIST, list);
 			request.getRequestDispatcher(PageName.REQUEST_ON_SERVICE_LIST_USER_PAGE).forward(request, response);		
 		} catch (ServiceException e) {
+			e.printStackTrace();
 			response.sendRedirect(request.getContextPath() + PageName.REDIRECT_ERROR_PAGE);
 			LOGGER.error(e);		
 		} catch (ServletException e) {

@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import by.epam.swift.controller.PageName;
+import by.epam.swift.controller.ParameterName;
 import by.epam.swift.controller.command.Command;
-import by.epam.swift.controller.configuration.PageName;
-import by.epam.swift.controller.configuration.ParameterName;
 import by.epam.swift.service.NewsService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;

@@ -9,10 +9,10 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 
 import by.epam.swift.bean.User;
+import by.epam.swift.controller.AttributeName;
+import by.epam.swift.controller.PageName;
+import by.epam.swift.controller.ParameterName;
 import by.epam.swift.controller.command.Command;
-import by.epam.swift.controller.configuration.AttributeName;
-import by.epam.swift.controller.configuration.PageName;
-import by.epam.swift.controller.configuration.ParameterName;
 import by.epam.swift.service.AgreementService;
 import by.epam.swift.service.exception.ServiceException;
 import by.epam.swift.service.factory.ServiceFactory;

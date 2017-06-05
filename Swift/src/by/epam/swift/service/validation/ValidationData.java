@@ -15,16 +15,14 @@ public final class ValidationData {
 	/** Method for validation request data.
 	 * @param title
 	 * @param type
-	 * @param datePeriod
 	 * @param serviceAction
 	 * @return boolean 
 	 */
-	public static boolean validRequest(String title, String type, String datePeriod, String serviceAction){
+	public static boolean validRequest(String title, String type, String serviceAction){
 		boolean isValidTitle = validString(title);
 		boolean isValidType = validString(type);
-		boolean isValidDatePeriod = validString(datePeriod);
 		boolean isValidServiceAction = validString(serviceAction);
-		if(isValidDatePeriod && isValidServiceAction && isValidTitle && isValidType){
+		if(isValidServiceAction && isValidTitle && isValidType){
 			return true;
 		}else{
 			return false;			

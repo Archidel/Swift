@@ -50,7 +50,6 @@ import by.epam.swift.controller.command.user.AddBalance;
 import by.epam.swift.controller.command.user.SetUserBlock;
 import by.epam.swift.controller.command.wrong.Redirect;
 import by.epam.swift.controller.command.wrong.WrongRequest;
-import by.epam.swift.controller.configuration.CommandName;
 
 /**The class provides a command to execute
  * @author Archangel

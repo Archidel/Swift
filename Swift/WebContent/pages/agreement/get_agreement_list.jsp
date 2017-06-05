@@ -29,7 +29,6 @@
 		<h4><span>${found_label}: ${requestScope.amountResult}</span></h4>
 			
 		<table class="table table-hover">
-			<caption><h2 style="text-align: center;">${agreement_label}</h2></caption>
 		  	<thead>
 	    		<tr>
 	        		<th>${agreement_id_label}</th>
@@ -44,7 +43,8 @@
 			   		<tr>
 						<td>${list.idAgreement}</td>
 					    <td>${list.idUser}</td>
-					   	<td><fmt:formatDate type="both" dateStyle="medium" timeStyle="medium" value="${list.dateCreation}"/></td>
+					   	<td>
+					   	${list.dateCreation}
 					    <td>
 					    	<c:if test="${list.idAdmin != 0}">
 					    		${yes_label}
